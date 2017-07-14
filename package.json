@@ -1,0 +1,12 @@
+{
+  "name": "s360-scss-fundamental-toolkit",
+  "version": "1.0.0",
+  "description": "Set of mixins, extenables, and other useful tools for building websites.",
+  "main": "scss/toolkit.scss",
+  "author": "Square360, Inc.",
+   "contributors": [{
+    "name": "Steven Keiser",
+    "email": "steven.keiser@square360.com"
+  }],
+  "license": "ISC"
+}

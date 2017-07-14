@@ -1,0 +1,14 @@
+@mixin remove-text {
+	background-color: transparent;
+	border: 0;
+	font-size: 0;
+	color: transparent;
+	overflow: hidden;
+
+	&::before {
+		content: "";
+		display: block;
+		width: 0;
+		height: 100%;
+	}
+}
