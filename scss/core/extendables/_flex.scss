@@ -1,17 +1,6 @@
-%flex {
+%display-flex {
 	display: flex;
 	align-items: flex-start;
 	width: 100%;
-}
-
-%display-flex {
-	@extend %flex;
-
 	flex-wrap: wrap;
-}
-
-%display-flex-no-wrap {
-	@extend %flex;
-
-	flex-wrap: nowrap;
 }
