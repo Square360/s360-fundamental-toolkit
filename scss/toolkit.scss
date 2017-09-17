@@ -1,5 +1,16 @@
+@import "~compass-mixins/lib/_compass";
+@import "~compass-mixins/lib/compass/_reset";
+@import "~breakpoint-sass/stylesheets/_breakpoint";
+@import "~sass-toolkit/stylesheets/_toolkit";
+@import "~susy/sass/_susy";
+
 @import "_variables";
+
+/////////////////////////////////////////////////
+// CORE
+/////////////////////////////////////////////////
 
 @import "core/_mixins";
 @import "core/_functions";
+@import "core/_layout";
 @import "core/_extendables";
