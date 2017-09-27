@@ -1,0 +1,17 @@
+$bp-phone-landscape: 480px !default;
+$bp-phone-landscape-only: 480px 719px !default;
+
+$bp-tablet: 720px !default;
+$bp-tablet-only: 720px 799px !default;
+$bp-tablet-below: max-width 719px !default;
+
+$bp-tablet-landscape: 800px !default;
+$bp-tablet-landscape-only: 800px 1023px !default;
+$bp-tablet-landscape-below: max-width 799px !default;
+
+$bp-desktop: 1024px !default;
+$bp-desktop-only: 1024px 1279px !default;
+$bp-desktop-below: max-width 1023px !default;
+
+$bp-big-desktop: 1280px !default;
+$bp-big-desktop-below: max-width 1279px !default;
