@@ -8,22 +8,22 @@ It also provides a set of default variables for breakpoint sizes, a Susy 12 colu
 1. [Installation](#markdown-header-installation)
 2. [SCSS Folder]
 	+ [core]
-		+ [extendables]
-		+ [functions]
-		+ [mixins]
-		+ [layout]
-		+ [breakpoints]
-	+ [variables]
+		- [extendables]
+		- [functions]
+		- [mixins]
+		- [layout]
+		- [breakpoints]
+	- [variables]
 
 ## Installation
 
-Navigate to your project's "assets" folder and run the following:
+Navigate to the folder in your project where the `package.json` file is located and run the following:
 
 ```bash
 npm install --save git+ssh://git@bitbucket.org:sq360_sysadmin/s360-fundamental-toolkit.git
 ```
 
-Once it's finished downloading, at the very top of your main `*.scss` file add the following:
+Once it's finished downloading, add the following to the very top of your main `*.scss` file:
 
 ```scss
 @import "~s360-fundamental-toolkit/scss/toolkit";
