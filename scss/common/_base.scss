@@ -1,0 +1,16 @@
+* {
+	box-sizing: border-box;
+}
+
+html, body {
+	background: #ffffff;
+	font-size: 100%;
+}
+
+strong {
+	font-weight: $font-weight-bold;
+}
+
+em {
+	font-style: italic;
+}
