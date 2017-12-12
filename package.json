@@ -1,6 +1,6 @@
 {
   "name": "s360-fundamental-toolkit",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Set of mixins, extenables, and other useful tools for building websites.",
   "main": "scss/toolkit.scss",
   "author": "Square360, Inc.",
