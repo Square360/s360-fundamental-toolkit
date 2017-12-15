@@ -54,7 +54,8 @@ Once it's finished downloading, add the following to the very top of your main `
 ## Images Folder
 
 The folder holds any global image(s) that can be used on any website.  Any image 
-in this folder can be added to your scss file when use the variable `$s360ft-image-path`.
+in this folder can be added to your scss file when use the variable `$s360ft-image-path`
+or HTML markup.  See table below:
 
 | Files | SCSS | HTML |
 |:------|:-----|:-----|
