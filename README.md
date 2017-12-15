@@ -1,19 +1,27 @@
 # Square360 Fundamental Toolkit
 
-This toolkit include several libraries including; SASS Toolkit, Compass Mixins, Breakpoint SASS and Susy v2.
-It also provides a set of default variables for breakpoint sizes, a Susy 12 column grid map, gutters for the grid and various functions for text and DOM manipulation.
+This toolkit include several libraries including; SASS Toolkit, Breakpoint SASS and Susy v2.
+It also provides a set of default variables for breakpoints, a Susy 12 column grid map, gutters and various functions for text and DOM manipulation.
 
 ## Table of Contents
 
 1. [Installation](#markdown-header-installation)
 2. [SCSS Folder]
-	+ [core]
-		- [extendables]
-		- [functions]
-		- [mixins]
-		- [layout]
-		- [breakpoints]
-	- [variables]
+	+ [common](#markdown-header-common)
+		- [\_base](#markdown-header-_base)
+		- [\_reset](#markdown-header-_reset)
+	+ [core](#markdown-header-core)
+		- [extendables](#markdown-header-extendables)
+		- [functions](#markdown-header-functions)
+		- [mixins](#markdown-header-mixins)
+		- [\_breakpoints](#markdown-header-)
+		- [\_fonts](#markdown-header-)
+		- [\_layout](#markdown-header-)
+	- [\_variables](#markdown-header-)
+	- [\_toolkit](#markdown-header-)
+3. [Images Folder]
+
+----
 
 ## Installation
 
@@ -28,3 +36,15 @@ Once it's finished downloading, add the following to the very top of your main `
 ```scss
 @import "~s360-fundamental-toolkit/scss/toolkit";
 ```
+
+----
+
+## SSCS Folder
+
+### common
+
+#### \_base
+
+
+
+### core
