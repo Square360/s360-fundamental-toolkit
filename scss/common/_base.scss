@@ -8,7 +8,21 @@ html, body {
 }
 
 strong {
-	font-weight: $font-weight-bold;
+	font-weight: bold;
+}
+
+sub {
+	vertical-align: sub;
+	font-size: smaller;
+}
+
+sup {
+	vertical-align: super;
+	font-size: x-small;
+}
+
+small {
+	font-size: smaller;
 }
 
 em {
