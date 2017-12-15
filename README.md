@@ -8,7 +8,7 @@ It also provides a set of default variables for breakpoints, a Susy 12 column gr
 1. [Installation](#markdown-header-installation)
 2. [SCSS Folder]
 	+ [common](#markdown-header-common)
-		- [\_base](#markdown-header-_base)
+		- [\_base](#markdown-header-base.scss)
 		- [\_reset](#markdown-header-_reset)
 	+ [core](#markdown-header-core)
 		- [extendables](#markdown-header-extendables)
@@ -43,7 +43,7 @@ Once it's finished downloading, add the following to the very top of your main `
 
 ### common
 
-#### \_base
+#### base.scss
 
 
 
