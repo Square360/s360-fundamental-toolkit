@@ -1,3 +1,3 @@
-@mixin font-size($size: $font-size-base) {
+@mixin font-size($size) {
 	font-size: rem($size);
 }
