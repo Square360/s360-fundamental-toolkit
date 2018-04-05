@@ -5,12 +5,35 @@
 @import "_variables";
 
 /////////////////////////////////////////////////
-// CORE
+// CORE EXTENDABLES
+/////////////////////////////////////////////////
+
+@import "core/extendables/_flex";
+
+/////////////////////////////////////////////////
+// CORE FUNCTIONS
+/////////////////////////////////////////////////
+
+@import "core/functions/_strip-unit";
+@import "core/functions/_enumerate";
+@import "core/functions/_rem";
+@import "core/functions/_scale-font";
+
+/////////////////////////////////////////////////
+// CORE MIXINS
+/////////////////////////////////////////////////
+
+@import "core/mixins/_flip-horizontal";
+@import "core/mixins/_font-size";
+@import "core/mixins/_font-smoothing";
+@import "core/mixins/_input-placeholder";
+@import "core/mixins/_remove-text";
+
+/////////////////////////////////////////////////
+// CORE MISC.
 /////////////////////////////////////////////////
 
 @import "core/_breakpoints";
-@import "core/_extendables";
-@import "core/_functions";
-@import "core/_layout";
+@import "core/_susy";
+@import "core/_gutters";
 @import "core/_line-heights";
-@import "core/_mixins";
