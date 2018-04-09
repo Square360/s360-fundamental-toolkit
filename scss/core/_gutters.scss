@@ -1,9 +1,13 @@
 /**
- * $gutter variables are dynamically sized based on the $susy map settings.
- * @see _susy.scss
+ * @file Defines gutters used throughout a site.
+ * ---
+ * @see {@link _susy.scss}
  */
 
-$gutter: gutter() !default;
+$gutter: 10px !default;
 $gutter-double: $gutter * 2 !default;
 $gutter-negative: $gutter * -1 !default;
+
+// This gutter's value is determined by the number 
+// of columns defined in the $susy variable.
 $gutter-column: span(1) !default;
