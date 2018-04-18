@@ -1,4 +1,6 @@
-@function rem($size: 0) {
+@function rem(
+	$size: 0
+) {
 	@if $size == 0 {
 		@return 0;
 	

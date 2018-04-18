@@ -1,10 +1,11 @@
-// From https://github.com/sass/sass/issues/996
-@function enumerate($list) {
+@function enumerate(
+	$list
+) {
 	$map: ();
 	
-	@for $index from 1 through length($list) {
-		$value: nth($list, $index);
-		$map: map-merge($map, ($index: $value));
+	@for $i from 1 through length($list) {
+		$value: nth($list, $i);
+		$map: map-merge($map, ($i: $value));
 	}
 	
 	@return $map;
