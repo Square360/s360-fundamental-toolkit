@@ -1,9 +1,12 @@
-@function split-string($string, $separator) {
+@function str-split(
+	$string, 
+	$separator
+) {
 	$split-arr: ();
 	
 	$index: str-index(quote(#{ $string }), $separator);
 	
-	@while ($index != null) {
+	@while $index != null {
 		$item: str-slice($string, 1, $index - 1);
 		
 		$split-arr: append($split-arr, $item);
