@@ -1,0 +1,44 @@
+@function str-to-number(
+	$string
+) {
+	@if type-of($string) == 'number' {
+		@return $string;
+	}
+
+	$_result: 0;
+	$_decimals: 0;
+	$_is-negative: str-slice($string, 1, 1) == '-';
+	$_numbers: (
+		'0': 0, 
+		'1': 1, 
+		'2': 2, 
+		'3': 3, 
+		'4': 4, 
+		'5': 5, 
+		'6': 6, 
+		'7': 7, 
+		'8': 8, 
+		'9': 9
+	);
+
+	@for $i from if($_is-negative, 2, 1) through str-length($string) {
+		$_character: str-slice($string, $i, $i);
+		
+		// Checks if the $character is a decimal.
+		@if $_character == '.' {
+			$_decimals: 1;
+	
+		// Normal number, before any decimals.
+		} @else if $_decimals == 0 {
+			$_result: $_result * 10 + map-get($_numbers, $_character);
+
+		// Numbers after the decimal.
+		} @else { 
+			$_result: $_result + (map-get($_numbers, $_character) / pow(10, $_decimals));
+			
+			$_decimals: $_decimals + 1;
+		}
+	}
+
+	@return if($_is-negative, -$_result, $_result);
+}
