@@ -1,0 +1,79 @@
+@mixin grid(
+	$cols: $grid-columns, 
+	$col-gap: $grid-column-gap, 
+	$rows: auto, 
+	$row-gap: $grid-row-gap
+) {
+	$_column-count: 0;
+
+	display: grid;
+	grid-column-gap: if(unitless($col-gap), #{ $col-gap }px, $col-gap);
+	grid-row-gap: if(unitless($row-gap), #{ $row-gap }px, $row-gap);
+
+	//////////////////////////////////////////////////
+	// GRID-TEMPLATE-ROWS
+	//////////////////////////////////////////////////
+
+	grid-template-rows: $rows;
+
+	//////////////////////////////////////////////////
+	// GRID-TEMPLATE-COLUMNS
+	//////////////////////////////////////////////////
+
+	@if type-of(nth($cols, 1)) == 'number' or str-index(nth($cols, 1), '(') {
+		@if length($cols) == 1 and unitless($cols) {
+			$_column-count: $cols;
+			
+			grid-template-columns: repeat($cols, 1fr);
+
+		} @else {
+			$_template-columns: ();
+			
+			@each $col in $cols {
+				$_template-columns: append($_template-columns, $col);
+
+				@if type-of($col) == 'number' {
+					$_column-count: $_column-count + 1;
+
+				} @elseif type-of($col) == 'string' and str-index($col, 'repeat') {
+					$_column-count: $_column-count + str-to-number(nth(str-split(nth(str-split($col, '('), 2), ','), 1));
+				}
+			}
+
+			grid-template-columns: $_template-columns;
+		}
+
+	//////////////////////////////////////////////////
+	// GRID-TEMPLATE-AREAS
+	//////////////////////////////////////////////////
+
+	} @else if type-of(nth($cols, 1)) == 'string' {
+		$_template-areas: ();
+
+		// When defining template-areas in a grid, 
+		// each set of quoted columns are considered rows.
+
+		// This loop will get each row.
+		@each $row in $cols {
+			// Empty the row columns.
+			$_row-columns: ();
+
+			// This loop will get each column inside the row.
+			@each $col in str-split($row, ' ') {
+				// Add the column to the row columns.
+				$_row-columns: append($_row-columns, $col);
+			}
+
+			// Add the row columns to the template areas.
+			$_template-areas: append($_template-areas, quote(#{ $_row-columns }));
+
+			// Get a count of how many columns are in the rows.
+			$_column-count: length($_row-columns);
+		}
+
+		grid-template-areas: $_template-areas;
+		grid-template-columns: repeat($_column-count, 1fr);
+	}
+	
+	@include grid-column(1, $_column-count);
+}
