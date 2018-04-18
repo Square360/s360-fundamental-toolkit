@@ -21,10 +21,14 @@
 	//////////////////////////////////////////////////
 
 	@if type-of(nth($cols, 1)) == 'number' or str-index(nth($cols, 1), '(') {
-		@if length($cols) == 1 and unitless($cols) {
-			$_column-count: $cols;
+		@if length($cols) == 1 {
+			@if type-of($cols) == 'number' and unitless($cols) {
+				$_column-count: $cols;
+				grid-template-columns: repeat($cols, 1fr);
 			
-			grid-template-columns: repeat($cols, 1fr);
+			} @else {
+				grid-template-columns: $cols;
+			}
 
 		} @else {
 			$_template-columns: ();
