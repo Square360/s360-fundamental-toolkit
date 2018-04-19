@@ -21,12 +21,13 @@
 	//////////////////////////////////////////////////
 
 	@if type-of(nth($cols, 1)) == 'number' or str-index(nth($cols, 1), '(') {
-		@if length($cols) == 1 {
-			@if type-of($cols) == 'number' and unitless($cols) {
+		@if length($cols) == 1 and type-of($cols) == 'number') {
+			@if unitless($cols) {
 				$_column-count: $cols;
 				grid-template-columns: repeat($cols, 1fr);
 			
 			} @else {
+				$_column-count: $_column-count + 1;
 				grid-template-columns: $cols;
 			}
 
@@ -39,8 +40,12 @@
 				@if type-of($col) == 'number' {
 					$_column-count: $_column-count + 1;
 
-				} @elseif type-of($col) == 'string' and str-index($col, 'repeat') {
-					$_column-count: $_column-count + str-to-number(nth(str-split(nth(str-split($col, '('), 2), ','), 1));
+				} @else if type-of($col) == 'string' and (str-index($col, 'repeat') or str-index($col, 'auto')) {
+					$_column-count: $_column-count + if(
+						str-index($col, 'repeat'),
+						str-to-number(nth(str-split(nth(str-split($col, '('), 2), ','), 1)), 
+						1
+					);
 				}
 			}
 
