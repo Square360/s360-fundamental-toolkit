@@ -2,5 +2,10 @@
 	$start: 1, 
 	$span: 1
 ) {
-	grid-column: #{ $start } / #{ $start + $span };
+	@if str-slice($span, 1, 1) == '-') {
+		grid-column: #{ $start } / #{ $span };
+	
+	} @else {
+		grid-column: #{ $start } / #{ $start + $span };
+	}
 }
