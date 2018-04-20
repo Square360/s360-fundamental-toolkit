@@ -9,27 +9,6 @@ gutters and various functions for text and DOM manipulation.
 1. [Installation](#markdown-header-installation)
 2. [Setup](#markdown-header-setup)
 3. [SCSS Folder](#markdown-header-scss-folder)
-	- \_variables.scss
-	- toolkit.scss
-	+ **common**
-		- \_base.scss
-		- \_reset.scss
-	+ **core**
-		- \_breakpoints.scss
-		- \_fonts.scss
-		- \_layout.scss
-		+ **extendables**
-			- \_flex.scss
-		+ **functions**
-			- \_enumerate.scss
-			- \_rem.scss
-			- \_scale-font.scss
-			- \_strip-unit.scss
-		+ **mixins**
-			- \_flip-horizontal.scss
-			- \_font-smoothing.scss
-			- \_input-placeholder.scss
-			- \_remove-text.scss
 4. [Images Folder](#markdown-header-images-folder)
 
 ## Installation
@@ -46,10 +25,11 @@ Once it's finished downloading, add the following to the very top of your main `
 
 ```scss
 @import "~s360-fundamental-toolkit/scss/toolkit";
+
 ```
 ## SCSS Folder
 
-
+TBW
 
 ## Images Folder
 
