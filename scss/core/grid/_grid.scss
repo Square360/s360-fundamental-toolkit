@@ -84,5 +84,5 @@
 		grid-template-columns: repeat($_column-count, 1fr);
 	}
 	
-	@include grid-column(1, $_column-count);
+	// @include grid-column(1, $_column-count);
 }
