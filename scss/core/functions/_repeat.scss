@@ -1,0 +1,12 @@
+@function repeat(
+	$count, 
+	$string: 1fr
+) {
+	$_list: ();
+
+	@for $i from 1 through $count {
+		$_list: append($_list, $string);
+	}
+
+	@return $_list;
+}
