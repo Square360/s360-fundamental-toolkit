@@ -6,19 +6,11 @@
 ) {
 	display: grid;
 	
-	//////////////////////////////////////////////////
-	// GRID-TEMPLATE-COLUMNS
-	//////////////////////////////////////////////////
-	
 	@if type-of($cols) == 'number' {
 		grid-template-columns: if(unitless($cols), repeat($cols, 1fr), $cols);
 	}
 
 	@if type-of($cols) == 'list' or type-of($cols) == 'string' {
-		//////////////////////////////////////////////////
-		// GRID-TEMPLATE-ROWS
-		//////////////////////////////////////////////////
-		
 		@if type-of(nth($cols, 1)) == 'string' and (
 			not str-index(nth($cols, 1), 'fit-content') and 
 			not str-index(nth($cols, 1), 'auto') and 
@@ -27,10 +19,6 @@
 		) {
 			grid-template-areas: $cols;
 	
-		//////////////////////////////////////////////////
-		// GRID-TEMPLATE-COLUMNS
-		//////////////////////////////////////////////////
-		
 		} @else {
 			$_template-columns: ();
 			
@@ -48,11 +36,6 @@
 	}
 
 	grid-column-gap: if(unitless($col-gap), #{ $col-gap }px, $col-gap);
-
-	//////////////////////////////////////////////////
-	// DEFINE THE GRID ROWS
-	//////////////////////////////////////////////////
-	
 	grid-template-rows: $rows;
 	grid-row-gap: if(unitless($row-gap), #{ $row-gap }px, $row-gap);
 }

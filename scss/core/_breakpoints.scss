@@ -1,17 +1,51 @@
+/// @group breakpoints
+/// @type Number (unit)
 $bp-phone-landscape: 480px !default;
+
+/// @group breakpoints
+/// @type List
 $bp-phone-landscape-only: 480px 719px !default;
 
+/// @group breakpoints
+/// @type Number (unit)
 $bp-tablet: 720px !default;
+
+/// @group breakpoints
+/// @type List
 $bp-tablet-only: 720px 799px !default;
+
+/// @group breakpoints
+/// @type List
 $bp-tablet-below: max-width 719px !default;
 
+/// @group breakpoints
+/// @type Number (unit)
 $bp-tablet-landscape: 800px !default;
+
+/// @group breakpoints
+/// @type List
 $bp-tablet-landscape-only: 800px 1023px !default;
+
+/// @group breakpoints
+/// @type List
 $bp-tablet-landscape-below: max-width 799px !default;
 
+/// @group breakpoints
+/// @type Number (unit)
 $bp-desktop: 1024px !default;
+
+/// @group breakpoints
+/// @type List
 $bp-desktop-only: 1024px 1279px !default;
+
+/// @group breakpoints
+/// @type List
 $bp-desktop-below: max-width 1023px !default;
 
+/// @group breakpoints
+/// @type Number (unit)
 $bp-big-desktop: 1280px !default;
+
+/// @group breakpoints
+/// @type List
 $bp-big-desktop-below: max-width 1279px !default;
