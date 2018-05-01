@@ -1,4 +1,7 @@
-// concept from http://madebymike.com.au/writing/precise-control-responsive-typography/
+///
+/// @param {number} $font-size [1rem] -
+/// @param {number} $scale-units [2] - 
+/// @link http://madebymike.com.au/writing/precise-control-responsive-typography/
 @function scale-font(
 	$font-size: 1rem, 
 	$scale-units: 2

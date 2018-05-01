@@ -1,14 +1,8 @@
-/**
- * Returns the base number to the exponent power.
- * ---
- * @param  {number} $base
- * 	The base number.
- * @param  {number} $exponent
- * 	The exponent used to raise the base.
- * ---
- * @return {number}
- * 	A number representing the base number taken to the power of the exponent.
- */
+///
+/// @param {number} $base - The base number.
+/// @param {number} $exponent - The exponent used to raise the base.
+///
+/// @return {number} - A number representing the base number taken to the power of the exponent.
 @function pow(
 	$base, 
 	$exponent
