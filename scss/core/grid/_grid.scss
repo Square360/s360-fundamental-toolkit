@@ -1,3 +1,14 @@
+/// 
+/// @param {number | list | string} $cols [$grid-columns] - 
+/// @param {number} $col-gap [$grid-column-gap] - 
+/// @param {number | list | string} $rows [auto] - 
+/// @param {number} $row-gap [$grid-row-gap]
+///
+/// @group grid
+///
+/// @require $grid-columns
+/// @require $grid-column-gap
+/// @require $grid-row-gap
 @mixin grid(
 	$cols: $grid-columns, 
 	$col-gap: $grid-column-gap, 

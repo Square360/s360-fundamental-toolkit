@@ -1,3 +1,7 @@
+/// @param {number} $start [1]
+/// @param {number} $span [1]
+///
+/// @group grid
 @mixin grid-column(
 	$start: 1, 
 	$span: 1

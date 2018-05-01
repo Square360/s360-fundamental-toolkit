@@ -1,4 +1,14 @@
+/// @group grid
+///
+/// @type Number | String | List
 $grid-columns: 12 !default;
 
+/// @group grid
+///
+/// @type Number (unit)
 $grid-column-gap: $gutter-double !default;
+
+/// @group grid
+///
+/// @type Number (unit)
 $grid-row-gap: 0 !default;
