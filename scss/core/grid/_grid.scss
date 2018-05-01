@@ -6,9 +6,9 @@
 ///
 /// @group grid
 ///
-/// @require $grid-columns
-/// @require $grid-column-gap
-/// @require $grid-row-gap
+/// @requires $grid-columns
+/// @requires $grid-column-gap
+/// @requires $grid-row-gap
 @mixin grid(
 	$cols: $grid-columns, 
 	$col-gap: $grid-column-gap, 
