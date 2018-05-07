@@ -17,7 +17,7 @@
 ) {
 	display: grid;
 	
-	@if type-of($cols) == 'number' {
+	@if type-of($cols) == 'number' and $cols > 0 {
 		grid-template-columns: if(unitless($cols), repeat($cols, 1fr), $cols);
 	}
 

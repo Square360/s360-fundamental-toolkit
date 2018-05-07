@@ -1,5 +1,5 @@
-/// @param {number} $start [1]
-/// @param {number} $span [1]
+/// @param {number} $start [1] - The grid track to start on.
+/// @param {number} $span [1] - The grid track to span across.
 ///
 /// @group grid
 @mixin grid-column(
