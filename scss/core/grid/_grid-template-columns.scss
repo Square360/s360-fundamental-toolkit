@@ -1,0 +1,13 @@
+/// @param {number|string} $cols
+///
+/// @group grid
+@mixin grid-template-columns(
+	$cols
+) {
+	@if unitless($cols) {
+		grid-template-columns: repeat($cols, 1fr);
+	
+	} @else {
+		grid-template-columns: $cols;
+	}
+}

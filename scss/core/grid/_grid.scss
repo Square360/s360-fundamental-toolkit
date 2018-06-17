@@ -18,7 +18,7 @@
 	display: grid;
 	
 	@if type-of($cols) == 'number' and $cols > 0 {
-		grid-template-columns: if(unitless($cols), repeat($cols, 1fr), $cols);
+		@include grid-template-columns($cols);
 	}
 
 	@if type-of($cols) == 'list' or type-of($cols) == 'string' {
@@ -42,7 +42,7 @@
 				}
 			}
 
-			grid-template-columns: $_template-columns;
+			@include grid-template-columns($_template-columns);
 		}
 	}
 
