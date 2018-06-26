@@ -1,39 +1,39 @@
 @import "core/_line-heights";
 
-// Basic HTML
+/* Basic HTML */
 html, body, h1, h2, h3, h4, h5, h6, p, hr,
 
-// Formatting
+/* Formatting */
 abbr, address, b, bdi, bdo, blockquote, cite, code, del, dfn, em, i, ins, kbd, 
 mark, meter, pre, progress, q, s, samp, small, strong, sub, sup, template, time, 
 u, var, wbr,
 
-// Forms and Input
+/* Forms and Input */
 form, input, textarea, button, select, optgroup, option, label, fieldset, legend, 
 datalist, output,
 
-// Frames
+/* Frames */
 iframe,
 
-// Images
+/* Images */
 img, map, area, canvas, figcaption, figure, picture, svg
 
-// Audio / Video
+/* Audio / Video */ 
 audio, source, track, video,
 
-// links
+/* links */
 a, nav,
 
-// Lists
+/* Lists */
 ul, ol, li, dl, dt, dd, menu, menuitem,
 
-// Tables 
+/* Tables */ 
 table, caption, th, tr, td, thead, tbody, tfoot, col, colgroup,
 
-// Styles and Semantics
+/* Styles and Semantics */
 div, span, header, footer, main, section, article, aside, details, dialog, summary, data,
 
-// Programming
+/* Programming */
 object, embed {
 	margin: 0;
 	padding: 0;
@@ -54,6 +54,7 @@ header, footer, main, section, article, aside, details, summary, figure, nav {
 html {
 	box-sizing: border-box;
 }
+
 *,
 *::before, 
 *::after {
@@ -69,8 +70,12 @@ img, object, embed {
 	max-width: 100%;
 }
 
-ol, ul {
-	list-style: none;
+ul {
+	list-style: disc outside none;
+}
+
+ol {
+	list-style: decimal outside none;
 }
 
 blockquote, q {
@@ -125,9 +130,13 @@ pre {
     word-wrap: break-word;
 }
 
-// Standardize any monospaced elements.
+/**
+ * 1. Correct the inheritance and scaling of font size in all browsers.
+ * 2. Correct the odd "em" font sizing in all browsers.
+ */
 pre, code, kbd, samp {
-	font-family: monospace, sans-serif;
+	font-family: monospace, sans-serif; /* 1 */
+	font-size: 1em; /* 2 */
 }
 
 // Put hand cursor on clickable elements.
@@ -137,6 +146,14 @@ input[type=submit],
 input[type=file],
 button {
 	cursor: pointer;
+}
+
+// Make buttons play nice in IE.
+button,
+input[type=button],
+input[type=submit] {
+	width: auto; 
+	overflow: visible;
 }
 
 sub, sup {
@@ -158,6 +175,8 @@ small {
 	font-size: smaller;
 }
 
-b, strong {
+
+b, 
+strong {
 	font-weight: bold;
 }
