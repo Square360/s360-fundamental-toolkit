@@ -1,10 +1,15 @@
-@import "toolkit-config";
+@import "~breakpoint-sass/stylesheets/_breakpoint";
+@import "~sass-toolkit/stylesheets/_toolkit";
+@import "~susy/sass/_susy";
 
+@import "_variables";
 
+@import "core/_susy";
+@import "core/_extendables";
+@import "core/_functions";
+@import "core/_mixins";
 
-@import "common/_body";
-@import "common/_italic";
-@import "common/_small";
-@import "common/_strong";
-@import "common/_sub";
-@import "common/_sup";
+@import "core/_breakpoints";
+@import "core/_gutters";
+@import "core/_grid";
+@import "core/_line-heights";

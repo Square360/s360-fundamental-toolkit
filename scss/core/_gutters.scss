@@ -1,13 +1,10 @@
-/**
- * @file Defines gutters used throughout a site.
- * ---
- * @see {@link _susy.scss}
- */
+/// Defines gutters used throughout a site.
+/// @see _susy.scss
 
 $gutter: 10px !default;
 $gutter-double: $gutter * 2 !default;
 $gutter-negative: $gutter * -1 !default;
 
-// This gutter's value is determined by the number 
-// of columns defined in the $susy variable.
+/// This gutter's value is determined by the number 
+/// of columns defined in the $susy variable.
 $gutter-column: span(1) !default;

@@ -4,7 +4,7 @@
 @mixin grid-template-columns(
 	$cols
 ) {
-	@if unitless($cols) {
+	@if type-of($cols) == 'number' and unitless($cols) {
 		grid-template-columns: repeat($cols, 1fr);
 	
 	} @else {
