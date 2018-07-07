@@ -1,39 +1,40 @@
 @import "core/_line-heights";
 
-/* Basic HTML */
+// Basic HTML
 html, body, h1, h2, h3, h4, h5, h6, p, hr,
 
-/* Formatting */
+// Formatting
 abbr, address, b, bdi, bdo, blockquote, cite, code, del, dfn, em, i, ins, kbd, 
 mark, meter, pre, progress, q, s, samp, small, strong, sub, sup, template, time, 
 u, var, wbr,
 
-/* Forms and Input */
+// Forms and Input
 form, input, textarea, button, select, optgroup, option, label, fieldset, legend, 
 datalist, output,
 
-/* Frames */
+// Frames
 iframe,
 
-/* Images */
-img, map, area, canvas, figcaption, figure, picture, svg
+// Images
+img, map, area, canvas, figcaption, figure, picture, svg,
 
-/* Audio / Video */ 
+// Audio / Video
 audio, source, track, video,
 
-/* links */
+// Links
 a, nav,
 
-/* Lists */
-ul, ol, li, dl, dt, dd, menu, menuitem,
+// Lists
+ul, ol, li, dl, dt, dd,
 
-/* Tables */ 
+// Tables
 table, caption, th, tr, td, thead, tbody, tfoot, col, colgroup,
 
-/* Styles and Semantics */
-div, span, header, footer, main, section, article, aside, details, dialog, summary, data,
+// Styles and Semantics
+div, span, header, footer, main, section, article, aside, details, dialog, 
+summary, data,
 
-/* Programming */
+// Programming
 object, embed {
 	margin: 0;
 	padding: 0;
@@ -44,23 +45,33 @@ object, embed {
 	background: transparent;
 }
 
-/* HTML5 display-role reset for older browsers */
+// Add the correct display for new HTML5 elements in older browsers. 
 header, footer, main, section, article, aside, details, summary, figure, nav {
 	display: block;
 }
 
-// Handle box-sizing while better addressing child elements:
-// https://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/
+/**
+ * 1. Add the correct box sizing.
+ * 2. Prevent adjustments of font size after orientation changes on mobile.
+ */
 html {
-	box-sizing: border-box;
+	box-sizing: border-box; /* 1 */
+	text-size-adjust: 100%; /* 2 */
 }
 
+/**
+ * A better way to handle box-sizing for child elements.
+ * https://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/
+ */
 *,
 *::before, 
 *::after {
 	box-sizing: inherit;
 }
 
+/**
+ * Add the correct line height.
+ */
 body {
 	line-height: $line-height-normal;
 }
@@ -70,12 +81,23 @@ img, object, embed {
 	max-width: 100%;
 }
 
-ul {
-	list-style: disc outside none;
+/**
+ * Add correct margin and padding to lists.
+ */
+ul, ol {
+	margin: 1em 0;
+	padding-left: 2em;
 }
 
-ol {
-	list-style: decimal outside none;
+/**
+ * Add the correct margin and padding to descriptions.
+ */
+dl {
+	margin: 1em 0;
+	
+	dd {
+		padding-left: 2em;
+	}
 }
 
 blockquote, q {
@@ -88,46 +110,32 @@ blockquote, q {
 	}
 }
 
-del {
-	text-decoration: line-through;
-}
-
-// tables still need cellspacing="0" in the markup
+/**
+ * Tables
+ * **************************************************
+ * cellspacing="0" is still required in the markup
+ */
 table {
 	border-collapse: collapse; 
 	border-spacing: 0;
-}
-th {
-	font-weight: bold; 
-	vertical-align: bottom;
-}
-td { 
-	vertical-align: top;
+	
+	th {
+		font-weight: bold; 
+		vertical-align: bottom;
+	}
+
+	td {
+		vertical-align: top;
+	}
 }
 
-// You still need to define "border-top-color" in your local styles
+*
+ * You still need to define "border-color" in your local styles
+ 
 hr {
-	display: block; 
-	height: 1px; 
-	border-top-width: 1px;
-	border-top-style: solid; 
-	margin: 1em 0;
-}
-
-input, select {
-	vertical-align: middle;
-}
-
-input[type="radio"] {
-	vertical-align: text-bottom;
-}
-input[type="checkbox"] {
-	vertical-align: bottom;
-}
-
-pre {
-    white-space: pre;
-    word-wrap: break-word;
+	border-width: 1px;
+	border-style: inset;
+	margin: 0.5em 0;
 }
 
 /**
@@ -137,6 +145,25 @@ pre {
 pre, code, kbd, samp {
 	font-family: monospace, sans-serif; /* 1 */
 	font-size: 1em; /* 2 */
+}
+
+pre {
+	white-space: pre;
+	word-wrap: break-word;
+}
+
+
+
+input, select {
+	vertical-align: middle;
+}
+
+input[type="radio"] {
+	vertical-align: text-bottom;
+}
+
+input[type="checkbox"] {
+	vertical-align: bottom;
 }
 
 // Put hand cursor on clickable elements.
@@ -156,27 +183,35 @@ input[type=submit] {
 	overflow: visible;
 }
 
-sub, sup {
-	font-size: smaller;
-	line-height: 0;
-}
+/**
+ * Subscript / Superscript
+ */
+sub,
 sup {
-	vertical-align: super;
-}
-sub {
-	vertical-align: sub;
+	font-size: 75%;
+	line-height: 0;
+	position: relative;
 }
 
-em, i {
+sub {
+	bottom: -0.25em;
+}
+
+sup {
+	top: -0.5em;
+}
+
+
+
+em, i, cite, address, dfn {
 	font-style: italic;
 }
 
 small {
-	font-size: smaller;
+	font-size: 75%;
 }
 
 
-b, 
-strong {
+b, strong {
 	font-weight: bold;
 }
