@@ -45,7 +45,8 @@ object, embed {
 }
 
 // Add the correct display for new HTML5 elements in older browsers. 
-header, footer, main, section, article, aside, details, summary, figure, nav {
+header, footer, main, section, article, aside, details, summary, figcaption, 
+figure, nav {
 	display: block;
 }
 
@@ -258,5 +259,7 @@ pre, code, kbd, samp {
  */
 
 img, object, embed {
+	display: block;
 	max-width: 100%;
+	height: auto;
 }
