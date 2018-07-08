@@ -40,7 +40,6 @@ object, embed {
 	padding: 0;
 	border: 0;
 	font-size: 100%;
-	font-weight: normal;
 	vertical-align: baseline;
 	background: transparent;
 }
@@ -51,53 +50,57 @@ header, footer, main, section, article, aside, details, summary, figure, nav {
 }
 
 /**
+ * Basic HTML
+ * **************************************************
+ */
+
+/**
  * 1. Add the correct box sizing.
  * 2. Prevent adjustments of font size after orientation changes on mobile.
+ * 3. Add the correct font weight, typically 400.
  */
 html {
 	box-sizing: border-box; /* 1 */
 	text-size-adjust: 100%; /* 2 */
+	font-weight: normal; /* 3 */
 }
 
 /**
- * A better way to handle box-sizing for child elements.
- * https://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/
+ * 1. A better way to handle box-sizing for child elements.
+	  https://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/
+ * 2. Inherit font weight for child elements.
  */
 *,
 *::before, 
 *::after {
-	box-sizing: inherit;
+	box-sizing: inherit; /* 1 */
+	font-weight: inherit; /* 2 */
 }
 
-/**
- * Add the correct line height.
- */
+// Add the correct line height. 
 body {
 	line-height: $line-height-normal;
 }
 
-// Responsive images and other embedded objects
-img, object, embed {
-	max-width: 100%;
+/**
+ * 1. Scaling the Y axis prevents the border size from doubling, which would 
+ * 	  give a 2px hr.
+ */
+hr {
+	border-width: 1px;
+	border-style: solid;
+	margin: 0.5em 0;
+	transform: scaleY(0.5); /* 1 */
+	border-color: threedface;
 }
 
 /**
- * Add correct margin and padding to lists.
+ * Formatting
+ * **************************************************
  */
-ul, ol {
-	margin: 1em 0;
-	padding-left: 2em;
-}
 
-/**
- * Add the correct margin and padding to descriptions.
- */
-dl {
-	margin: 1em 0;
-	
-	dd {
-		padding-left: 2em;
-	}
+address, cite, dfn, em, i {
+	font-style: italic;
 }
 
 blockquote, q {
@@ -110,49 +113,33 @@ blockquote, q {
 	}
 }
 
+b, strong {
+	font-weight: bold;
+}
+
+small {
+	font-size: 75%;
+}
+
+sub,
+sup {
+	font-size: 75%;
+	line-height: 0;
+	position: relative;
+}
+
+sub {
+	bottom: -0.25em;
+}
+
+sup {
+	top: -0.5em;
+}
+
 /**
- * Tables
+ * Forms and Input
  * **************************************************
- * cellspacing="0" is still required in the markup
  */
-table {
-	border-collapse: collapse; 
-	border-spacing: 0;
-	
-	th {
-		font-weight: bold; 
-		vertical-align: bottom;
-	}
-
-	td {
-		vertical-align: top;
-	}
-}
-
-// *
- // * You still need to define "border-color" in your local styles
-
-hr {
-	border-width: 1px;
-	border-style: inset;
-	margin: 0.5em 0;
-}
-
-/**
- * 1. Correct the inheritance and scaling of font size in all browsers.
- * 2. Correct the odd "em" font sizing in all browsers.
- */
-pre, code, kbd, samp {
-	font-family: monospace, sans-serif; /* 1 */
-	font-size: 1em; /* 2 */
-}
-
-pre {
-	white-space: pre;
-	word-wrap: break-word;
-}
-
-
 
 input, select {
 	vertical-align: middle;
@@ -184,34 +171,92 @@ input[type=submit] {
 }
 
 /**
- * Subscript / Superscript
+ * 1. Correct the text wrapping in Edge and IE.
+ * 2. Correct the color inheritance from `fieldset` elements in IE.
  */
-sub,
-sup {
-	font-size: 75%;
-	line-height: 0;
-	position: relative;
+legend {
+	color: inherit; /* 2 */
+	display: table; /* 1 */
+	max-width: 100%; /* 1 */
+	padding: 0 0.5em;
+	white-space: normal; /* 1 */
 }
 
-sub {
-	bottom: -0.25em;
+fieldset {
+	border-width: 1px;
+	border-style: solid;
+	border-color: threedface;
+	padding: 0.75em;
 }
 
-sup {
-	top: -0.5em;
+// Remove the default vertical scrollbar in IE.
+textarea {
+  overflow: auto;
 }
 
+/**
+ * Lists
+ * **************************************************
+ */
 
-
-em, i, cite, address, dfn {
-	font-style: italic;
+// Add correct margin and padding. 
+ul, ol {
+	margin: 1em 0;
+	padding-left: 2em;
 }
 
-small {
-	font-size: 75%;
+// Add correct margin and padding. 
+dl {
+	margin: 1em 0;
+	
+	dd {
+		padding-left: 2em;
+	}
 }
 
+/**
+ * Tables
+ * **************************************************
+ */
 
-b, strong {
-	font-weight: bold;
+table {
+	border-collapse: collapse; 
+	border-spacing: 0;
+	
+	th {
+		font-weight: bold; 
+		vertical-align: bottom;
+	}
+
+	td {
+		vertical-align: top;
+	}
+}
+
+/**
+ * Programming
+ * **************************************************
+ */
+
+pre {
+	white-space: pre;
+	word-wrap: break-word;
+}
+
+/**
+ * 1. Correct the inheritance and scaling of font size in all browsers.
+ * 2. Correct the odd "em" font sizing in all browsers.
+ */
+pre, code, kbd, samp {
+	font-family: monospace, sans-serif; /* 1 */
+	font-size: 1em; /* 2 */
+}
+
+/**
+ * Responsive
+ * **************************************************
+ */
+
+img, object, embed {
+	max-width: 100%;
 }
