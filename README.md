@@ -16,7 +16,7 @@ gutters and various functions for text and DOM manipulation.
 Navigate to the folder in your project where the `package.json` file is located and run the following:
 
 ```bash
-npm install --save git+ssh://git@bitbucket.org:sq360_sysadmin/s360-fundamental-toolkit.git
+npm install --save git+https://git@bitbucket.org:sq360_sysadmin/s360-fundamental-toolkit.git
 ```
 
 ## Setup
