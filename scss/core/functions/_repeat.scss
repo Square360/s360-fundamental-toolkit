@@ -1,12 +1,18 @@
 @function repeat(
 	$count, 
-	$string: 1fr
+	$string: 1fr,
+	$output: list
 ) {
-	$_list: ();
+	$_repeated-string: ();
 
 	@for $i from 1 through $count {
-		$_list: append($_list, $string);
+		$_repeated-string: append($_repeated-string, $string);
 	}
 
-	@return $_list;
+	@if $output == list {
+		@return #{$_repeated-string};
+	}
+	@else if $output == string {
+		@return quote(#{$_repeated-string});
+	}
 }
