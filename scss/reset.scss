@@ -68,7 +68,7 @@ html {
 
 /**
  * 1. A better way to handle box-sizing for child elements.
-	  https://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/
+ * 		https://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/
  * 2. Inherit font weight for child elements.
  */
 *,
@@ -85,7 +85,7 @@ body {
 
 /**
  * 1. Scaling the Y axis prevents the border size from doubling, which would 
- * 	  give a 2px hr.
+ *    give a 2px hr.
  */
 hr {
 	border-width: 1px;
@@ -192,7 +192,7 @@ fieldset {
 
 // Remove the default vertical scrollbar in IE.
 textarea {
-  overflow: auto;
+	overflow: auto;
 }
 
 /**
