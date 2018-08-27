@@ -24,6 +24,7 @@ npm install --save git+https://bitbucket.org/sq360_sysadmin/s360-fundamental-too
 Once it's finished downloading, add the following to the very top of your main `*.scss` file:
 
 ```scss
+@import "~s360-fundamental-toolkit/scss/reset";
 @import "~s360-fundamental-toolkit/scss/toolkit";
 
 ```
