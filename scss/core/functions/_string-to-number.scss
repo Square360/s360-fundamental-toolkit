@@ -27,13 +27,13 @@
 		// Checks if the $character is a decimal.
 		@if $_character == '.' {
 			$_decimals: 1;
-	
+		}
 		// Normal number, before any decimals.
-		} @else if $_decimals == 0 {
+		@else if $_decimals == 0 {
 			$_result: $_result * 10 + map-get($_numbers, $_character);
-
+		}
 		// Numbers after the decimal.
-		} @else { 
+		@else { 
 			$_result: $_result + (map-get($_numbers, $_character) / pow(10, $_decimals));
 			
 			$_decimals: $_decimals + 1;

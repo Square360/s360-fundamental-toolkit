@@ -1,0 +1,14 @@
+///
+///
+/// @requires {function} strip-unit
+@function em(
+	$size: 0,
+	$font-size-base: $font-size-base
+) {
+	@if $size == 0 {
+		@return 0;
+	}
+	@else {
+		@return #{ strip-unit($size / $font-size-base) }em;
+	}
+}
