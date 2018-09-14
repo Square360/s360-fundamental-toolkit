@@ -22,7 +22,8 @@
   	'vw': 1vw, 
   	'vh': 1vh, 
   	'vmin': 1vmin, 
-  	'vmax': 1vmax
+  	'vmax': 1vmax,
+    'fr': 1fr
   );
   
   @if not index(map-keys($units), $unit) {
