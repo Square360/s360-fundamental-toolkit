@@ -9,6 +9,6 @@
 		@return 0;
 	}
 	@else {
-		@return #{ strip-unit($size / $font-size-base) }em;
+		@return to-number(#{ strip-unit($size / $font-size-base) }em);
 	}
 }
