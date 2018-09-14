@@ -1,8 +1,8 @@
-/// 
-/// @param {number | list | string} $cols [$grid-columns] - 
-/// @param {number} $col-gap [$grid-column-gap] - 
-/// @param {number | list | string} $rows [auto] - 
-/// @param {number} $row-gap [$grid-row-gap]
+///
+/// @param {number | list | string} $cols [$grid-columns] -
+/// @param {number} $col-gap [$grid-column-gap] - If no unit is passed it will convert the number to REMs
+/// @param {number | list | string} $rows [auto] -
+/// @param {number} $row-gap [$grid-row-gap] - If no unit is passed it will convert the number to REMs
 ///
 /// @group grid
 ///
@@ -10,32 +10,32 @@
 /// @requires $grid-column-gap
 /// @requires $grid-row-gap
 @mixin grid(
-	$cols: $grid-columns, 
-	$col-gap: $grid-column-gap, 
-	$rows: auto, 
+	$cols: $grid-columns,
+	$col-gap: $grid-column-gap,
+	$rows: auto,
 	$row-gap: $grid-row-gap
 ) {
 	display: grid;
-	
+
 	@if type-of($cols) == 'number' and $cols > 0 {
 		@include grid-template-columns($cols);
 	}
 
 	@if type-of($cols) == 'list' or type-of($cols) == 'string' {
 		@if type-of(nth($cols, 1)) == 'string' and (
-			not str-index(nth($cols, 1), 'fit-content') and 
-			not str-index(nth($cols, 1), 'auto') and 
-			not str-index(nth($cols, 1), 'minmax') and 
+			not str-index(nth($cols, 1), 'fit-content') and
+			not str-index(nth($cols, 1), 'auto') and
+			not str-index(nth($cols, 1), 'minmax') and
 			not str-index(nth($cols, 1), 'min-content')
 		) {
 			grid-template-areas: $cols;
-	
+
 		} @else {
 			$_template-columns: ();
-			
+
 			@each $col in $cols {
 				@if type-of($col) == 'number' and unitless($col) {
-					$_template-columns: append($_template-columns, repeat($col, 1fr)); 
+					$_template-columns: append($_template-columns, repeat($col, 1fr));
 
 				} @else {
 					$_template-columns: append($_template-columns, $col);
@@ -46,7 +46,7 @@
 		}
 	}
 
-	grid-column-gap: if(unitless($col-gap), #{ $col-gap }px, $col-gap);
+	grid-column-gap: if(unitless($col-gap), rem($col-gap), $col-gap);
 	grid-template-rows: $rows;
-	grid-row-gap: if(unitless($row-gap), #{ $row-gap }px, $row-gap);
+	grid-row-gap: if(unitless($row-gap), rem($row-gap), $row-gap);
 }

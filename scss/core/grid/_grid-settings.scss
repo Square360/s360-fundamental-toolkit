@@ -1,5 +1,3 @@
-/// Description
-///
 /// @group grid
 ///
 /// @type Number | String | List
@@ -8,7 +6,7 @@ $grid-columns: 12 !default;
 /// @group grid
 ///
 /// @type Number (unit)
-$grid-column-gap: $gutter-double !default;
+$grid-column-gap: rem($gutter-double) !default;
 
 /// @group grid
 ///

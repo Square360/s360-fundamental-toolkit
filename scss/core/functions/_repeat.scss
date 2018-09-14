@@ -10,9 +10,9 @@
 	}
 
 	@if $output == list {
-		@return #{$_repeated-string};
+		@return #{ $_repeated-string };
 	}
 	@else if $output == string {
-		@return quote(#{$_repeated-string});
+		@return quote(#{ $_repeated-string });
 	}
 }
