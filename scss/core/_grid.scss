@@ -1,8 +1,10 @@
 @import "grid/_grid-settings";
 
-@import "grid/_grid-template-columns";
 @import "grid/_grid-column";
-
 @import "grid/_grid-row";
+
+@import "grid/_grid-template-areas";
+@import "grid/_grid-template-columns";
+@import "grid/_grid-template-rows";
 
 @import "grid/_grid";
