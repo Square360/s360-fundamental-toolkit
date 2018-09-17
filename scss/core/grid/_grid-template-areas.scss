@@ -19,5 +19,5 @@
 		$_rows: append($_rows, quote(#{ $_row }));
 	}
 	
-	grid-template-area: $_rows;
+	grid-template-areas: $_rows;
 }
