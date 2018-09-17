@@ -1,18 +1,23 @@
+///
+/// @param {number} $count - 
+/// @param {string|list} $value [1fr] - The value to be repeated.
+/// 
+/// @throws `#{ $count }` is not a number for the `repeat` function.
+/// 
+/// @return {string} - The $value repeated N ($count) times. 
 @function repeat(
 	$count, 
-	$string: 1fr,
-	$output: list
+	$value: 1fr
 ) {
-	$_repeated-string: ();
+	$_return: ();
+
+	@if type-of($count) != number {
+		@error '`#{ $count }` is not a number for the `repeat` function.';
+	} 
 
 	@for $i from 1 through $count {
-		$_repeated-string: append($_repeated-string, $string);
+		$_return: append($_return, $value);
 	}
 
-	@if $output == list {
-		@return #{ $_repeated-string };
-	}
-	@else if $output == string {
-		@return quote(#{ $_repeated-string });
-	}
+	@return #{ $_return };
 }
