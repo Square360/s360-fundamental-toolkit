@@ -1,0 +1,23 @@
+/// Specify named grid areas. Each string creates a new row. A column is 
+/// created for each cell in that string. 
+///
+/// @param {arglist} $areas
+///
+/// @group grid
+@mixin grid-template-areas(
+	$areas...
+) {
+	$_rows: ();
+	
+	@each $row in $areas {
+		$_row: ();
+		
+		@each $cell in $row {
+			$_row: append($_row, unquote($cell));
+		}
+		
+		$_rows: append($_rows, quote(#{ $_row }));
+	}
+	
+	grid-template-areas: $_rows;
+}

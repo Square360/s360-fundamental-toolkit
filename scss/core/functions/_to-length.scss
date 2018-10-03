@@ -6,7 +6,10 @@
 ///
 /// @return {Number} - `$value` expressed in `$unit`
 ///
-@function to-length($value, $unit) {
+@function to-length(
+  $value, 
+  $unit
+) {
   $units: (
   	'px': 1px, 
   	'cm': 1cm, 

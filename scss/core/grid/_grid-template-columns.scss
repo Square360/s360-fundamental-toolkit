@@ -1,13 +1,18 @@
-/// @param {number|string} $cols
+/// Define the line names and track sizing for the grid columns.
+///
+/// @param {number|string|list} $cols
 ///
 /// @group grid
 @mixin grid-template-columns(
 	$cols
 ) {
-	@if type-of($cols) == 'number' and unitless($cols) {
+	@if 
+		type-of($cols) == 'number' and 
+		unitless($cols)
+	{
 		grid-template-columns: repeat($cols, 1fr);
-	
-	} @else {
+	}
+	@else {
 		grid-template-columns: $cols;
 	}
 }
