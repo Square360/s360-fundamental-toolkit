@@ -1,51 +1,51 @@
 /// @group breakpoints
 /// @type Number (unit)
-$bp-phone-landscape: rem(480px) !default;
+$bp-phone-landscape: em(480px) !default;
 
 /// @group breakpoints
 /// @type List
-$bp-phone-landscape-only: rem(480px) rem(719px) !default;
+$bp-phone-landscape-only: em(480px) em(719px) !default;
 
 /// @group breakpoints
 /// @type Number (unit)
-$bp-tablet: rem(720px) !default;
+$bp-tablet: em(720px) !default;
 
 /// @group breakpoints
 /// @type List
-$bp-tablet-only: rem(720px) rem(799px) !default;
+$bp-tablet-only: em(720px) em(799px) !default;
 
 /// @group breakpoints
 /// @type List
-$bp-tablet-below: max-width rem(719px) !default;
+$bp-tablet-below: max-width em(719px) !default;
 
 /// @group breakpoints
 /// @type Number (unit)
-$bp-tablet-landscape: rem(800px) !default;
+$bp-tablet-landscape: em(800px) !default;
 
 /// @group breakpoints
 /// @type List
-$bp-tablet-landscape-only: rem(800px) rem(1023px) !default;
+$bp-tablet-landscape-only: em(800px) em(1023px) !default;
 
 /// @group breakpoints
 /// @type List
-$bp-tablet-landscape-below: max-width rem(799px) !default;
+$bp-tablet-landscape-below: max-width em(799px) !default;
 
 /// @group breakpoints
 /// @type Number (unit)
-$bp-desktop: rem(1024px) !default;
+$bp-desktop: em(1024px) !default;
 
 /// @group breakpoints
 /// @type List
-$bp-desktop-only: rem(1024px) rem(1279px) !default;
+$bp-desktop-only: em(1024px) em(1279px) !default;
 
 /// @group breakpoints
 /// @type List
-$bp-desktop-below: max-width rem(1023px) !default;
+$bp-desktop-below: max-width em(1023px) !default;
 
 /// @group breakpoints
 /// @type Number (unit)
-$bp-big-desktop: rem(1280px) !default;
+$bp-big-desktop: em(1280px) !default;
 
 /// @group breakpoints
 /// @type List
-$bp-big-desktop-below: max-width rem(1279px) !default;
+$bp-big-desktop-below: max-width em(1279px) !default;
