@@ -12,6 +12,20 @@
 	$row-gap: $grid-row-gap
 ) {
 	display: grid;
-	grid-column-gap: if(unitless($col-gap), em($col-gap), $col-gap);
-	grid-row-gap: if(unitless($row-gap), em($row-gap), $row-gap);
+	grid-column-gap:
+		if(unitless($col-gap),
+			em($col-gap),
+			if(unit($col-gap) == 'px',
+				em($col-gap),
+				$col-gap
+			)
+		);
+	grid-row-gap:
+		if(unitless($row-gap),
+			em($row-gap),
+			if(unit($row-gap) == 'px',
+				em($row-gap),
+				$row-gap
+			)
+		);
 }
