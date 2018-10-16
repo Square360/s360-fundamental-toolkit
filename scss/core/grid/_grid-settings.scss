@@ -11,4 +11,4 @@ $grid-column-gap: $gutter-double !default;
 /// @group grid
 ///
 /// @type Number (unit)
-$grid-row-gap: 0 !default;
+$grid-row-gap: $gutter-double !default;
