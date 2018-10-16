@@ -9,12 +9,20 @@
 	$span: 1
 ) {
 	@if 
-		str-slice(#{ $start }, 1, 1) == '-' or
-		str-slice(#{ $span }, 1, 1) == '-'
+		$start == 0 and 
+		$span == 0
 	{
-		grid-column: #{ $start } / #{ $span };
+		grid-column: unset;
 	}
 	@else {
-		grid-column: #{ $start } / #{ $start + $span };
+		@if 
+			str-slice(#{ $start }, 1, 1) == '-' or
+			str-slice(#{ $span }, 1, 1) == '-'
+		{
+			grid-column: #{ $start } / #{ $span };
+		}
+		@else {
+			grid-column: #{ $start } / #{ $start + $span };
+		}
 	}
 }
