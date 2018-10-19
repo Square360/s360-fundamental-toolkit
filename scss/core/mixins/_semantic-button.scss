@@ -1,0 +1,47 @@
+/// Helper function to create semantic button styles
+@mixin semantic-button(
+	$color: inherit, 
+	$background: inherit, 
+	$hover-color: inherit, 
+	$hover-background: inherit, 
+	$focus-color: inherit, 
+	$focus-background: inherit
+) {
+	background: $background;
+	color: $color;
+	font-family: inherit;
+	font-size: inherit;
+	font-weight: inherit;
+	line-height: inherit;
+	padding: 0;
+	text-align: inherit;
+	
+	// Use colors if hover not set
+	@if $hover-color == inherit and $color != inherit {
+		$hover-color: $color;
+	}
+	
+	@if $hover-background == inherit and $background != inherit {
+		$hover-background: $background;
+	}
+	
+	&:hover {
+		background: $hover-background;
+		color: $hover-color;
+	}
+	
+	// Use hover colors if focus not set
+	@if $focus-color == inherit and $hover-color != inherit {
+		$focus-color: $hover-color;
+	}
+	
+	@if $focus-background == inherit and $hover-background != inherit {
+		$focus-background: $hover-background;
+	}
+	
+	&:focus {
+		background: $focus-background;
+		box-shadow: none;
+		color: $focus-color;
+	}
+}

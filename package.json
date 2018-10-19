@@ -1,6 +1,6 @@
 {
   "name": "s360-fundamental-toolkit",
-  "version": "2.1.0",
+  "version": "2.4.0",
   "description": "Set of mixins, extenables, and other useful tools for building websites.",
   "main": "scss/toolkit.scss",
   "author": "Square360, Inc.",
@@ -8,6 +8,9 @@
     {
       "name": "Steven Keiser",
       "email": "steven.keiser@square360.com"
+    }, {
+      "name": "Brian Milea",
+      "email": "brian.milea@square360.com"
     }
   ],
   "license": "MIT",
