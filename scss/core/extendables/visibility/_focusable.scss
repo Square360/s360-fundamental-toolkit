@@ -1,17 +1,16 @@
-/*
-* Extends the .visually-hidden class to allow the element
-* to be focusable when navigated to via the keyboard:
-* https://www.drupal.org/node/897638
-*/
+/// Extends the .visually-hidden class to allow the element
+/// to be focusable when navigated to via the keyboard.
+///
+/// @link https://www.drupal.org/node/897638
 %focusable {
   &:active,
   &:focus {
-    clip       : auto;
-    height     : auto;
-    margin     : 0;
-    overflow   : visible;
-    position   : static;
-    width      : auto;
+    clip: auto;
+    height: auto;
+    margin: 0;
+    overflow: visible;
+    position: static;
+    width: auto;
     white-space: inherit;
   }
 }
