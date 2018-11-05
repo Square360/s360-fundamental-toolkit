@@ -16,3 +16,13 @@
   width: 1px;
   white-space: nowrap;
 }
+
+%remove-visually-hidden {
+  clip       : auto;
+  height     : auto;
+  width      : auto;
+  margin     : 0;
+  overflow   : visible;
+  position   : static;
+  white-space: inherit;
+}
