@@ -5,11 +5,11 @@
   &:focus,
   &:active,
   &:focus-within {
-    @extend %remove-visually-hidden;
+    @include remove-visually-hidden;
   }
 
   // Required by polyfill for IE.
   &.focus-within {
-    @extend %remove-visually-hidden;
+    @include remove-visually-hidden;
   }
 }
