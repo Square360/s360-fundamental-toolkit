@@ -1,0 +1,13 @@
+@mixin grid-row-gap(
+	$col-gap
+) {
+	@if unitless($col-gap) {
+		grid-row-gap: em($col-gap);
+	}
+	@else if unit($col-gap) == 'px' {
+		grid-row-gap: em($col-gap)	
+	}
+	@else {
+		grid-row-gap: $col-gap;
+	}
+}
