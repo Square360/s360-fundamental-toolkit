@@ -1,0 +1,10 @@
+/// Extends the .visually-hidden class to allow the element
+/// to be focusable when navigated to via the keyboard.
+///
+/// @link https://www.drupal.org/node/897638
+%focusable {
+  &:active,
+  &:focus {
+    @extend %remove-visually-hidden;
+  }
+}

@@ -1,45 +1,5 @@
-/// 1. Hide only visually, but have it available for screen readers.
-///
-/// 2. For long content, line feeds are not interpreted as spaces and small width
-/// causes content to wrap 1 word per line:
-///
-/// @link https://snook.ca/archives/html_and_css/hiding-content-for-accessibility
-/// @link https://medium.com/@jessebeach/beware-smushed-off-screen-accessible-text-5952a4c2cbfe
-%visually-hidden {
-  border: 0;
-  clip: rect(0 0 0 0);
-  height: 1px;
-  margin: -1px;
-  overflow: hidden;
-  padding: 0;
-  position: absolute;
-  width: 1px;
-  white-space: nowrap;
-}
-
-/// Hide visually and from screen readers, but maintain layout. 
-%invisible {
-  visibility: hidden;
-}
-
-/// Hide visually and from screen readers.
-%hidden {
-  display: none !important;
-}
-
-/// Extends the .visually-hidden class to allow the element
-/// to be focusable when navigated to via the keyboard.
-///
-/// @link https://www.drupal.org/node/897638
-%focusable {
-  &:active,
-  &:focus {
-    clip: auto;
-    height: auto;
-    margin: 0;
-    overflow: visible;
-    position: static;
-    width: auto;
-    white-space: inherit;
-  }
-}
+@import "visibility/_visually-hidden";
+@import "visibility/_focusable";
+@import "visibility/_hidden";
+@import "visibility/_invisible";
+@import "visibility/_focus-within";
