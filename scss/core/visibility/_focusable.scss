@@ -1,0 +1,14 @@
+/// Extends the %remove-visually-hidden to allow the element to be focusable 
+/// when navigated to via the keyboard.
+///
+/// @group visibility
+/// 
+/// @require {placeholder} %remove-visually-hidden
+/// 
+/// @link https://www.drupal.org/node/897638
+%focusable {
+  &:active,
+  &:focus {
+    @extend %remove-visually-hidden;
+  }
+}
