@@ -1,6 +1,7 @@
-@import "mixins/_flip-horizontal";
-@import "mixins/_font-size";
-@import "mixins/_font-smoothing";
-@import "mixins/_input-placeholder";
-@import "mixins/_remove-text";
-@import "mixins/_semantic-button";
+@import "./mixins/flip-horizontal";
+@import "./mixins/font-size";
+@import "./mixins/font-smoothing";
+@import "./mixins/input-placeholder";
+@import "./mixins/remove-text";
+@import "./mixins/semantic-button";
+@import "./mixins/remove-visually-hidden";

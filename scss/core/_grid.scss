@@ -1,12 +1,12 @@
-@import "grid/_grid-settings";
+@import "./grid/grid-settings";
 
-@import "grid/_grid-column";
-@import "grid/_grid-row";
+@import "./grid/grid-column";
+@import "./grid/grid-row";
 
-@import "grid/_grid-template-areas";
-@import "grid/_grid-template-columns";
-@import "grid/_grid-template-rows";
+@import "./grid/grid-template-areas";
+@import "./grid/grid-template-columns";
+@import "./grid/grid-template-rows";
 
-@import "grid/_grid-split-columns";
+@import "./grid/grid-split-columns";
 
-@import "grid/_grid";
+@import "./grid/grid";
