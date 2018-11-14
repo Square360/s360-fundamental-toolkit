@@ -2,14 +2,14 @@
 @import "~sass-toolkit/stylesheets/_toolkit";
 @import "~susy/sass/_susy";
 
-@import "_variables";
+@import "./variables";
 
-@import "core/_susy";
-@import "core/_extendables";
-@import "core/_functions";
-@import "core/_mixins";
+@import "./core/susy";
+@import "./core/extendables";
+@import "./core/functions";
+@import "./core/mixins";
 
-@import "core/_breakpoints";
-@import "core/_gutters";
-@import "core/_grid";
-@import "core/_line-heights";
+@import "./core/breakpoints";
+@import "./core/gutters";
+@import "./core/grid";
+@import "./core/line-heights";
