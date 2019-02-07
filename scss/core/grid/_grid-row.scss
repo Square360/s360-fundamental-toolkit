@@ -5,24 +5,24 @@
 ///
 /// @group grid
 @mixin grid-row(
-	$start: 1, 
-	$span: 1
+  $start: 1,
+  $span: 1
 ) {
-	@if 
-		$start == 0 and 
-		$span == 0
-	{
-		grid-row: unset;
-	}
-	@else {
-		@if 
-			str-slice(#{ $start }, 1, 1) == '-' or
-			str-slice(#{ $span }, 1, 1) == '-'
-		{
-			grid-row: #{ $start } / #{ $span };
-		}
-		@else {
-			grid-row: #{ $start } / #{ $start + $span };
-		}
-	}
+  @if
+    $start == 0 and
+    $span == 0
+  {
+    grid-row: unset;
+  }
+  @else {
+    @if
+      str-slice(#{ $start }, 1, 1) == '-' or
+      str-slice(#{ $span }, 1, 1) == '-'
+    {
+      grid-row: #{ $start } / #{ $span };
+    }
+    @else {
+      grid-row: #{ $start } / #{ $start + $span };
+    }
+  }
 }
