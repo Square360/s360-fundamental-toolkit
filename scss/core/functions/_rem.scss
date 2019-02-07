@@ -2,13 +2,13 @@
 ///
 /// @require {function} strip-unit
 @function rem(
-	$size: 0,
-	$font-size-base: $font-size-base
+  $size: 0,
+  $font-size-base: $font-size-base
 ) {
-	@if $size == 0 {
-		@return 0;
-	}
-	@else {
-		@return to-number(#{ strip-unit($size / $font-size-base) }rem);
-	}
+  @if $size == 0 {
+    @return 0;
+  }
+  @else {
+    @return to-number(#{ strip-unit($size / $font-size-base) }rem);
+  }
 }
