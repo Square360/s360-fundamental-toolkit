@@ -1,6 +1,7 @@
-@import "./grid/grid-settings";
-
+@import "./grid/grid-column-gap";
 @import "./grid/grid-column";
+
+@import "./grid/grid-row-gap";
 @import "./grid/grid-row";
 
 @import "./grid/grid-template-areas";
@@ -8,5 +9,3 @@
 @import "./grid/grid-template-rows";
 
 @import "./grid/grid-split-columns";
-
-@import "./grid/grid";
