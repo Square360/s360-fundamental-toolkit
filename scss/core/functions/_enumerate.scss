@@ -1,12 +1,12 @@
 @function enumerate(
-	$list
+  $list
 ) {
-	$map: ();
-	
-	@for $i from 1 through length($list) {
-		$value: nth($list, $i);
-		$map: map-merge($map, ($i: $value));
-	}
-	
-	@return $map;
+  $map: ();
+
+  @for $i from 1 through length($list) {
+    $value: nth($list, $i);
+    $map: map-merge($map, ($i: $value));
+  }
+
+  @return $map;
 }

@@ -1,11 +1,10 @@
 /// Base font size used for all elements on a site that don't specify a font size.
 ///
 /// @group fonts
+///
 /// @type Number (unit)
 $font-size-base: 16px !global;
 
-
-/// prefix as a way to tell the compiler that it should resolve the path using a configured array of module directories (typically <projectRoot>/node_modules
 
 /// @type String
 $s360ft-image-path: "~s360-fundamental-toolkit/images" !global;

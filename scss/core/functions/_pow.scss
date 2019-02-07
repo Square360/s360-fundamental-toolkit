@@ -4,16 +4,16 @@
 ///
 /// @return {number} - A number representing the base number taken to the power of the exponent.
 @function pow(
-	$base, 
-	$exponent
+  $base,
+  $exponent
 ) {
-	$value: 1;
+  $value: 1;
 
-	@if $exponent > 0 {
-		@for $i from 1 through $exponent {
-			$value: $value * $base;
-		}
-	}
+  @if $exponent > 0 {
+    @for $i from 1 through $exponent {
+      $value: $value * $base;
+    }
+  }
 
-	@return $value;
+  @return $value;
 }

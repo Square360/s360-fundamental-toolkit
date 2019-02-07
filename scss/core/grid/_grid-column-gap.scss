@@ -1,0 +1,19 @@
+///
+/// @param {number} $col-gap [$grid-column-gap]
+///
+/// @group grid
+///
+/// @require {variable} $gutter-double
+@mixin grid-column-gap(
+  $col-gap: $gutter-double
+) {
+  @if unitless($col-gap) {
+    grid-column-gap: em($col-gap);
+  }
+  @else if unit($col-gap) == 'px' {
+    grid-column-gap: em($col-gap)
+  }
+  @else {
+    grid-column-gap: $col-gap;
+  }
+}

@@ -1,14 +1,14 @@
 ///
+/// @require {function} strip-unit
 ///
-/// @requires {function} strip-unit
 @function em(
-	$size: 0,
-	$font-size-base: $font-size-base
+  $size: 0,
+  $font-size-base: $font-size-base
 ) {
-	@if $size == 0 {
-		@return 0;
-	}
-	@else {
-		@return to-number(#{ strip-unit($size / $font-size-base) }em);
-	}
+  @if $size == 0 {
+    @return 0;
+  }
+  @else {
+    @return to-number(#{ strip-unit($size / $font-size-base) }em);
+  }
 }

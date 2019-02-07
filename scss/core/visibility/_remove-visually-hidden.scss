@@ -1,0 +1,21 @@
+/// Makes an element visible again.
+///
+/// @group visibility
+@mixin remove-visually-hidden() {
+  clip: auto;
+  height: auto;
+  width: auto;
+  margin: 0;
+  overflow: visible;
+  position: static;
+  white-space: inherit;
+}
+
+/// Uses the remove-visually-hidden mixin.
+///
+/// @require {Mixin} remove-visually-hidden
+///
+/// @group visibility
+%remove-visually-hidden {
+  @include remove-visually-hidden;
+}

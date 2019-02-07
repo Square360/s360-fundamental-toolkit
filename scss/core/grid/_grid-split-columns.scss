@@ -1,118 +1,118 @@
 @mixin grid-split-columns(
-	$ratio
+  $ratio
 ) {
-	@include grid-template-columns(12);
+  @include grid-template-columns(12);
 
-	/**
-	 * 60 / 40 RATIO AND REVERSE
-	 * **************************************************
-	 */
-	
-	@if $ratio == '60:40' {
-		> * {
-			&:nth-child(odd) {
-				@include grid-column(1, 7);
-			}
+  /**
+   * 60 / 40 RATIO AND REVERSE
+   * **************************************************
+   */
+  
+  @if $ratio == '60:40' {
+    > * {
+      &:nth-child(odd) {
+        @include grid-column(1, 7);
+      }
 
-			&:nth-child(even) {
-				@include grid-column(8, 5);
-			}
-		}
-	}
-	@elseif $ratio == '40:60' {
-		> * {
-			&:nth-child(odd) {
-				@include grid-column(1, 5);
-			}
+      &:nth-child(even) {
+        @include grid-column(8, 5);
+      }
+    }
+  }
+  @else if $ratio == '40:60' {
+    > * {
+      &:nth-child(odd) {
+        @include grid-column(1, 5);
+      }
 
-			&:nth-child(even) {
-				@include grid-column(6, 7);
-			}
-		}
-	}
+      &:nth-child(even) {
+        @include grid-column(6, 7);
+      }
+    }
+  }
 
-	/**
-	 * 70 / 30 RATIO AND REVERSE
-	 * **************************************************
-	 */
+  /**
+   * 70 / 30 RATIO AND REVERSE
+   * **************************************************
+   */
 
-	@if $ratio == '70:30' {
-		> * {
-			&:nth-child(odd) {
-				@include grid-column(1, 8);
-			}
+  @if $ratio == '70:30' {
+    > * {
+      &:nth-child(odd) {
+        @include grid-column(1, 8);
+      }
 
-			&:nth-child(even) {
-				@include grid-column(9, 4);
-			}
-		}
-	}
-	@elseif $ratio == '30:70' {
-		> * {
-			&:nth-child(odd) {
-				@include grid-column(1, 4);
-			}
+      &:nth-child(even) {
+        @include grid-column(9, 4);
+      }
+    }
+  }
+  @else if $ratio == '30:70' {
+    > * {
+      &:nth-child(odd) {
+        @include grid-column(1, 4);
+      }
 
-			&:nth-child(even) {
-				@include grid-column(5, 8);
-			}
-		}
-	}
+      &:nth-child(even) {
+        @include grid-column(5, 8);
+      }
+    }
+  }
 
-	/**
-	 * 80 / 20 RATIO AND REVERSE
-	 * **************************************************
-	 */
+  /**
+   * 80 / 20 RATIO AND REVERSE
+   * **************************************************
+   */
 
-	@if $ratio == '80:20' {
-		> * {
-			&:nth-child(odd) {
-				@include grid-column(1, 9);
-			}
+  @if $ratio == '80:20' {
+    > * {
+      &:nth-child(odd) {
+        @include grid-column(1, 9);
+      }
 
-			&:nth-child(even) {
-				@include grid-column(10, 3);
-			}
-		}
-	}
-	@elseif $ratio == '20:80' {
-		> * {
-			&:nth-child(odd) {
-				@include grid-column(1, 3);
-			}
+      &:nth-child(even) {
+        @include grid-column(10, 3);
+      }
+    }
+  }
+  @else if $ratio == '20:80' {
+    > * {
+      &:nth-child(odd) {
+        @include grid-column(1, 3);
+      }
 
-			&:nth-child(even) {
-				@include grid-column(4, 9);
-			}
-		}
-	}
+      &:nth-child(even) {
+        @include grid-column(4, 9);
+      }
+    }
+  }
 
-	/**
-	 * 90 / 10 RATIO AND REVERSE
-	 * **************************************************
-	 */
+  /**
+   * 90 / 10 RATIO AND REVERSE
+   * **************************************************
+   */
 
-	@if $ratio == '90:10' {
-		> * {
-			&:nth-child(odd) {
-				@include grid-column(1, 10);
-			}
+  @if $ratio == '90:10' {
+    > * {
+      &:nth-child(odd) {
+        @include grid-column(1, 10);
+      }
 
-			&:nth-child(even) {
-				@include grid-column(11, 2);
-			}
-		}
-	}
-	@elseif $ratio == '10:90' {
-		
-		> * {
-			&:nth-child(odd) {
-				@include grid-column(1, 2);
-			}
+      &:nth-child(even) {
+        @include grid-column(11, 2);
+      }
+    }
+  }
+  @else if $ratio == '10:90' {
+    
+    > * {
+      &:nth-child(odd) {
+        @include grid-column(1, 2);
+      }
 
-			&:nth-child(even) {
-				@include grid-column(3, 10);
-			}
-		}
-	}
+      &:nth-child(even) {
+        @include grid-column(3, 10);
+      }
+    }
+  }
 }

@@ -1,16 +1,16 @@
 %_flex {
-	display: flex;
-	align-items: flex-start;
+  display: flex;
+  align-items: flex-start;
 }
 
 %display-flex {
-	@extend %_flex;
+  @extend %_flex;
 
-	flex-wrap: wrap;
+  flex-wrap: wrap;
 }
 
 %display-flex-nowrap {
-	@extend %_flex;
-	
-	flex-wrap: nowrap;
+  @extend %_flex;
+
+  flex-wrap: nowrap;
 }
