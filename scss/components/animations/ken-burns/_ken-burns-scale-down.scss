@@ -1,0 +1,14 @@
+.ken-burns-scale-down {
+  @extend %ken-burns;
+  animation-name: ken-burns-scale-down;
+}
+
+@keyframes ken-burns-scale-down {
+  from {
+    transform: scale($ken-burns-image-scale);
+  }
+
+  to {
+    transform: scale($ken-burns-image-scale-down);
+  }
+}
