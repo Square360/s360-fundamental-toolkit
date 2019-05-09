@@ -5,7 +5,7 @@
 
 @keyframes ken-burns-scale-up {
   from {
-    transform: scale($ken-burns-image-scale);
+    transform: scale($ken-burns-image-scale-base);
   }
 
   to {
