@@ -1,0 +1,18 @@
+.ken-burns-pan-down-left {
+  @extend %ken-burns;
+  animation-name: ken-burns-pan-down-left;
+}
+
+@keyframes ken-burns-pan-down-left {
+  from {
+    transform:
+      translate(0, 0)
+      scale($ken-burns-image-scale-base);
+  }
+
+  to {
+    transform:
+      translate(-$ken-burns-translate-x, $ken-burns-translate-y)
+      scale($ken-burns-image-scale-down);
+  }
+}
