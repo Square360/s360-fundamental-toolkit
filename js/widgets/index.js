@@ -1,1 +1,1 @@
-export { default as accordion } from './accordion';
+export { accordion } from './accordion';
