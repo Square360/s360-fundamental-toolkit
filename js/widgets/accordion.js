@@ -1,4 +1,4 @@
-export default function() {
+export function accordion() {
   $('[data-accordion]').each(function(key, accordion) {
     const $ACCORDION = $(accordion);
     const $EXPAND_ALL_BUTTON = $('<button class="accordion-expand" aria-expanded="false">Expand all</button>');
