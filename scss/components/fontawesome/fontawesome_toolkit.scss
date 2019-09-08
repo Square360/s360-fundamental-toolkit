@@ -1,0 +1,44 @@
+// Fontawesome mixin for icons before or after with the var name from the Fontawesome 5 Pro package
+@mixin fontawesome-icon($fa-style: 'light', $fa-icon-code: $fa-var-smile-wink, $position: 'after') {
+  $fontawesome-styles: (
+    'light': (
+      'family': '"Font Awesome 5 Pro"',
+      'weight' : 300
+    ),
+    'regular': (
+      'family': '"Font Awesome 5 Pro"',
+      'weight' : 400
+    ),
+    'solid': (
+      'family': '"Font Awesome 5 Pro"',
+      'weight' : 900
+    ),
+    'brands': (
+      'family': '"Font Awesome 5 Brands"',
+      'weight' : 400
+    ),
+    'duotone': (
+      'family': '"Font Awesome 5 Duotone"',
+      'weight' : 900
+    )
+  );
+
+  &::#{ $position } {
+    content: fa-content(#{ $fa-icon-code });
+    display: inline-block;
+    font-style: normal;
+    font-variant: normal;
+    text-rendering: auto;
+    line-height: 1;
+    font-family: unquote(map-get(map-get($fontawesome-styles, $fa-style), 'family'));
+    font-weight: map-get(map-get($fontawesome-styles, $fa-style), 'weight');
+    vertical-align: middle;
+
+    @if $position == 'before' {
+      margin-right: 0.25em;
+    }
+    @else if $position == 'after' {
+      margin-left: 0.25em;
+    }
+  }
+}
