@@ -1,0 +1,82 @@
+/// This mixing allows for placing an icon either before or after using the
+/// variable name from the Font Awesome 5 Pro package.
+///
+/// @author George Heimel
+/// @author Steven Keiser
+///
+/// @param {string} $fa-style ['light']
+///   Which FontAwesome icon style.
+///
+/// @param {variable} $fa-icon-code [$fa-var-smile-wink]
+///   Which FontAwesome icon variable.
+///   See "node_modules/@fortawesome/fontawesome-pro/scss/_variables.scss" for
+///   all the available icon codes. The icon code can be constructed by
+///   appending "$fa-var-" to the icon's name. e.g. "thumbs-up" becomes "$fa-var-thumbs-up".
+///
+/// @param {string} $position ['after']
+///   Where to place the Font Awesome icon.
+///
+/// @example
+///   @include fontawesome-icon('regular', $fa-var-thumbs-up, 'after');
+///
+///   *::after {
+///     content: "\f164";
+///     display: inline-block;
+///     font-family: "Font Awesome 5 Pro";
+///     font-weight: 400;
+///     font-style: normal;
+///     font-variant: normal;
+///     text-rendering: auto;
+///     line-height: 1;
+///   }
+
+/// @link https://fontawesome.com/icons/thumbs-up
+@mixin font-awesome-icon(
+  $fa-style: 'light',
+  $fa-icon-code: $fa-var-smile-wink,
+  $position: 'after'
+) {
+  $font-awesome-styles: (
+    'light': (
+      'family': '"Font Awesome 5 Pro"',
+      'weight' : 300
+    ),
+    'regular': (
+      'family': '"Font Awesome 5 Pro"',
+      'weight' : 400
+    ),
+    'solid': (
+      'family': '"Font Awesome 5 Pro"',
+      'weight' : 900
+    ),
+    'brands': (
+      'family': '"Font Awesome 5 Brands"',
+      'weight' : 400
+    ),
+    'duotone': (
+      'family': '"Font Awesome 5 Duotone"',
+      'weight' : 900
+    )
+  );
+
+  &::#{ $position } {
+    $font-awesome-style: map-get($font-awesome-styles, $fa-style);
+
+    content: fa-content(#{ $fa-icon-code });
+    display: inline-block;
+    font-style: normal;
+    font-variant: normal;
+    text-rendering: auto;
+    line-height: inherit;
+    font-family: unquote(map-get($font-awesome-style, 'family'));
+    font-weight: map-get($font-awesome-style, 'weight');
+    vertical-align: middle;
+
+    @if $position == 'before' {
+      margin-right: 0.25em;
+    }
+    @else if $position == 'after' {
+      margin-left: 0.25em;
+    }
+  }
+}
