@@ -19,18 +19,6 @@
 /// @example
 ///   @include fontawesome-icon('regular', $fa-var-thumbs-up, 'after');
 ///
-///   *::after {
-///     content: "\f164";
-///     display: inline-block;
-///     font-family: "Font Awesome 5 Pro";
-///     font-style: normal;
-///     font-weight: 400;
-///     line-height: 1;
-///     font-variant: normal;
-///     text-rendering: auto;
-///     vertical-align: middle;
-///   }
-///
 /// @link https://fontawesome.com/icons/thumbs-up
 
 @mixin font-awesome-icon(
