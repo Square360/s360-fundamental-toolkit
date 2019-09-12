@@ -4,14 +4,14 @@
 /// @author George Heimel
 /// @author Steven Keiser
 ///
-/// @param {string} $fa-style ['light']
-///   Which FontAwesome icon style.
-///
-/// @param {variable} $fa-icon-code [$fa-var-smile-wink]
+/// @param {variable} $fa-icon-variable
 ///   Which FontAwesome icon variable.
 ///   See "node_modules/@fortawesome/fontawesome-pro/scss/_variables.scss" for
 ///   all the available icon codes. The icon code can be constructed by
 ///   appending "$fa-var-" to the icon's name. e.g. "thumbs-up" becomes "$fa-var-thumbs-up".
+///
+/// @param {string} $fa-style ['light']
+///   Which FontAwesome icon style.
 ///
 /// @param {string} $position ['after']
 ///   Where to place the Font Awesome icon.
@@ -23,54 +23,59 @@
 ///     content: "\f164";
 ///     display: inline-block;
 ///     font-family: "Font Awesome 5 Pro";
-///     font-weight: 400;
 ///     font-style: normal;
+///     font-weight: 400;
+///     line-height: 1;
 ///     font-variant: normal;
 ///     text-rendering: auto;
-///     line-height: 1;
+///     vertical-align: middle;
 ///   }
-
+///
 /// @link https://fontawesome.com/icons/thumbs-up
+
 @mixin font-awesome-icon(
+  $fa-icon-variable,
   $fa-style: 'light',
-  $fa-icon-code: $fa-var-smile-wink,
   $position: 'after'
 ) {
   $font-awesome-styles: (
     'light': (
       'family': '"Font Awesome 5 Pro"',
-      'weight' : 300
+      'weight': 300
     ),
     'regular': (
       'family': '"Font Awesome 5 Pro"',
-      'weight' : 400
+      'weight': 400
     ),
     'solid': (
       'family': '"Font Awesome 5 Pro"',
-      'weight' : 900
+      'weight': 900
     ),
     'brands': (
       'family': '"Font Awesome 5 Brands"',
-      'weight' : 400
+      'weight': 400
     ),
     'duotone': (
       'family': '"Font Awesome 5 Duotone"',
-      'weight' : 900
+      'weight': 900
     )
   );
 
   &::#{ $position } {
     $font-awesome-style: map-get($font-awesome-styles, $fa-style);
 
-    content: fa-content(#{ $fa-icon-code });
+    content: fa-content(#{ $fa-icon-variable });
     display: inline-block;
+    font-family: unquote(map-get($font-awesome-style, 'family'));
     font-style: normal;
     font-variant: normal;
-    text-rendering: auto;
-    line-height: inherit;
-    font-family: unquote(map-get($font-awesome-style, 'family'));
     font-weight: map-get($font-awesome-style, 'weight');
+    line-height: 1;
+    text-rendering: auto;
     vertical-align: middle;
+
+    // Might want to use this rather than hand type, just incase FA makes a change?
+    // @include fa-icon;
 
     @if $position == 'before' {
       margin-right: 0.25em;
