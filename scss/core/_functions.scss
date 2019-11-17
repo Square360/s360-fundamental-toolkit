@@ -1,9 +1,13 @@
+@import "./functions/deep-map-check";
+@import "./functions/deep-map-get";
+@import "./functions/deep-map-merge";
 @import "./functions/em";
 @import "./functions/enumerate";
+@import "./functions/get-config";
 @import "./functions/pow";
 @import "./functions/rem";
 @import "./functions/scale-font";
-@import "./functions/string-split";
+@import "./functions/str-split";
 @import "./functions/strip-unit";
 @import "./functions/repeat";
 @import "./functions/to-length";
