@@ -1,0 +1,43 @@
+/// Split a string by delimiter.
+///
+/// @author Steven Keiser
+///
+/// @param {string} $string
+///
+/// @param {string} $delimiter
+///
+///
+/// @example
+///   str-explode('Split me by spaces.', ' ');
+///
+/// @return {list}
+
+@function str-split(
+  $string,
+  $delimiter
+) {
+  @if type-of($string) != 'string' {
+    @error 'The argument $string: `#{ $string }` must be a string.';
+  }
+  @else if type-of($delimiter) != 'string' {
+    @error 'The argument $delimiter: `#{ $delimiter }` must be a string.';
+  }
+
+  $result: ();
+  $running: true;
+
+  @while $running {
+    $index: str-index($string, $delimiter);
+
+    @if $index != null {
+      $item: str-slice($string, 1, ($index - 1));
+      $result: append($result, $item);
+      $string: str-slice($string, ($index + 1));
+    }
+    @else {
+      $running: false;
+    }
+  }
+
+  @return append($result, $string);
+}
