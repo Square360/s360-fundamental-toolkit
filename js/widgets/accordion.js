@@ -1,6 +1,14 @@
 export function accordion() {
   $('[data-accordion]').each(function(key, accordion) {
     const $ACCORDION = $(accordion);
+
+    if ($ACCORDION.attr('data-accordion') === 'loaded') {
+      return;
+    }
+    else {
+      $ACCORDION.attr('data-accordion', 'loaded');
+    }
+
     const $EXPAND_ALL_BUTTON = $('<button class="accordion-expand" aria-expanded="false">Expand all</button>');
 
     const $SECTIONS = $ACCORDION.find('[aria-expanded]');
