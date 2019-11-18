@@ -1,11 +1,10 @@
 /// Search for any value contained within nested maps, by using dot notation as
-/// the key argument.
+/// the key argument. Based on Nenad Novaković "get" function.
 ///
-/// @author Nenad Novaković (https://github.com/dvlden)
 /// @author Steven Keiser
 ///
 /// @param {string} $key
-/// @param {string} $map [$global-config]
+/// @param {map} $map
 ///
 /// @example
 ///   get-config('border.radius.xs');
@@ -13,19 +12,18 @@
 /// @example
 ///   get-config('font.primary', $font-config);
 ///
-/// @require {function} deep-map-check
-/// @require {function} deep-map-get
+/// @require {function} _deep-map-check
+/// @require {function} _deep-map-get
 /// @require {function} str-split
-/// @require {map} global-config
 ///
-/// @return
+/// @see https://github.com/dvlden/differs/blob/master/src/abstracts/functions/_get.scss
 
-@function get-config($key, $map: $global-config) {
+@function get-config($key, $map) {
   $keys: str-split($key, '.');
 
-  @if not deep-map-check($map, $keys...) {
+  @if not _deep-map-check($map, $keys...) {
     @error 'The argument $map: `#{$map}` doesn\'t has some of the $keys: `#{$keys}`!';
   }
 
-  @return deep-map-get($map, $keys...);
+  @return _deep-map-get($map, $keys...);
 }
