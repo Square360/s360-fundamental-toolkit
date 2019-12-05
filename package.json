@@ -1,7 +1,8 @@
 {
   "name": "s360-fundamental-toolkit",
-  "version": "3.5.0",
+  "version": "3.6.0",
   "description": "Set of mixins, extenables, and other useful tools for building websites.",
+  "license": "MIT",
   "main": "scss/toolkit.scss",
   "author": "Square360, Inc.",
   "contributors": [
@@ -16,10 +17,15 @@
       "email": "douglas.mcgilvray@square360.com"
     }
   ],
-  "license": "MIT",
+  "scripts": {
+    "build": "tsc"
+  },
   "dependencies": {
     "breakpoint-sass": "^2.7.1",
     "sass-toolkit": "^2.10.2",
     "susy": "^2.2.12"
+  },
+  "devDependencies": {
+    "typescript": "^3.5.2"
   }
 }
