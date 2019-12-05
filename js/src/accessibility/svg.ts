@@ -1,7 +1,7 @@
 export function svgRoleImg() {
-  let svgs = document.querySelectorAll('svg');
+  const SVGS = document.querySelectorAll('svg');
 
-  svgs.forEach((svg) => {
+  SVGS.forEach((svg) => {
     svg.setAttribute('role', 'img');
   });
 }

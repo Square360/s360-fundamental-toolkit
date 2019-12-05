@@ -1,8 +1,8 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 function svgRoleImg() {
-    let svgs = document.querySelectorAll('svg');
-    svgs.forEach((svg) => {
+    const SVGS = document.querySelectorAll('svg');
+    SVGS.forEach((svg) => {
         svg.setAttribute('role', 'img');
     });
 }
