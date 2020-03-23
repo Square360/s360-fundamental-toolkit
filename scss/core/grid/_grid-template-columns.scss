@@ -14,7 +14,7 @@
     type-of($cols) == 'number' and
     unitless($cols)
   {
-    grid-template-columns: repeat($cols, 1fr);
+    grid-template-columns: repeat($cols, minmax(0, 1fr));
   }
   @else {
     grid-template-columns: $cols;
