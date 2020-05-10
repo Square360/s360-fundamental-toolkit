@@ -1,0 +1,24 @@
+/// Takes the given $value and creates repeated string N ($count) times.
+///
+/// @param {number} $count
+///   How many times the $value should be repeated.
+///
+/// @param {string|list} $value
+///   The value to be repeated.
+///
+/// @return {string}
+///   The $value repeated N ($count) times.
+
+@function legacy-repeat($count, $value) {
+  $return: ();
+
+  @if type-of($count) != number {
+    @error 'The argument $count: `#{$count}` is not a number.';
+  }
+
+  @for $i from 1 through $count {
+    $return: append($_return, $value);
+  }
+
+  @return #{$return};
+}
