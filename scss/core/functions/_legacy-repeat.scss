@@ -1,0 +1,27 @@
+/// Take the given $value and repeat it $count times.
+///
+/// @param {number} $count
+///   How many times the $value should be repeated.
+///
+/// @param {string|list} $value
+///   The value to be repeated.
+
+/// @example
+///   legacy-repeat(5, 1fr); // returns 1fr 1fr 1fr 1fr 1fr;
+///
+/// @return {string}
+///   The $value repeated $count times.
+
+@function legacy-repeat($count, $value) {
+  $return: ();
+
+  @if type-of($count) != number {
+    @error 'The argument $count: `#{$count}` is not a number.';
+  }
+
+  @for $i from 1 through $count {
+    $return: append($return, $value);
+  }
+
+  @return #{$return};
+}

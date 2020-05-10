@@ -1,6 +1,17 @@
-@function strip-unit(
-  $number
-) {
+/// Take the given $number and remove it's unit.
+///
+/// @author Steven Keiser
+///
+/// @param {number} $number
+///   The number to remove the unit from.
+///
+/// @example
+///   strip-unit(12px); // returns 12;
+///
+/// @return {number}
+///   The given $number with it's unit removed.
+
+@function strip-unit($number) {
   @if type-of($number) == 'number' and not unitless($number) {
     @return $number / ($number * 0 + 1);
   }
