@@ -4,13 +4,4 @@
 
 @import "./variables";
 
-@import "./core/susy";
-@import "./core/extendables";
-@import "./core/functions";
-@import "./core/mixins";
-@import "./core/visibility";
-@import "./core/semantics";
-
-@import "./core/breakpoints";
-@import "./core/gutters";
-@import "./core/line-heights";
+@import "./core";
