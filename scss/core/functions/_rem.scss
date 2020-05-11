@@ -21,7 +21,7 @@
 
 @function rem($number, $base-number: $font-size-base) {
   @if $number == 0 {
-    @error 'The argument $number: `#{ $number }` must be greater than `0`.';
+    @return 0;
   }
 
   @return to-number(#{strip-unit($number / $base-number)}rem);
