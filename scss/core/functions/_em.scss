@@ -12,15 +12,17 @@
 /// @example
 ///   rem(12, 14); // returns 0.8571428571em;
 ///
+/// @require {function} to-number
 /// @require {function} strip-unit
+/// @require {variable} $font-size-base
 ///
 /// @return {number}
 ///   The given $number converted to "em" units.
 
 @function em($number, $base-number: $font-size-base) {
   @if $number == 0 {
-    @error 'The argument $number: `#{ $number }` must be greater than `0`.';
+    @return 0;
   }
 
-  @return strip-unit($number) / strip-unit($base-number) + em;
+  @return to-number(#{strip-unit($number / $base-number)}em);
 }
