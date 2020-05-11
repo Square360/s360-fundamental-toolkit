@@ -3,6 +3,8 @@
 /// @param {string|number} $value
 ///   Value to be converted.
 ///
+/// @require {function} to-unit
+///
 /// @return {number}
 ///   The given $value as a number.
 
