@@ -1,0 +1,19 @@
+/// Returns responsive font sizing using clamp() with fallback.
+///
+/// @author Brian Milea
+///
+/// @param {number} $min
+///   Minimum size (in rem)
+/// @param {number} $med
+///   Median size (in vw)
+/// @param {number} $max
+///   Maximum size (in rem)
+
+@mixin responsive-font-size($min, $med, $max) {
+  font-size: $min;
+  font-size: #{ "min(max(#{ $min }, #{ $med }), #{ $max })" };
+
+  @supports (font-size: clamp($min, $med, $max)) {
+    font-size: clamp($min, $med, $max);
+  }
+}
