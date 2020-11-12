@@ -1,6 +1,6 @@
 "use strict";
-String.prototype.kebabCase = function () {
-    let string = this.toString();
+Object.defineProperty(exports, "__esModule", { value: true });
+function kebabCase(string) {
     // Get all lowercase letters that are near to uppercase ones
     string = string.replace(/([a-z])([A-Z])/g, '$1-$2');
     // Get all spaces and special characters.
@@ -8,4 +8,5 @@ String.prototype.kebabCase = function () {
     // Convert everything to lowercase.
     string = string.toLowerCase();
     return string;
-};
+}
+exports.kebabCase = kebabCase;

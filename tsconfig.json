@@ -5,7 +5,7 @@
     "declaration": false,
     "outDir": "./js/dist",
     "strict": true,
-    "rootDir": "./js/src",
+    "rootDir": "./js/src"
   },
   "include": ["js/src"],
   "exclude": ["node_modules"]
