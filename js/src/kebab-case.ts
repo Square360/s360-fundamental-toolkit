@@ -1,10 +1,4 @@
-interface String {
-  kebabCase(): string;
-}
-
-String.prototype.kebabCase = function(): string {
-  let string: string = this.toString();
-
+const kebabCase = (string: string) => {
   // Get all lowercase letters that are near to uppercase ones
   string = string.replace(/([a-z])([A-Z])/g, '$1-$2');
 
@@ -16,3 +10,5 @@ String.prototype.kebabCase = function(): string {
 
   return string;
 }
+
+export default kebabCase;
