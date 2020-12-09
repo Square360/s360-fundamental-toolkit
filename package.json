@@ -3,16 +3,19 @@
   "version": "4.4.0",
   "description": "Set of mixins, extenables, and other useful tools for building websites.",
   "license": "MIT",
-  "main": "scss/toolkit.scss",
+  "main": "build/index.js",
+  "types": "build/index.d.ts",
   "author": "Square360, Inc.",
   "contributors": [
     {
       "name": "Steven Keiser",
       "email": "steven.keiser@square360.com"
-    }, {
+    },
+    {
       "name": "Brian Milea",
       "email": "brian.milea@square360.com"
-    }, {
+    },
+    {
       "name": "Douglas McGilvray",
       "email": "douglas.mcgilvray@square360.com"
     }
@@ -26,6 +29,7 @@
     "susy": "^2.2.12"
   },
   "devDependencies": {
+    "@types/jquery": "^3.5.4",
     "typescript": "^3.5.2"
   }
 }

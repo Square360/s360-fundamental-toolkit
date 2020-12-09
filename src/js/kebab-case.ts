@@ -1,0 +1,14 @@
+const kebabCase = (string: string) => {
+  // Get all lowercase letters that are near to uppercase ones
+  string = string.replace(/([a-z])([A-Z])/g, '$1-$2');
+
+  // Get all spaces and special characters.
+  string = string.replace(/([\s]+)|([^A-Za-z0-9]+)/g, '-');
+
+  // Convert everything to lowercase.
+  string = string.toLowerCase();
+
+  return string;
+}
+
+export default kebabCase;
