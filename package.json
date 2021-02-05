@@ -1,6 +1,6 @@
 {
   "name": "s360-fundamental-toolkit",
-  "version": "4.5.1",
+  "version": "4.5.2",
   "description": "Set of mixins, extenables, and other useful tools for building websites.",
   "license": "MIT",
   "main": "scss/toolkit.scss",
