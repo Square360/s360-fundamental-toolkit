@@ -17,7 +17,7 @@
   $_minFont: strip-unit($minFont);
   $_minWindow: strip-unit($minWindow);
 
-  $_yAxisIntersection: -($minWidth) * $_slope + $_minFont;
+  $_yAxisIntersection: (-$_minWindow) * $slope + $_minFont;
 
   @return $_yAxisIntersection;
 }

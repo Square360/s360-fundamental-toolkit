@@ -1,5 +1,5 @@
 /// Returns responsive font sizing using clamp() and linear scaling based on viewport min and max
-///
+/// @name Linear Font Scale
 /// @author George Heimel
 ///
 /// @param {number} $minFont
@@ -11,10 +11,14 @@
 /// @param {number} $maxWindow [1440]
 ///   Maximum window size (in pixels)
 ///
-/// @require { function } slope
-/// @require { function } yAxisIntersection
+/// @require {function} slope
+/// @require {function} yAxisIntersection
 ///
 /// @see https://css-tricks.com/linearly-scale-font-size-with-css-clamp-based-on-the-viewport/
+///
+/// @example
+///   linear-font-scale(3.5rem, 7.75rem);
+///   // font-size: clamp(3.5rem, calc(2.08333rem + 6.2963vw), 7.75rem);
 
 
 @mixin linear-font-scale($minFont, $maxFont, $minWindow: 360, $maxWindow: 1440) {
@@ -22,7 +26,4 @@
   $yAxisIntersection: yAxisIntersection(rem($minWindow), $minFont, $slope);
 
   font-size: clamp($minFont, calc(#{$yAxisIntersection}rem + #{$slope * 100}vw), $maxFont);
-
-  // font-size: clamp(2rem, calc(2.16rem + .0130vw), 2.875rem);
-  //clamp( minFont[rem],  calc(yAxisIntersection[rem] + (slope * 100)[vw]),  maxFont[rem])
 }
