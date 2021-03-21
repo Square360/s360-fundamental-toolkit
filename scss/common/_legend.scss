@@ -1,0 +1,10 @@
+legend {
+  color: inherit;
+  display: table;
+  font-family: var(--legend-font-family, inherit);
+  font-size: var(--legend-font-size, inherit);
+  font-weight: var(--legend-font-weight, inherit);
+  max-width: 100%;
+  padding: 0 0.5em;
+  white-space: normal;
+}

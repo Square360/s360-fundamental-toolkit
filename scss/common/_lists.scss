@@ -1,0 +1,47 @@
+ul,
+ol {
+  margin: {
+    top: var(--list-margin-top, 1em);
+    right: var(--list-margin-right, 0);
+    bottom: var(--list-margin-bottom, 1em);
+    left: var(--list-margin-left, 0);
+  }
+  padding: {
+    left: var(--list-padding-indent, 2em);
+  }
+
+  li {
+    padding-left: var(--list-item-marker-gap);
+
+    &::marker {
+      color: var(--list-marker-color);
+      font-size: var(--list-marker-font-size);
+      font-family: var(--list-marker-font-family);
+      font-weight: var(--list-marker-font-weight);
+    }
+  }
+}
+
+ul {
+  li {
+    list-style-type: var(--list-item-style-type);
+  }
+}
+
+
+dl {
+  margin: {
+    top: var(--description-list-margin-top, 1em);
+    right: var(--description-list-margin-right, 0);
+    bottom: var(--description-list-margin-bottom, 1em);
+    left: var(--description-list-margin-left, 0);
+  }
+  padding: {
+    left: var(--description-list-padding-indent, 2em);
+  }
+
+  dd {
+    left: var(--description-detail-padding-indent, 2em);
+    padding-left: 2em;
+  }
+}
