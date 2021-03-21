@@ -47,3 +47,20 @@ header, footer, main, section, article, aside, details, summary, figcaption,
 figure, nav {
   display: block;
 }
+
+html {
+  box-sizing: border-box;
+  font-weight: normal;
+  text-size-adjust: 100%;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  font-weight: inherit;
+}
+
+body {
+  line-height: 1;
+}
