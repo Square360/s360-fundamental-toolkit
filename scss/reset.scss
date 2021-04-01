@@ -42,9 +42,18 @@ object, embed {
   background: transparent;
 }
 
-// Add the correct display for new HTML5 elements in older browsers. 
-header, footer, main, section, article, aside, details, summary, figcaption, 
-figure, nav {
+// Add the correct display for new HTML5 elements in older browsers.
+header,
+footer,
+main,
+section,
+article,
+aside,
+details,
+summary,
+figcaption,
+figure,
+nav {
   display: block;
 }
 
@@ -70,7 +79,7 @@ html {
  * 2. Inherit font weight for child elements.
  */
 *,
-*::before, 
+*::before,
 *::after {
   box-sizing: inherit; /* 1 */
   font-weight: inherit; /* 2 */
@@ -98,21 +107,27 @@ hr {
  * **************************************************
  */
 
-address, cite, dfn, em, i {
+address,
+cite,
+dfn,
+em,
+i {
   font-style: italic;
 }
 
-blockquote, q {
+blockquote,
+q {
   quotes: none;
 
   &::before,
   &::after {
-    content: '';
+    content: "";
     content: none;
   }
 }
 
-b, strong {
+b,
+strong {
   font-weight: bold;
 }
 
@@ -140,7 +155,8 @@ sup {
  * **************************************************
  */
 
-input, select {
+input,
+select {
   vertical-align: middle;
 }
 
@@ -165,7 +181,7 @@ button {
 button,
 input[type="button"],
 input[type="submit"] {
-  width: auto; 
+  width: auto;
   overflow: visible;
 }
 
@@ -202,16 +218,31 @@ textarea {
  * **************************************************
  */
 
-// Add correct margin and padding. 
-ul, ol {
+// Add correct margin and padding.
+ul,
+ol {
   margin: 1em 0;
-  padding-left: 2em;
+  padding-left: var(--list-padding-indent, 2em);
+  > li {
+    padding-left: var(--list-item-marker-gap);
+    &::marker {
+      color: var(--list-marker-color);
+      font-size: var(--list-marker-font-size);
+      font-family: var(--list-marker-font-family);
+      font-weight: var(--list-marker-font-weight);
+    }
+  }
+}
+ul {
+  li {
+    list-style-type: var(--list-item-style-type);
+  }
 }
 
-// Add correct margin and padding. 
+// Add correct margin and padding.
 dl {
   margin: 1em 0;
-  
+
   dd {
     padding-left: 2em;
   }
@@ -223,11 +254,11 @@ dl {
  */
 
 table {
-  border-collapse: collapse; 
+  border-collapse: collapse;
   border-spacing: 0;
-  
+
   th {
-    font-weight: bold; 
+    font-weight: bold;
     vertical-align: bottom;
   }
 
@@ -250,7 +281,10 @@ pre {
  * 1. Correct the inheritance and scaling of font size in all browsers.
  * 2. Correct the odd "em" font sizing in all browsers.
  */
-pre, code, kbd, samp {
+pre,
+code,
+kbd,
+samp {
   font-family: monospace, sans-serif; /* 1 */
   font-size: 1em; /* 2 */
 }
@@ -260,7 +294,10 @@ pre, code, kbd, samp {
  * **************************************************
  */
 
-img, object, embed, video {
+img,
+object,
+embed,
+video {
   max-width: 100%;
   height: auto;
 }
