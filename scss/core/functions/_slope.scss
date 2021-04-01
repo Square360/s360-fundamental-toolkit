@@ -10,8 +10,9 @@
 ///   Minimum window size (in rem)
 /// @param {number} $maxWindow
 ///   Maximum window size (in rem)
+///
 /// @return {number}
-/// The linear slope
+///   The linear slope
 
 @function slope($minFont, $maxFont, $minWindow, $maxWindow) {
   $_minFont: strip-unit($minFont);

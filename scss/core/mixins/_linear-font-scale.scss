@@ -1,5 +1,5 @@
 /// Returns responsive font sizing using clamp() and linear scaling based on viewport min and max
-/// @name Linear Font Scale
+///
 /// @author George Heimel
 ///
 /// @param {number} $minFont
@@ -17,10 +17,7 @@
 /// @see https://css-tricks.com/linearly-scale-font-size-with-css-clamp-based-on-the-viewport/
 ///
 /// @example
-///   linear-font-scale(3.5rem, 7.75rem);
-///   // font-size: clamp(3.5rem, calc(2.08333rem + 6.2963vw), 7.75rem);
-
-/// for error checking https://www.sitepoint.com/validating-input-in-sass-mixins-and-functions/
+///   linear-font-scale(3.5rem, 7.75rem); // returns font-size: clamp(3.5rem, calc(2.08333rem + 6.2963vw), 7.75rem);
 
 @mixin linear-font-scale($minFont, $maxFont, $minWindow: 360, $maxWindow: 1440) {
   $slope: slope($minFont, $maxFont, rem($minWindow), rem($maxWindow));

@@ -8,12 +8,11 @@
 ///   Minimum font size (in rem)
 /// @param {number} $slope
 ///   linear slope decimal number (no units)
+///
 /// @return {number}
-/// The y Axis Intersection Point
-
+///   The y Axis Intersection Point
 
 @function yAxisIntersection( $minWindow, $minFont, $slope) {
-
   $_minFont: strip-unit($minFont);
   $_minWindow: strip-unit($minWindow);
 
