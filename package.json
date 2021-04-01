@@ -1,6 +1,6 @@
 {
   "name": "s360-fundamental-toolkit",
-  "version": "5.0.0",
+  "version": "5.1.0",
   "description": "Set of mixins, extenables, and other useful tools for building websites.",
   "license": "MIT",
   "main": "build/index.js",
@@ -18,6 +18,10 @@
     {
       "name": "Douglas McGilvray",
       "email": "douglas.mcgilvray@square360.com"
+    },
+    {
+      "name": "George Heimel",
+      "email": "george.heimel@square360.com"
     }
   ],
   "scripts": {
