@@ -1,0 +1,6 @@
+img {
+  display: var(--image-display, block);
+  max-width: var(--image-max-width, 100%);
+  height: var(--image-height, auto);
+  width: var(--image-width, auto);
+}

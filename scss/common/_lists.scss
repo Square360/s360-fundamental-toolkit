@@ -28,8 +28,8 @@ ul {
   }
 }
 
-
 dl {
+  display: var(--description-list-display, block);
   margin: {
     top: var(--description-list-margin-top, 1em);
     right: var(--description-list-margin-right, 0);
@@ -38,6 +38,10 @@ dl {
   }
   padding: {
     left: var(--description-list-padding-indent, 2em);
+  }
+
+  dt {
+
   }
 
   dd {
