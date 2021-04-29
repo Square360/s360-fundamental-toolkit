@@ -1,11 +1,10 @@
-a {
+@mixin a {
   background-color: var(--link-background-color, inherit);
   border-color: var(--link-border-color, transparent);
   border-radius: var(--link-border-radius, 0);
   border-style: var(--link-border-style, solid);
   border-width: var(--link-border-width, 0);
   color: var(--link-color, inherit);
-  cursor: var(--link-cursor, pointer);
   display: var(--link-display, inline);
   font-family: var(--link-font-family, inherit);
   font-size: var(--link-font-size, inherit);
@@ -36,4 +35,6 @@ a {
   &:focus {
     outline: rem(1) dotted var(--link-color, currentColor);
   }
+
+  @content;
 }

@@ -27,25 +27,3 @@ ul {
     list-style-type: var(--list-item-style-type);
   }
 }
-
-dl {
-  display: var(--description-list-display, block);
-  margin: {
-    top: var(--description-list-margin-top, 1em);
-    right: var(--description-list-margin-right, 0);
-    bottom: var(--description-list-margin-bottom, 1em);
-    left: var(--description-list-margin-left, 0);
-  }
-  padding: {
-    left: var(--description-list-padding-indent, 2em);
-  }
-
-  dt {
-
-  }
-
-  dd {
-    left: var(--description-detail-padding-indent, 2em);
-    padding-left: 2em;
-  }
-}

@@ -1,0 +1,12 @@
+hr {
+  border-color: var(--hr-border-color, threedface);
+  border-style: var(--hr-border-style, solid);
+  border-width: var(--hr-border-width, 1px);
+  margin: {
+    top: var(--hr-margin-top, 0.5em);
+    right: var(--hr-margin-right, 0);
+    bottom: var(--hr-margin-bottom, 0.5em);
+    left: var(--hr-margin-left, 0);
+  }
+  transform: var(--hr-transform, scaleY(0.5));
+}

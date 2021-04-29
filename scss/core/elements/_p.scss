@@ -1,4 +1,4 @@
-p {
+@mixin p {
   color: var(--paragraph-color, inherit);
   display: var(--paragraph-display, block);
   font-family: var(--paragraph-font-family, inherit);
@@ -21,4 +21,6 @@ p {
   &:last-of-type {
     --paragraph-margin-bottom: 0;
   }
+
+  @content;
 }

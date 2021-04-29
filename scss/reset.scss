@@ -2,12 +2,12 @@
 html, body, h1, h2, h3, h4, h5, h6, p, hr,
 
 // Formatting
-abbr, address, b, bdi, bdo, blockquote, cite, code, del, dfn, em, i, ins, kbd, 
-mark, meter, pre, progress, q, s, samp, small, strong, sub, sup, template, time, 
+abbr, address, b, bdi, bdo, blockquote, cite, code, del, dfn, em, i, ins, kbd,
+mark, meter, pre, progress, q, s, samp, small, strong, sub, sup, template, time,
 u, var, wbr,
 
 // Forms and Input
-form, input, textarea, button, select, optgroup, option, label, fieldset, legend, 
+form, input, textarea, button, select, optgroup, option, label, fieldset, legend,
 datalist, output,
 
 // Frames
@@ -29,7 +29,7 @@ ul, ol, li, dl, dt, dd,
 table, caption, th, tr, td, thead, tbody, tfoot, col, colgroup,
 
 // Styles and Semantics
-div, span, header, footer, main, section, article, aside, details, dialog, 
+div, span, header, footer, main, section, article, aside, details, dialog,
 summary, data,
 
 // Programming
@@ -42,8 +42,8 @@ object, embed {
   background: transparent;
 }
 
-// Add the correct display for new HTML5 elements in older browsers. 
-header, footer, main, section, article, aside, details, summary, figcaption, 
+// Add the correct display for new HTML5 elements in older browsers.
+header, footer, main, section, article, aside, details, summary, figcaption,
 figure, nav {
   display: block;
 }
@@ -70,7 +70,7 @@ html {
  * 2. Inherit font weight for child elements.
  */
 *,
-*::before, 
+*::before,
 *::after {
   box-sizing: inherit; /* 1 */
   font-weight: inherit; /* 2 */
@@ -82,7 +82,7 @@ body {
 }
 
 /**
- * 1. Scaling the Y axis prevents the border size from doubling, which would 
+ * 1. Scaling the Y axis prevents the border size from doubling, which would
  *    give a 2px hr.
  */
 hr {
@@ -165,7 +165,7 @@ button {
 button,
 input[type="button"],
 input[type="submit"] {
-  width: auto; 
+  width: auto;
   overflow: visible;
 }
 
@@ -202,16 +202,16 @@ textarea {
  * **************************************************
  */
 
-// Add correct margin and padding. 
+// Add correct margin and padding.
 ul, ol {
   margin: 1em 0;
   padding-left: 2em;
 }
 
-// Add correct margin and padding. 
+// Add correct margin and padding.
 dl {
   margin: 1em 0;
-  
+
   dd {
     padding-left: 2em;
   }
@@ -223,11 +223,11 @@ dl {
  */
 
 table {
-  border-collapse: collapse; 
+  border-collapse: collapse;
   border-spacing: 0;
-  
+
   th {
-    font-weight: bold; 
+    font-weight: bold;
     vertical-align: bottom;
   }
 
