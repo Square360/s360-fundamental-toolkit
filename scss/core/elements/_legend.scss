@@ -1,4 +1,4 @@
-legend {
+@mixin legend() {
   color: var(--legend-color, inherit);
   display: var(--legend-display, table);
   font-family: var(--legend-font-family, inherit);
