@@ -1,4 +1,4 @@
-@use "./core/elements";
+@import "./core/mixins";
 
 $include-image: true !default;
 $include-hr: true !default;
@@ -8,26 +8,59 @@ $include-table: true !default;
 
 @if ($include-image) {
   img {
-    @include elements.image();
+    @include mixins.selector-properties((
+      display: block,
+      max-width: 100%,
+      height: auto,
+      width: auto
+    ));
   }
 }
 
 @if ($include-hr) {
   hr {
-    @include elements.hr();
+    @include mixins.selector-properties((
+      border-color: threedface,
+      border-style: solid,
+      border-width: 1px,
+      margin-top: 0.5em,
+      margin-right: 0,
+      margin-bottom: 0.5em,
+      margin-left: 0,
+      transform: scaleY(0.5)
+    ));
   }
 }
 
 @if ($include-legend) {
   legend {
-    @include elements.legend();
+    @include mixins.selector-properties((
+      color: inherit,
+      display: table,
+      max-width: 100%,
+      padding: 0 0.5em,
+      white-space: normal,
+    ));
   }
 }
 
 @if ($include-fieldset) {
   fieldset {
-    @include elements.fieldset();
+    @include mixins.selector-properties((
+      border-color: threedface,
+      border-width: 1px,
+      border-style: solid,
+      margin-top: 0,
+      margin-right: 0,
+      margin-bottom: 0,
+      margin-left: 0,
+      padding-top: 0.75em,
+      padding-right: 0.75em,
+      padding-bottom: 0.75em,
+      padding-left: 0.75em,
+    ));
   }
+
 }
 
 @if ($include-table) {

@@ -9,6 +9,7 @@
   font-family: var(--link-font-family, inherit);
   font-size: var(--link-font-size, inherit);
   font-weight: var(--link-font-weight, inherit);
+  line-height: var(--button-line-height, inherit);
   margin: {
     top: var(--link-margin-top, 0);
     right: var(--link-margin-right, 0);
@@ -21,20 +22,10 @@
     bottom: var(--link-padding-bottom, 0);
     left: var(--link-padding-left, 0);
   }
+  text-align: var(--button-text-align, inherit);
   text-decoration: var(--link-text-decoration, none);
   text-transform: var(--link-text-transform, inherit);
   transition: var(--link-transition, all 200ms ease-in-out);
-
-  &:hover,
-  &:focus {
-    background-color: var(--link-hover-background-color, inherit);
-    border-color: var(--link-hover-border-color, transparent);
-    color: var(--link-hover-color, inherit);
-  }
-
-  &:focus {
-    outline: rem(1) dotted var(--link-color, currentColor);
-  }
 
   @content;
 }

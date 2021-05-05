@@ -2,13 +2,12 @@
 html, body, h1, h2, h3, h4, h5, h6, p, hr,
 
 // Formatting
-abbr, address, b, bdi, bdo, blockquote, cite, code, del, dfn, em, i, ins, kbd,
-mark, meter, pre, progress, q, s, samp, small, strong, sub, sup, template, time,
-u, var, wbr,
+abbr, address, b, blockquote, cite, em, i, pre, q, small, strong, sub, sup,
+template, time, u,
 
 // Forms and Input
-form, input, textarea, button, select, optgroup, option, label, fieldset, legend,
-datalist, output,
+form, input, textarea, button, select, optgroup, option, label, fieldset,
+legend, datalist, output,
 
 // Frames
 iframe,
@@ -42,25 +41,18 @@ object, embed {
   background: transparent;
 }
 
-// Add the correct display for new HTML5 elements in older browsers.
-header, footer, main, section, article, aside, details, summary, figcaption,
-figure, nav {
-  display: block;
-}
-
 *,
 *::before,
 *::after {
   box-sizing: border-box;
-
 }
-
 
 body {
   line-height: 1;
 }
 
-/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+// Remove all animations, transitions and smooth scroll
+// for people that prefer not to see them.
 @media (prefers-reduced-motion: reduce) {
   html:focus-within {
     scroll-behavior: auto;
@@ -75,3 +67,6 @@ body {
     scroll-behavior: auto !important;
   }
 }
+
+
+// formating bdi, bdo, code, del, dfn, ins, kbd, mark, meter, progress, s, samp, var, wbr
