@@ -1,4 +1,4 @@
-const kebabCase = (string: string) => {
+export function kebabCase(string: string) {
   // Get all lowercase letters that are near to uppercase ones
   string = string.replace(/([a-z])([A-Z])/g, '$1-$2');
 
@@ -10,5 +10,3 @@ const kebabCase = (string: string) => {
 
   return string;
 }
-
-export default kebabCase;
