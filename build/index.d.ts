@@ -1,2 +1,4 @@
-export { default as svgRoleImg } from './accessibility/svg';
-export { default as kebabCase } from './kebab-case';
+export { svgRoleImg } from './accessibility/svg';
+export { kebabCase } from './kebab-case';
+export { randomBetween } from './random-between';
+export { Timer } from './Timer';
