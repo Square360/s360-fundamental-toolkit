@@ -1,2 +1,1 @@
-declare const svgRoleImg: () => void;
-export default svgRoleImg;
+export declare function svgRoleImg(): void;
