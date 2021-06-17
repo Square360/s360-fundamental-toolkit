@@ -1,7 +1,7 @@
 {
   "name": "s360-fundamental-toolkit",
   "version": "5.0.0",
-  "description": "Set of mixins, extenables, and other useful tools for building websites.",
+  "description": "Set of mixins, placeholders, and other useful tools for building websites.",
   "license": "MIT",
   "main": "build/index.js",
   "types": "build/index.d.ts",
@@ -18,15 +18,19 @@
     {
       "name": "Douglas McGilvray",
       "email": "douglas.mcgilvray@square360.com"
+    },
+    {
+      "name": "Douglas McGilvray",
+      "email": "douglas.mcgilvray@square360.com"
     }
   ],
+  "sass": "scss/toolkit.scss",
   "scripts": {
     "build": "tsc"
   },
   "dependencies": {
   },
   "devDependencies": {
-    "@types/jquery": "^3.5.4",
     "typescript": "^3.5.2"
   }
 }
