@@ -24,9 +24,6 @@
     "build": "tsc"
   },
   "dependencies": {
-    "breakpoint-sass": "^2.7.1",
-    "sass-toolkit": "^2.10.2",
-    "susy": "^2.2.12"
   },
   "devDependencies": {
     "@types/jquery": "^3.5.4",
