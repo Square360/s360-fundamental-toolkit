@@ -1,2 +1,1 @@
-declare const kebabCase: (string: string) => string;
-export default kebabCase;
+export declare function kebabCase(string: string): string;
