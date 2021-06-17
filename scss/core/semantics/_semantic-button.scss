@@ -4,13 +4,13 @@
 ///
 @mixin semantic-button(
   $color: inherit,
-  $background: inherit,
+  $background-color: inherit,
   $hover-color: inherit,
-  $hover-background: inherit,
+  $hover-background-color: inherit,
   $focus-color: inherit,
-  $focus-background: inherit
+  $focus-background-color: inherit
 ) {
-  --button-background: #{ $background };
+  --button-background-color: #{ $background-color };
   --button-color: #{ $color };
   --button-font-family: inherit;
   --button-font-size: inherit;
@@ -24,12 +24,12 @@
     $hover-color: $color;
   }
 
-  @if ($hover-background == inherit and $background != inherit) {
-    $hover-background: $background;
+  @if ($hover-background-color == inherit and $background-color != inherit) {
+    $hover-background-color: $background-color;
   }
 
   &:hover {
-    --button-background: #{ $hover-background };
+    --button-background-color: #{ $hover-background-color };
     --button-color: #{ $hover-color };
   }
 
@@ -38,14 +38,13 @@
     $focus-color: $hover-color;
   }
 
-  @if ($focus-background == inherit and $hover-background != inherit) {
-    $focus-background: $hover-background;
+  @if ($focus-background-color == inherit and $hover-background-color != inherit) {
+    $focus-background-color: $hover-background-color;
   }
 
   &:focus {
-    --button-background: #{ $focus-background };
+    --button-background-color: #{ $focus-background-color };
     --button-color: #{ $focus-color };
-
-    box-shadow: none;
+    --button-box-shadow: none;
   }
 }
