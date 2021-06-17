@@ -37,7 +37,7 @@
     $character: str-slice($value, $i, $i);
 
     @if not (index(map-keys($numbers), $character) or $character == '.') {
-      @return to-unit(if($minus, -$result, $result), str-slice($value, $i))
+      @return to-unit(if($minus, -$result, $result), str-slice($value, $i));
     }
 
     @if $character == '.' {
