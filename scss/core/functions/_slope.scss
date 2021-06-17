@@ -1,26 +1,30 @@
-/// Calculate the linear slope between font size and viewport
+@use "../functions";
+
+/// Calculate the linear slope between font size and viewport.
 ///
 /// @author George Heimel
 ///
-/// @param {number} $minFont
-///   Minimum font size (in rem)
-/// @param {number} $maxFont
-///   Maximum font size (in rem)
-/// @param {number} $minWindow
-///   Minimum window size (in rem)
-/// @param {number} $maxWindow
-///   Maximum window size (in rem)
+/// @param {number} $min-font
+///   Minimum font size in rems.
+/// @param {number} $max-font
+///   Maximum font size in rems
+/// @param {number} $min-window
+///   Minimum window size in rems
+/// @param {number} $max-window
+///   Maximum window size in rems
+///
+/// @require {function} strip-unit
 ///
 /// @return {number}
 ///   The linear slope
 
-@function slope($minFont, $maxFont, $minWindow, $maxWindow) {
-  $_minFont: strip-unit($minFont);
-  $_maxFont: strip-unit($maxFont);
-  $_minWindow: strip-unit($minWindow);
-  $_maxWindow: strip-unit($maxWindow);
+@function slope($min-font, $max-font, $min-window, $max-window) {
+  $min-font: functions.strip-unit($min-font);
+  $max-font: functions.strip-unit($max-font);
+  $min-window: functions.strip-unit($min-window);
+  $max-window: functions.strip-unit($max-window);
 
-  $_slope: ($_maxFont - $_minFont) / ($_maxWindow - $_minWindow);
+  $slope: ($max-font - $min-font) / ($max-window - $min-window);
 
-  @return $_slope;
+  @return $slope;
 }

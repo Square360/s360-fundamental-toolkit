@@ -1,22 +1,22 @@
-/// Calculate the linear slope between font size and viewport
+/// Calculate the linear slope between font size and viewport.
 ///
 /// @author George Heimel
 ///
-/// @param {number} $minWindow
-///   Minimum window size (in rem)
-/// @param {number} $minFont
-///   Minimum font size (in rem)
+/// @param {number} $min-window
+///   Minimum window size in rems
+/// @param {number} $min-font
+///   Minimum font size in rems
 /// @param {number} $slope
 ///   linear slope decimal number (no units)
 ///
 /// @return {number}
 ///   The y Axis Intersection Point
 
-@function yAxisIntersection( $minWindow, $minFont, $slope) {
-  $_minFont: strip-unit($minFont);
-  $_minWindow: strip-unit($minWindow);
+@function y-axis-intersection($min-window, $min-font, $slope) {
+  $min-font: strip-unit($min-font);
+  $min-window: strip-unit($min-window);
 
-  $_yAxisIntersection: (-$_minWindow) * $slope + $_minFont;
+  $y-axis-intersection: (-$min-window) * $slope + $min-font;
 
-  @return $_yAxisIntersection;
+  @return $y-axis-intersection;
 }
