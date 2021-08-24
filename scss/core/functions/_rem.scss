@@ -1,5 +1,5 @@
-@use "./to-number";
-@use "./strip-unit";
+@use "./to-number" as *;
+@use "./strip-unit" as *;
 @use "sass:math";
 
 /// Take the given $number and covert it to "rem" using the given $base-number.
@@ -8,7 +8,7 @@
 ///
 /// @param {number} $number
 ///   The number to convert to "rem".
-/// @param {number} $base-number [16px]
+/// @param {number} $base-number [16]
 ///   The base number to calculate to the new "rem" number from.
 ///
 /// @example
@@ -22,7 +22,7 @@
 /// @return {number}
 ///   The given $number converted to "rem" units.
 
-@function rem($number, $base-number: 16px) {
+@function rem($number, $base-number: 16) {
   @if $number == 0 {
     @return 0;
   }

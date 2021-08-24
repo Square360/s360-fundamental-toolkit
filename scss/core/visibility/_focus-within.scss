@@ -1,11 +1,11 @@
+@use "./remove-visually-hidden" as *;
+
 /// Extends the %remove-visually-hidden class to allow the element to be
 /// focusable when focus is in the element or a child element.
 ///
 /// @group visibility
 /// @require {placeholder} %remove-visually-hidden
 /// @require {mixin} remove-visually-hidden
-
-@use "./remove-visually-hidden";
 
 %focus-within {
   &:focus,

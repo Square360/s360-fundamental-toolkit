@@ -1,3 +1,7 @@
+@use "./y-axis-intersection" as *;
+@use "./slope" as *;
+@use "./rem" as *;
+
 /// Returns responsive font sizing using clamp() and linear scaling based on viewport min and max.
 ///
 /// @author George Heimel
@@ -20,10 +24,6 @@
 ///   .selector {
 ///     font-size: linear-size-scale(3.5rem, 7.75rem);
 ///   }
-
-@use "./y-axis-intersection";
-@use "./slope";
-@use "./rem";
 
 @function linear-size-scale($min-size, $max-size, $min-window: 360, $max-window: 1440) {
   $slope: slope($min-size, $max-size, rem($min-window), rem($max-window));

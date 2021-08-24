@@ -1,5 +1,14 @@
 @use "sass:color";
 
+/// Applies a box-shadow with the given parameters.
+///
+/// @author Brian Milea
+///
+/// @param {number} $level
+///   The amount of shadow to apply.
+/// @param {string} $color
+///   The color of the shadow.
+
 @mixin material-shadow($level: 1, $color: #000000) {
   @if ($level == 0) {
     box-shadow: 0 0 0 color.transparentize($color, 1);

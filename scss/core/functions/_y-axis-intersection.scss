@@ -1,3 +1,5 @@
+@use "./strip-unit" as *;
+
 /// Calculate the linear slope between font size and viewport.
 ///
 /// @author George Heimel
@@ -11,8 +13,6 @@
 ///
 /// @return {number}
 ///   The y Axis Intersection Point
-
-@use "./strip-unit";
 
 @function y-axis-intersection($min-window, $min-font, $slope) {
   $min-font: strip-unit($min-font);

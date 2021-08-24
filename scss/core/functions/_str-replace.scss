@@ -1,3 +1,5 @@
+@use "sass:string";
+
 /// Replace `$search` with `$replace` in `$string`
 ///
 /// @author Hugo Giraudel
@@ -12,8 +14,6 @@
 
 /// @return {string}
 ///   Updated string
-
-@use "sass:string";
 
 @function str-replace($string, $search, $replace: '') {
   $index: string.index($string, $search);

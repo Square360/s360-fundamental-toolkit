@@ -1,3 +1,5 @@
+@use "sass:list";
+
 /// Take the given $value and repeat it $count times.
 ///
 /// @param {number} $count
@@ -16,11 +18,11 @@
   $return: ();
 
   @if type-of($count) != number {
-    @error 'The argument $count: `#{$count}` is not a number.';
+    @error 'The argument $count: `#{ $count }` is not a number.';
   }
 
   @for $i from 1 through $count {
-    $return: append($return, $value);
+    $return: list.append($return, $value);
   }
 
   @return #{$return};

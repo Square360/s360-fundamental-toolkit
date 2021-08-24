@@ -16,7 +16,7 @@
 /// @return {number}
 ///   The linear slope
 
-@use "./strip-unit";
+@use "./strip-unit" as *;
 @use "sass:math";
 
 @function slope($min-size, $max-size, $min-window, $max-window) {
@@ -25,7 +25,7 @@
   $min-window: strip-unit($min-window);
   $max-window: strip-unit($max-window);
 
-  $slope: math.div(($max-size - $min-size) / ($max-window - $min-window));
+  $slope: math.div(($max-size - $min-size), ($max-window - $min-window));
 
   @return $slope;
 }

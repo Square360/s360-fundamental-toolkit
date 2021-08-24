@@ -1,6 +1,6 @@
-@use "./to-number";
-@use "./strip-unit";
 @use "sass:math";
+@use "./to-number" as *;
+@use "./strip-unit" as *;
 
 /// Take the given $number and covert it to "em" using the given $base-number.
 ///
@@ -8,7 +8,7 @@
 ///
 /// @param {number} $number
 ///   The number to convert to "em".
-/// @param {number} $base-number [16px]
+/// @param {number} $base-number [16]
 ///   The base number to calculate to the new "em" number from.
 ///
 /// @example
@@ -22,7 +22,7 @@
 /// @return {number}
 ///   The given $number converted to "em" units.
 
-@function em($number, $base-number: 16px) {
+@function em($number, $base-number: 16) {
   @if $number == 0 {
     @return 0;
   }

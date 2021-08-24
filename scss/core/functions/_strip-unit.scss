@@ -1,3 +1,5 @@
+@use "sass:math";
+
 /// Take the given $number and remove it's unit.
 ///
 /// @author Steven Keiser
@@ -10,8 +12,6 @@
 ///
 /// @return {number}
 ///   The given $number with it's unit removed.
-
-@use "sass:math";
 
 @function strip-unit($number) {
   @if type-of($number) == 'number' and not math.is-unitless($number) {

@@ -1,3 +1,6 @@
+@use "sass:map";
+@use "sass:string";
+
 /// Take the given $value and apply the given $unit.
 ///
 /// @author Steven Keiser
@@ -30,9 +33,9 @@
     'fr': 1fr
   );
 
-  @if not index(map-keys($units), $unit) {
+  @if not string.index(map.keys($units), $unit) {
     @error 'The argument $unit: `#{ $unit }` must be value css unit.';
   }
 
-  @return $value * map-get($units, $unit);
+  @return $value * map.get($units, $unit);
 }
