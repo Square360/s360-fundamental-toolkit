@@ -1,4 +1,6 @@
-@use "../functions";
+@use "./to-number";
+@use "./strip-unit";
+@use "sass:math";
 
 /// Take the given $number and covert it to "em" using the given $base-number.
 ///
@@ -25,5 +27,5 @@
     @return 0;
   }
 
-  @return functions.to-number(#{functions.strip-unit($number / $base-number)}em);
+  @return to-number(#{ strip-unit(math.div($number, $base-number)) }em);
 }

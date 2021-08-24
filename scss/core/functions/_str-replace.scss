@@ -1,19 +1,19 @@
-@use "sass:string";
-
 /// Replace `$search` with `$replace` in `$string`
 ///
 /// @author Hugo Giraudel
 /// @author Steven Keiser
 ///
-/// @param {String} $string
+/// @param {string} $string
 ///   Initial string
-/// @param {String} $search
+/// @param {string} $search
 ///   Substring to replace
-/// @param {String} $replace ['']
+/// @param {string} $replace ['']
 ///   New value
 
-/// @return {String}
+/// @return {string}
 ///   Updated string
+
+@use "sass:string";
 
 @function str-replace($string, $search, $replace: '') {
   $index: string.index($string, $search);

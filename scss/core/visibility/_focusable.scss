@@ -5,6 +5,8 @@
 ///
 /// @require {placeholder} %remove-visually-hidden
 
+@use "./remove-visually-hidden";
+
 %focusable {
   &:active,
   &:focus {

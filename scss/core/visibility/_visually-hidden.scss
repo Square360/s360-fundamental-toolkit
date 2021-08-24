@@ -1,10 +1,11 @@
-/// Hide visually, but not from screen readers. Line feeds are not interpreted 
+/// Hide visually, but not from screen readers. Line feeds are not interpreted
 /// as spaces and small width causes content to wrap 1 word per line.
 ///
 /// @group visibility
 ///
 /// @link https://snook.ca/archives/html_and_css/hiding-content-for-accessibility
 /// @link https://medium.com/@jessebeach/beware-smushed-off-screen-accessible-text-5952a4c2cbfe
+
 %visually-hidden {
   border: 0;
   clip: rect(0 0 0 0);

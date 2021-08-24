@@ -5,6 +5,8 @@
 /// @require {placeholder} %remove-visually-hidden
 /// @require {mixin} remove-visually-hidden
 
+@use "./remove-visually-hidden";
+
 %focus-within {
   &:focus,
   &:active,
