@@ -1,6 +1,6 @@
-@use "./to-number" as *;
-@use "./strip-unit" as *;
 @use "sass:math";
+@use "./strip-unit" as *;
+@use "./to-number" as *;
 
 /// Take the given $number and covert it to "rem" using the given $base-number.
 ///

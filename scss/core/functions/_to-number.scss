@@ -1,6 +1,7 @@
+@use "sass:list";
+@use "sass:map";
 @use "sass:math";
 @use "sass:string";
-@use "sass:map";
 @use "./to-unit" as *;
 
 /// Take the given $value and converts it into a number.
@@ -41,7 +42,7 @@
   @for $i from if($minus, 2, 1) through string.length($value) {
     $character: string.slice($value, $i, $i);
 
-    @if not (string.index(map.keys($numbers), $character) or $character == '.') {
+    @if not (list.index(map.keys($numbers), $character) or $character == '.') {
       @return to-unit(if($minus, -$result, $result), string.slice($value, $i));
     }
 

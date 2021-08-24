@@ -1,5 +1,5 @@
+@use "sass:list";
 @use "sass:map";
-@use "sass:string";
 
 /// Take the given $value and apply the given $unit.
 ///
@@ -33,7 +33,7 @@
     'fr': 1fr
   );
 
-  @if not string.index(map.keys($units), $unit) {
+  @if not list.index(map.keys($units), $unit) {
     @error 'The argument $unit: `#{ $unit }` must be value css unit.';
   }
 

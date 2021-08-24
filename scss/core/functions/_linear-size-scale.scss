@@ -1,6 +1,6 @@
-@use "./y-axis-intersection" as *;
-@use "./slope" as *;
 @use "./rem" as *;
+@use "./slope" as *;
+@use "./y-axis-intersection" as *;
 
 /// Returns responsive font sizing using clamp() and linear scaling based on viewport min and max.
 ///

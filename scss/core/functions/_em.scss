@@ -1,6 +1,6 @@
 @use "sass:math";
-@use "./to-number" as *;
 @use "./strip-unit" as *;
+@use "./to-number" as *;
 
 /// Take the given $number and covert it to "em" using the given $base-number.
 ///
