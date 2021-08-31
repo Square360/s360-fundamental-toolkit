@@ -1,5 +1,5 @@
-@use "./rem" as *;
-@use "./strip-unit" as *;
+@use "../typography/rem" as *;
+@use "../helpers/strip-unit" as *;
 
 /// Returns responsive font sizing using clamp() and linear scaling based on viewport min and max.
 ///
@@ -16,6 +16,8 @@
 ///   Minimum window size.
 /// @param {number} $max-window [1440]
 ///   Maximum window size.
+///
+/// @require {function} strip-unit
 ///
 /// @example
 ///   .selector {

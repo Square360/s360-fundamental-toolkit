@@ -21,4 +21,6 @@ $CONFIG: map.deep-merge($-DEFAULT_CONFIG, $CONFIG);
   $scale-modular-scale-ratio: map.get($CONFIG, 'modular-scale-ratio')
 );
 
-@forward "./toolkit/typography" with ($typography-font-size-base: map.get($CONFIG, 'font-size-base'));
+@forward "./toolkit/typography" with (
+  $typography-font-size-base: map.get($CONFIG, 'font-size-base')
+);
