@@ -16,11 +16,12 @@ $CONFIG: map.deep-merge($-DEFAULT_CONFIG, $CONFIG);
 @forward "./toolkit/semantics";
 @forward "./toolkit/visibility";
 
+@forward "./toolkit/typography" with (
+  $typography-font-size-base: map.get($CONFIG, 'font-size-base')
+);
+
 @forward "./toolkit/scale" with (
   $scale-font-size-base: map.get($CONFIG, 'font-size-base'),
   $scale-modular-scale-ratio: map.get($CONFIG, 'modular-scale-ratio')
 );
 
-@forward "./toolkit/typography" with (
-  $typography-font-size-base: map.get($CONFIG, 'font-size-base')
-);

@@ -1,5 +1,6 @@
 @use "../typography/rem" as *;
 @use "../helpers/strip-unit" as *;
+@use "sass:math";
 
 /// Returns responsive font sizing using clamp() and linear scaling based on viewport min and max.
 ///
@@ -49,7 +50,7 @@
   $max-window: strip-unit($max-window);
   $min-window: strip-unit($min-window);
 
-  $slope: (strip-unit($max-size) - strip-unit($min-size)) / (strip-unit($max-window) - ($min-window));
+  $slope: math.div(strip-unit($max-size) - strip-unit($min-size), strip-unit($max-window) - ($min-window));
   $y-axis-intersection: (-$min-window) * $slope + $min-size;
 
   @return clamp(
