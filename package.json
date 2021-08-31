@@ -20,11 +20,10 @@
       "email": "douglas.mcgilvray@square360.com"
     },
     {
-      "name": "Douglas McGilvray",
-      "email": "douglas.mcgilvray@square360.com"
+      "name": "George Heimel",
+      "email": "george.heimel@square360.com"
     }
   ],
-  "sass": "scss/toolkit.scss",
   "scripts": {
     "build": "tsc"
   },

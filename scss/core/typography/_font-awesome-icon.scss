@@ -9,21 +9,15 @@
 ///   See "node_modules/@fortawesome/fontawesome-pro/scss/_variables.scss" for
 ///   all the available icon codes. The icon code can be constructed by
 ///   appending "$fa-var-" to the icon's name. e.g. "thumbs-up" becomes "$fa-var-thumbs-up".
-///
 /// @param {string} $fa-style ['light']
 ///   Which FontAwesome icon style.
-///
 /// @param {string} $position ['after']
 ///   Where to place the Font Awesome icon.
 ///
 /// @example
 ///   @include fontawesome-icon('regular', $fa-var-thumbs-up, 'after');
 
-@mixin font-awesome-icon(
-  $fa-icon-variable,
-  $fa-style: 'light',
-  $position: 'after'
-) {
+@mixin font-awesome-icon($fa-icon-variable, $fa-style: 'light', $position: 'after') {
   $font-awesome-styles: (
     'light': (
       'family': '"Font Awesome 5 Pro"',

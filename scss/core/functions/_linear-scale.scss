@@ -1,0 +1,58 @@
+@use "./rem" as *;
+@use "./strip-unit" as *;
+
+/// Returns responsive font sizing using clamp() and linear scaling based on viewport min and max.
+///
+/// @see https://css-tricks.com/linearly-scale-font-size-with-css-clamp-based-on-the-viewport/
+///
+/// @author George Heimel
+/// @author Steven Keiser
+///
+/// @param {number} $min-size
+///   Minimum size.
+/// @param {number} $max-size
+///   Maximum size.
+/// @param {number} $min-window [360]
+///   Minimum window size.
+/// @param {number} $max-window [1440]
+///   Maximum window size.
+///
+/// @example
+///   .selector {
+///     font-size: linear-scale(3.5rem, 7.75rem);
+///   }
+///
+/// @return {string}
+///
+
+@function linear-scale($min-size, $max-size, $min-window: 360, $max-window: 1440) {
+  @if type-of($min-size) != 'number' {
+    @error 'The argument $min-size: `#{ $min-size }` is not a number.';
+  }
+
+  @if type-of($max-size) != 'number' {
+    @error 'The argument $max-size: `#{ $max-size }` is not a number.';
+  }
+
+  @if type-of($min-window) != 'number' {
+    @error 'The argument $min-window: `#{ $min-window }` is not a number.';
+  }
+
+  @if type-of($max-window) != 'number' {
+    @error 'The argument $max-window: `#{ $max-window }` is not a number.';
+  }
+
+  $max-size: strip-unit($max-size);
+  $min-size: strip-unit($min-size);
+  $max-window: strip-unit($max-window);
+  $min-window: strip-unit($min-window);
+
+  $slope: (strip-unit($max-size) - strip-unit($min-size)) / (strip-unit($max-window) - ($min-window));
+  $y-axis-intersection: (-$min-window) * $slope + $min-size;
+
+  @return clamp(
+    #{ rem($min-size) },
+    calc(#{ rem($y-axis-intersection) } + #{ $slope * 100 }vw),
+    #{ rem($max-size) }
+  );
+}
