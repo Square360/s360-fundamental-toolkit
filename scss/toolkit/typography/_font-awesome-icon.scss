@@ -1,3 +1,6 @@
+@use "sass:map";
+@use "sass:string";
+
 /// This mixing allows for placing an icon either before or after using the
 /// variable name from the Font Awesome 5 Pro package.
 ///
@@ -13,11 +16,13 @@
 ///   Which FontAwesome icon style.
 /// @param {string} $position ['after']
 ///   Where to place the Font Awesome icon.
+/// @param {string} $margin ['0.25em']
+///   The margin to add to either the left or right of the Font Awesome icon.
 ///
 /// @example
 ///   @include fontawesome-icon('regular', $fa-var-thumbs-up, 'after');
 
-@mixin font-awesome-icon($fa-icon-variable, $fa-style: 'light', $position: 'after') {
+@mixin font-awesome-icon($fa-icon-variable, $fa-style: 'light', $position: 'after', $margin: 0.25em) {
   $font-awesome-styles: (
     'light': (
       'family': '"Font Awesome 5 Pro"',
@@ -42,26 +47,23 @@
   );
 
   &::#{ $position } {
-    $font-awesome-style: map-get($font-awesome-styles, $fa-style);
+    $font-awesome-style: map.get($font-awesome-styles, $fa-style);
 
     content: fa-content(#{ $fa-icon-variable });
     display: inline-block;
-    font-family: unquote(map-get($font-awesome-style, 'family'));
+    font-family: string.unquote(map.get($font-awesome-style, 'family'));
     font-style: normal;
     font-variant: normal;
-    font-weight: map-get($font-awesome-style, 'weight');
+    font-weight: map.get($font-awesome-style, 'weight');
     line-height: 1;
     text-rendering: auto;
     vertical-align: middle;
 
-    // Might want to use this rather than hand type, just incase FA makes a change?
-    // @include fa-icon;
-
     @if $position == 'before' {
-      margin-right: 0.25em;
+      margin-right: #{ $margin };
     }
     @else if $position == 'after' {
-      margin-left: 0.25em;
+      margin-left: #{ $margin };
     }
   }
 }

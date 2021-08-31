@@ -1,9 +1,9 @@
 @use "sass:math";
 @use "./strip-unit" as *;
 
-$-em-font-size-base: 16 !default;
+$em-font-size-base: 16 !default;
 
-/// Converts the given $number to "em" using $-rem-font-size-base.
+/// Converts the given $number to "em" using $em-font-size-base.
 ///
 /// @author Steven Keiser
 ///
@@ -23,5 +23,5 @@ $-em-font-size-base: 16 !default;
     @return 0;
   }
 
-  @return #{ strip-unit(math.div($number, $-em-font-size-base)) }em;
+  @return #{ strip-unit(math.div($number, $em-font-size-base)) }em;
 }

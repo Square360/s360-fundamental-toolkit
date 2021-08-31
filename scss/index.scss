@@ -1,4 +1,24 @@
-@forward "./core/functions";
-@forward "./core/mixins";
-@forward "./core/semantics";
-@forward "./core/visibility";
+@use "sass:map";
+
+$-DEFAULT_CONFIG: (
+  font-size-base: 16,
+  modular-scale-ratio: 1.168
+);
+
+// Potential overrrides from theme.
+$CONFIG: () !default;
+
+// All config.
+$CONFIG: map.deep-merge($-DEFAULT_CONFIG, $CONFIG);
+
+@forward "./toolkit/effects";
+@forward "./toolkit/helpers";
+@forward "./toolkit/semantics";
+@forward "./toolkit/visibility";
+
+@forward "./toolkit/scale" with (
+  $scale-font-size-base: map.get($CONFIG, 'font-size-base'),
+  $scale-modular-scale-ratio: map.get($CONFIG, 'modular-scale-ratio')
+);
+
+@forward "./toolkit/typography" with ($typography-font-size-base: map.get($CONFIG, 'font-size-base'));

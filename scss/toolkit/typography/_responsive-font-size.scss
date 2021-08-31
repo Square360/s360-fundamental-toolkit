@@ -10,6 +10,18 @@
 ///   Maximum size (in rem)
 
 @mixin responsive-font-size($min, $med, $max) {
+  @if type-of($min) != 'number' {
+    @error 'The argument $min: `#{ $min }` is not a number.';
+  }
+
+  @if type-of($med) != 'number' {
+    @error 'The argument $med: `#{ $med }` is not a number.';
+  }
+
+  @if type-of($max) != 'number' {
+    @error 'The argument $max: `#{ $max }` is not a number.';
+  }
+
   font-size: $min;
   font-size: #{ "min(max(#{ $min }, #{ $med }), #{ $max })" };
 

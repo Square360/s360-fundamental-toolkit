@@ -1,6 +1,0 @@
-$typography-font-size-base: 16 !default;
-
-@forward "./font-smoothing";
-@forward "./responsive-font-size";
-@forward "./em" with ($-em-font-size-base: $typography-font-size-base);
-@forward "./rem" with ($-rem-font-size-base: $typography-font-size-base);
