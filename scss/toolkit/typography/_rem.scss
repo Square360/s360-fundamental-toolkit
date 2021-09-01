@@ -1,5 +1,6 @@
 @use "sass:math";
 @use "../helpers/strip-unit" as *;
+@use "../helpers/to-number" as *;
 
 $rem-font-size-base: 16 !default;
 
@@ -23,5 +24,5 @@ $rem-font-size-base: 16 !default;
     @return 0;
   }
 
-  @return #{ strip-unit(math.div($number, $rem-font-size-base)) }rem;
+  @return to-number(#{ strip-unit(math.div($number, $rem-font-size-base)) }rem);
 }
