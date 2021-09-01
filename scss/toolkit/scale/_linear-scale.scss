@@ -50,7 +50,7 @@
   $max-window: strip-unit($max-window);
   $min-window: strip-unit($min-window);
 
-  $slope: math.div(strip-unit($max-size) - strip-unit($min-size), strip-unit($max-window) - ($min-window));
+  $slope: math.div($max-size - $min-size, $max-window - $min-window);
   $y-axis-intersection: (-$min-window) * $slope + $min-size;
 
   @return clamp(
