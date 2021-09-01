@@ -48,13 +48,23 @@ $linear-scale-font-size-base: 16 !default;
   }
 
   // Converts REM to PX.
+  @if unit($min-size) == 'rem' or unit($min-size) == 'em' {
+    $min-size: $min-size * $linear-scale-font-size-base;
+  }
+
+  // Converts REM to PX.
   @if unit($max-size) == 'rem' or unit($max-size) == 'em' {
     $max-size: $max-size * $linear-scale-font-size-base;
   }
 
   // Converts REM to PX.
-  @if unit($min-size) == 'rem' or unit($min-size) == 'em' {
-    $min-size: $min-size * $linear-scale-font-size-base;
+  @if unit($min-window) == 'rem' or unit($min-window) == 'em' {
+    $min-window: $min-window * $linear-scale-font-size-base;
+  }
+
+  // Converts REM to PX.
+  @if unit($max-window) == 'rem' or unit($max-window) == 'em' {
+    $max-window: $max-window * $linear-scale-font-size-base;
   }
 
   $max-size: strip-unit($max-size);
