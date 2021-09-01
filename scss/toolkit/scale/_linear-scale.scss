@@ -1,6 +1,7 @@
 @use "../typography/rem" as *;
 @use "../helpers/strip-unit" as *;
-@use "sass:math";
+
+$linear-scale-font-size-base: 16 !default;
 
 /// Returns responsive font sizing using clamp() and linear scaling based on viewport min and max.
 ///
@@ -43,6 +44,16 @@
 
   @if type-of($max-window) != 'number' {
     @error 'The argument $max-window: `#{ $max-window }` is not a number.';
+  }
+
+  // Converts REM to PX.
+  @if unit($max-size) == 'rem' or unit($max-size) == 'em' {
+    $max-size: $max-size * $linear-scale-font-size-base;
+  }
+
+  // Converts REM to PX.
+  @if unit($min-size) == 'rem' or unit($min-size) == 'em' {
+    $min-size: $min-size * $linear-scale-font-size-base;
   }
 
   $max-size: strip-unit($max-size);
