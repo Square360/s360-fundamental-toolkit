@@ -1,7 +1,10 @@
 $scale-font-size-base: 16 !default;
 $scale-modular-scale-ratio: 1.500 !default;
 
-@forward "./linear-scale";
+@forward "./linear-scale" with (
+  $linear-scale-font-size-base: $scale-font-size-base,
+);
+
 @forward "./modular-scale" with (
   $modular-scale-font-size-base: $scale-font-size-base,
   $modular-scale-ratio: $scale-modular-scale-ratio
