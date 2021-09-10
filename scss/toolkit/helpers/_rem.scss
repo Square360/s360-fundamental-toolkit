@@ -12,17 +12,28 @@ $rem-font-size-base: 16 !default;
 ///   The number to convert to "rem".
 ///
 /// @example
-///   rem(12); // returns 0.75rem;
+///   rem(12);
 ///
-/// @require {function} strip-unit
+/// @require {function} to-number
 ///
 /// @return {number}
 ///   The given $number converted to "rem" units.
 
 @function rem($number) {
   @if $number == 0 {
-    @return 0;
+    @error "The argument $number must be greater than 0.";
   }
 
-  @return to-number(#{ strip-unit(math.div($number, $rem-font-size-base)) }rem);
+  @if type-of($number) != 'number' {
+    @error "The argument $number: `#{ $number }` is not a number.";
+  }
+
+  @if not unitless($number) {
+    @error "The argument $number: `#{ $number }` is not unitless.";
+  }
+
+  $number: math.div($number, $rem-font-size-base);
+  $number: to-number(#{ $number }rem);
+
+  @return $number;
 }

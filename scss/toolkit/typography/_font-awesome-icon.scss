@@ -1,6 +1,8 @@
 @use "sass:map";
 @use "sass:string";
 
+@use "~@fortawesome/fontawesome-pro/scss/_variables" as * with ($fa-font-path: "~@fortawesome/fontawesome-pro/webfonts");
+
 /// This mixing allows for placing an icon either before or after using the
 /// variable name from the Font Awesome 5 Pro package.
 ///
@@ -22,7 +24,12 @@
 /// @example
 ///   @include fontawesome-icon('regular', $fa-var-thumbs-up, 'after');
 
-@mixin font-awesome-icon($fa-icon-variable, $fa-style: 'light', $position: 'after', $margin: 0.25em) {
+@mixin font-awesome-icon(
+  $fa-icon-variable,
+  $fa-style: 'light',
+  $position: 'after',
+  $margin: 0.25em
+) {
   $font-awesome-styles: (
     'light': (
       'family': '"Font Awesome 5 Pro"',

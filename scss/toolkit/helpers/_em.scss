@@ -12,17 +12,28 @@ $em-font-size-base: 16 !default;
 ///   The number to convert to "em".
 ///
 /// @example
-///   rem(12); // returns 0.75em;
+///   em(12);
 ///
-/// @require {function} strip-unit
+/// @require {function} to-number
 ///
 /// @return {number}
 ///   The given $number converted to "em" units.
 
 @function em($number) {
   @if $number == 0 {
-    @return 0;
+    @error "The argument $number must be greater than 0.";
   }
 
-  @return to-number(#{ strip-unit(math.div($number, $em-font-size-base)) }em);
+  @if type-of($number) != 'number' {
+    @error "The argument $number: `#{ $number }` is not a number.";
+  }
+
+  @if not unitless($number) {
+    @error "The argument $number: `#{ $number }` is not unitless.";
+  }
+
+  $number: math.div($number, $em-font-size-base);
+  $number: to-number(#{ $number }em);
+
+  @return $number;
 }
