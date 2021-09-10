@@ -7,21 +7,13 @@
 ///
 /// @param {number} $scale [0]
 ///
-/// @param {string} $css-module ['']
-///   The name of a css module to use as the css3 variable. e.g. "a"
-///
 /// @return {number}
 ///   The font size in rems.
 
-@mixin font-size-ms($scale: 0, $css-module: '') {
+@function font-size-ms($scale: 0) {
   @if type-of($scale) != 'number' {
     @error "The argument $scale: `#{ $scale }` must be a `number`.";
   }
 
-  @if $css-module != '' {
-    --#{ $css-module }-font-size: rem(modular-scale($scale));
-  }
-  @else {
-    font-size: rem(modular-scale($scale));
-  }
+  @return rem(modular-scale($scale));
 }
