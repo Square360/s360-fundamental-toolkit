@@ -1,5 +1,5 @@
 @use "sass:math";
-@use "../typography/rem" as *;
+@use "../helpers/rem" as *;
 @use "../helpers/strip-unit" as *;
 
 $linear-scale-font-size-base: 16 !default;

@@ -9,7 +9,10 @@
 /// @param {string} $color [#000000]
 ///   The color of the shadow.
 
-@mixin material-shadow($level: 1, $color: #000000) {
+@mixin material-shadow(
+  $level: 1,
+  $color: #000000
+) {
   @if ($level == 0) {
     box-shadow: 0 0 0 color.transparentize($color, 1);
   }
