@@ -1,26 +1,39 @@
 @use "sass:string";
 
-/// Replace `$search` with `$replace` in `$string`
+/// Replace all occurrences of the $search string with the $replace string.
 ///
-/// @author Hugo Giraudel
 /// @author Steven Keiser
 ///
-/// @param {string} $string
-///   Initial string
+/// @param {string} $subject
+///   The string being searched and replaced on.
 /// @param {string} $search
-///   Substring to replace
-/// @param {string} $replace ['']
-///   New value
+///   The value being searched for.
+/// @param {string} $replace
+///   The replacement value that replaces found search values.
 ///
 /// @return {string}
-///   Updated string
+///   A string with the replaced values.
 
-@function str-replace($string, $search, $replace: '') {
-  $index: string.index($string, $search);
-
-  @if $index {
-    @return string.slice($string, 1, $index - 1) + $replace + str-replace(string.slice($string, $index + string.length($search)), $search, $replace);
+@function str-replace($subject, $search, $replace) {
+  @if type-of($subject) != 'string' {
+    @error "The argument $subject: `#{ $subject }` is not a string.";
   }
 
-  @return $string;
+  @if type-of($search) != 'string' {
+    @error "The argument $search: `#{ $search }` is not a string.";
+  }
+
+  @if type-of($replace) != 'string' {
+    @error "The argument $replace: `#{ $replace }` is not a string.";
+  }
+
+  $index: string.index($subject, $search);
+
+  @if $index {
+    @return string.slice($subject, 1, $index - 1) +
+            $replace +
+            str-replace(string.slice($subject, $index + string.length($search)), $search, $replace);
+  }
+
+  @return $subject;
 }

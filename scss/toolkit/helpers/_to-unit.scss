@@ -1,19 +1,21 @@
 @use "sass:list";
 @use "sass:map";
 
-/// Take the given $value and apply the given $unit.
+@use "./strip-unit" as *;
+
+/// Applies the $unit to the $number.
 ///
 /// @author Steven Keiser
 ///
-/// @param {number} $value
-///   The value to apply the unit to.
+/// @param {number} $number
+///   The number to apply the unit to.
 /// @param {string} $unit
 ///   The unit to be applied.
 ///
 /// @return {number}
-///   The given $value displayed with the given $unit.
+///   The $number displayed with the $unit.
 
-@function to-unit($value, $unit) {
+@function to-unit($number, $unit) {
   $units: (
     'px': 1px,
     'cm': 1cm,
@@ -33,9 +35,17 @@
     'fr': 1fr
   );
 
-  @if not list.index(map.keys($units), $unit) {
-    @error 'The argument $unit: `#{ $unit }` must be value css unit.';
+  @if type-of($number) != 'number' {
+    @error 'The argument $number: `#{ $number }` is not a number.';
   }
 
-  @return $value * map.get($units, $unit);
+  @if not math.is-unitless($number) {
+    @error 'The argument $number: `#{ $number }` already has a unit, `#{ math.unit($number) }`.';
+  }
+
+  @if not list.index(map.keys($units), $unit) {
+    @error 'The argument $unit: `#{ $unit }` is not a valid css unit.';
+  }
+
+  @return $number * map.get($units, $unit);
 }

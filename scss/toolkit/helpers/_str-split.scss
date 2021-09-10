@@ -1,35 +1,35 @@
 @use "sass:list";
 @use "sass:string";
 
-/// Take the given $string and split it using the given $delimiter.
+/// Split the $string by the $separator.
 ///
 /// @author Steven Keiser
 ///
 /// @param {string} $string
-///   The string to split.
-/// @param {string} $delimiter
-///   The value the string should be split on.
+///   The input string.
+/// @param {string} $separator
+///   How the input string should be split.
 ///
 /// @example
 ///   str-split('Split by space.', ' '); // returns "Split" "by" "space."
 ///
 /// @return {list}
-///   The given $string split into a list using the given $delimiter.
+///  A list of strings created by splitting the $string by the $separator.
 
-@function str-split($string, $delimiter) {
+@function str-split($string, $separator) {
   @if type-of($string) != 'string' {
-    @error 'The argument $string: `#{ $string }` must be a `string`.';
+    @error 'The argument $string: `#{ $string }` is not a string.';
   }
 
-  @if type-of($delimiter) != 'string' {
-    @error 'The argument $delimiter: `#{ $delimiter }` must be a `string`.';
+  @if type-of($separator) != 'string' {
+    @error 'The argument $separator: `#{ $separator }` is not a string.';
   }
 
   $result: ();
   $running: true;
 
   @while $running {
-    $index: string.index($string, $delimiter);
+    $index: string.index($string, $separator);
 
     @if $index != null {
       $item: string.slice($string, 1, ($index - 1));

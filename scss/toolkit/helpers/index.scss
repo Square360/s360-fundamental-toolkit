@@ -1,3 +1,7 @@
+$helpers-font-size-base: 16 !default;
+
+@forward "./em" with ($em-font-size-base: $helpers-font-size-base);
+@forward "./rem" with ($rem-font-size-base: $helpers-font-size-base);
 @forward "./str-replace";
 @forward "./str-split";
 @forward "./strip-unit";

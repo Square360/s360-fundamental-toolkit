@@ -6,13 +6,15 @@
 
 /// Take the given $value and converts it into a number.
 ///
+/// @author Steven Keiser
+///
 /// @param {string|number} $value
-///   Value to be converted.
+///   The value to be converted.
 ///
 /// @require {function} to-unit
 ///
 /// @return {number}
-///   The given $value as a number.
+///   The $value as a number.
 
 @function to-number($value) {
   @if type-of($value) == 'number' {
@@ -20,7 +22,7 @@
   }
 
   @if type-of($value) != 'string' {
-    @error 'The argument $value: `#{ $value }` must be a `string`.';
+    @error 'The argument $value: `#{ $value }` is not a string.';
   }
 
   $result: 0;
