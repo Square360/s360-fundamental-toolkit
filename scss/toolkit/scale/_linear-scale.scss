@@ -1,5 +1,6 @@
 @use "sass:math";
 @use "../helpers/rem" as *;
+@use "../helpers/em" as *;
 @use "../helpers/strip-unit" as *;
 
 $linear-scale-font-size-base: 16 !default;
@@ -19,6 +20,8 @@ $linear-scale-font-size-base: 16 !default;
 ///   Minimum window size.
 /// @param {number} $max-window [1440]
 ///   Maximum window size.
+/// @param {string} $unit ['rem']
+///   The css unit to use for the values inside the clamp function. REM or EM.
 ///
 /// @require {function} strip-unit
 ///
@@ -30,54 +33,53 @@ $linear-scale-font-size-base: 16 !default;
 /// @return {string}
 ///
 
-@function linear-scale($min-size, $max-size, $min-window: 360, $max-window: 1440) {
+@function linear-scale($min-size, $max-size, $min-window: 360, $max-window: 1440, $unit: 'rem') {
   @if type-of($min-size) != 'number' {
     @error 'The argument $min-size: `#{ $min-size }` is not a number.';
+  }
+  @if not unitless($min-size) {
+    @error "The argument $min-size: `#{ $min-size }` is not unitless.";
   }
 
   @if type-of($max-size) != 'number' {
     @error 'The argument $max-size: `#{ $max-size }` is not a number.';
   }
+  @if not unitless($max-size) {
+    @error "The argument $max-size: `#{ $max-size }` is not unitless.";
+  }
 
   @if type-of($min-window) != 'number' {
     @error 'The argument $min-window: `#{ $min-window }` is not a number.';
+  }
+  @if not unitless($min-window) {
+    @error "The argument $min-window: `#{ $min-window }` is not unitless.";
   }
 
   @if type-of($max-window) != 'number' {
     @error 'The argument $max-window: `#{ $max-window }` is not a number.';
   }
-
-  // Converts REM to PX.
-  @if unit($min-size) == 'rem' or unit($min-size) == 'em' {
-    $min-size: $min-size * $linear-scale-font-size-base;
+  @if not unitless($max-window) {
+    @error "The argument $max-window: `#{ $max-window }` is not unitless.";
   }
 
-  // Converts REM to PX.
-  @if unit($max-size) == 'rem' or unit($max-size) == 'em' {
-    $max-size: $max-size * $linear-scale-font-size-base;
+  @if type-of($unit) != 'string' {
+    @error "The argument $unit: `#{ $unit }` is not string.";
+  }
+  @if $unit != 'em' or $unit != 'rem' {
+    @error "The argument $unit: `#{ $unit }` is not `em` or `rem`.";
   }
 
-  // Converts REM to PX.
-  @if unit($min-window) == 'rem' or unit($min-window) == 'em' {
-    $min-window: $min-window * $linear-scale-font-size-base;
-  }
-
-  // Converts REM to PX.
-  @if unit($max-window) == 'rem' or unit($max-window) == 'em' {
-    $max-window: $max-window * $linear-scale-font-size-base;
-  }
-
-  $max-size: strip-unit($max-size);
-  $min-size: strip-unit($min-size);
-  $max-window: strip-unit($max-window);
-  $min-window: strip-unit($min-window);
-
-  $slope: math.div($max-size - $min-size, $max-window - $min-window);
+  $slope: math.div(($max-size - $min-size), ($max-window - $min-window));
   $y-axis-intersection: (-$min-window) * $slope + $min-size;
 
+  // Convert values based on the $unit.
+  $min-size: if($unit == 'rem', #{ rem($min-size) }, #{ em($min-size) });
+  $max-size: if($unit == 'rem', #{ rem($max-size) }, #{ em($max-size) });
+  $y-axis-intersection: if($unit == 'rem', #{ rem($y-axis-intersection) }, #{ em($y-axis-intersection) });
+
   @return clamp(
-    #{ rem($min-size) },
-    calc(#{ rem($y-axis-intersection) } + #{ $slope * 100 }vw),
-    #{ rem($max-size) }
+    #{ $min-size },
+    calc(#{ $y-axis-intersection } + #{ $slope * 100 }vw),
+    #{ $max-size }
   );
 }
