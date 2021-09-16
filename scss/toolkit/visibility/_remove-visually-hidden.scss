@@ -2,13 +2,19 @@
 ///
 /// @group visibility
 
-@mixin remove-visually-hidden() {
+@mixin remove-visually-hidden($position: static) {
+  $positions: static, absolute, fixed, relative, sticky, initial, inherit;
+
+  @if list.index($positions, $position) == null {
+    @error "The argument $position: `#{ $position }` is not one of the following: `#{ $positions }`." ;
+  }
+
   clip: auto;
   height: auto;
   width: auto;
   margin: 0;
   overflow: visible;
-  position: static;
+  position: $position;
   white-space: inherit;
 }
 

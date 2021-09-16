@@ -1,19 +1,58 @@
 @use "../scale/modular-scale" as *;
 @use "../helpers/rem" as *;
 
-///
+/// Use this function to create a font-size css3 variable with default value
+/// for the $namespace.
+/// If no $namespace is provided, return the font size with REMs.
 ///
 /// @author Steven Keiser
 ///
-/// @param {number} $scale [0]
+/// @param {number} $scale
+///   The point in the modular-scale sequence.
+///   Postive numbers, larger font size.
+///   Negative numbers, smaller font size.
+/// @param {number} $namespace ['']
+///   The name who's font size you want to create the variable for.
 ///
-/// @return {number}
-///   The font size in rems.
+/// @require {function} modular-scale
+/// @require {function} rem
+///
+/// @return {string}
+///   A css3 variable with a default font-size.
 
-@function font-size-ms($scale: 0) {
+@function font-size-ms($scale, $namespace: '') {
   @if type-of($scale) != 'number' {
-    @error "The argument $scale: `#{ $scale }` must be a `number`.";
+    @error "The argument $scale: `#{ $scale }` is not a number.";
   }
 
-  @return rem(modular-scale($scale));
+  @if $namespace == '' {
+    @return rem(modular-scale($scale));
+  }
+
+  @return var(--#{ $namespace }-font-size, #{ rem(modular-scale($scale)) });
+}
+
+/// Include this mixin where you want to overwrite font-size css3 variable for
+/// the $namespace.
+/// If no $namespace is provided, this creates the font-size css property.
+///
+/// @author Steven Keiser
+///
+/// @param {number} $scale
+///   The point in the modular-scale sequence.
+///   Postive numbers, larger font size.
+///   Negative numbers, smaller font size.
+///
+/// @param {number} $namespace ['']
+///   The name who's font size you want to overwrite.
+///
+/// @require {function} modular-scale
+/// @require {function} rem
+
+@mixin font-size-ms($scale, $namespace: '') {
+  @if type-of($scale) != 'number' {
+    @error "The argument $scale: `#{ $scale }` is not a number.";
+  }
+
+  #{ if($namespace != '', '--' + $namespace + '-', '') }font-size: rem(modular-scale($scale));
 }
