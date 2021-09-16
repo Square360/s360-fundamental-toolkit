@@ -65,7 +65,7 @@ $linear-scale-font-size-base: 16 !default;
   @if type-of($unit) != 'string' {
     @error "The argument $unit: `#{ $unit }` is not string.";
   }
-  @if $unit != 'em' or $unit != 'rem' {
+  @if $unit != 'em' and $unit != 'rem' {
     @error "The argument $unit: `#{ $unit }` is not `em` or `rem`.";
   }
 
