@@ -62,9 +62,6 @@ $linear-scale-font-size-base: 16 !default;
     @error "The argument $max-window: `#{ $max-window }` is not unitless.";
   }
 
-  @if type-of($unit) != 'string' {
-    @error "The argument $unit: `#{ $unit }` is not string.";
-  }
   @if $unit != 'em' and $unit != 'rem' {
     @error "The argument $unit: `#{ $unit }` is not `em` or `rem`.";
   }
