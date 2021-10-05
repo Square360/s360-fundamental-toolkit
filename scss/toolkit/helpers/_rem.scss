@@ -10,6 +10,8 @@ $rem-font-size-base: 16 !default;
 ///
 /// @param {number} $number
 ///   The number to convert to "rem".
+/// @param {number} $font-size-base [$rem-font-size-base]
+///   The base font size to use when converting the $number.
 ///
 /// @example
 ///   rem(12);
@@ -19,20 +21,32 @@ $rem-font-size-base: 16 !default;
 /// @return {number}
 ///   The given $number converted to "rem" units.
 
-@function rem($number) {
+@function rem($number, $font-size-base: $rem-font-size-base) {
   @if $number == 0 {
-    @error "The argument $number must be greater than 0.";
+    @error "The argument $number: `#{ $number }` must be greater than 0.";
+  }
+
+  @if $font-size-base == 0 {
+    @error "The argument $font-size-base: `#{ $font-size-base }` must be greater than 0.";
   }
 
   @if type-of($number) != 'number' {
     @error "The argument $number: `#{ $number }` is not a number.";
   }
 
+  @if type-of($font-size-base) != 'number' {
+    @error "The argument $font-size-base: `#{ $font-size-base }` is not a number.";
+  }
+
   @if not unitless($number) {
     @error "The argument $number: `#{ $number }` is not unitless.";
   }
 
-  $number: math.div($number, $rem-font-size-base);
+  @if not unitless($font-size-base) {
+    @error "The argument $font-size-base: `#{ $font-size-base }` is not unitless.";
+  }
+
+  $number: math.div($number, $font-size-base);
   $number: to-number(#{ $number }rem);
 
   @return $number;
