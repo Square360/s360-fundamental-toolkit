@@ -21,7 +21,7 @@ $em-font-size-base: 16 !default;
 /// @return {number}
 ///   The given $number converted to "em" units.
 
-@function em($number, $font-size-base: $rem-font-size-base) {
+@function em($number, $font-size-base: $em-font-size-base) {
   @if $number == 0 {
     @error "The argument $number: `#{ $number }` must be greater than 0.";
   }
