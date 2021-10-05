@@ -38,28 +38,28 @@ $linear-scale-font-size-base: 16 !default;
     @error 'The argument $min-size: `#{ $min-size }` is not a number.';
   }
   @if not unitless($min-size) {
-    @error "The argument $min-size: `#{ $min-size }` is not unitless.";
+    $min-size: strip-unit($min-size);
   }
 
   @if type-of($max-size) != 'number' {
     @error 'The argument $max-size: `#{ $max-size }` is not a number.';
   }
   @if not unitless($max-size) {
-    @error "The argument $max-size: `#{ $max-size }` is not unitless.";
+    $max-size: strip-unit($max-size);
   }
 
   @if type-of($min-window) != 'number' {
     @error 'The argument $min-window: `#{ $min-window }` is not a number.';
   }
   @if not unitless($min-window) {
-    @error "The argument $min-window: `#{ $min-window }` is not unitless.";
+    $min-window: strip-unit($min-window);
   }
 
   @if type-of($max-window) != 'number' {
     @error 'The argument $max-window: `#{ $max-window }` is not a number.';
   }
   @if not unitless($max-window) {
-    @error "The argument $max-window: `#{ $max-window }` is not unitless.";
+    $max-window: strip-unit($max-window);
   }
 
   @if $unit != 'em' and $unit != 'rem' {
