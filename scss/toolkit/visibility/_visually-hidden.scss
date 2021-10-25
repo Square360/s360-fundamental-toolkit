@@ -6,7 +6,7 @@
 /// @link https://snook.ca/archives/html_and_css/hiding-content-for-accessibility
 /// @link https://medium.com/@jessebeach/beware-smushed-off-screen-accessible-text-5952a4c2cbfe
 
-%visually-hidden {
+@mixin visually-hidden {
   border: 0;
   clip: rect(0 0 0 0);
   height: 1px;
@@ -16,4 +16,8 @@
   position: absolute;
   width: 1px;
   white-space: nowrap;
+}
+
+%visually-hidden {
+  @include visually-hidden();
 }
