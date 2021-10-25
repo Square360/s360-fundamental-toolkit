@@ -39,15 +39,14 @@ $rem-font-size-base: 16 !default;
   }
 
   @if not unitless($number) {
-    @error "The argument $number: `#{ $number }` is not unitless.";
+    $number: strip-unit($number);
   }
 
   @if not unitless($font-size-base) {
-    @error "The argument $font-size-base: `#{ $font-size-base }` is not unitless.";
+    $font-size-base: strip-unit($font-size-base);
   }
 
   $number: math.div($number, $font-size-base);
-  $number: to-number(#{ $number }rem);
 
-  @return $number;
+  @return to-number(#{ $number }rem);
 }

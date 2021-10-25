@@ -10,7 +10,7 @@ $em-font-size-base: 16 !default;
 ///
 /// @param {number} $number
 ///   The number to convert to "em".
-/// @param {number} $font-size-base [$rem-font-size-base]
+/// @param {number} $font-size-base [$em-font-size-base]
 ///   The base font size to use when converting the $number.
 ///
 /// @example
@@ -21,7 +21,10 @@ $em-font-size-base: 16 !default;
 /// @return {number}
 ///   The given $number converted to "em" units.
 
-@function em($number, $font-size-base: $em-font-size-base) {
+@function em(
+  $number,
+  $font-size-base: $em-font-size-base
+) {
   @if $number == 0 {
     @error "The argument $number: `#{ $number }` must be greater than 0.";
   }
@@ -39,15 +42,14 @@ $em-font-size-base: 16 !default;
   }
 
   @if not unitless($number) {
-    @error "The argument $number: `#{ $number }` is not unitless.";
+    $number: strip-unit($number);
   }
 
   @if not unitless($font-size-base) {
-    @error "The argument $font-size-base: `#{ $font-size-base }` is not unitless.";
+    $font-size-base: strip-unit($font-size-base);
   }
 
   $number: math.div($number, $font-size-base);
-  $number: to-number(#{ $number }em);
 
-  @return $number;
+  @return to-number(#{ $number }em);
 }
