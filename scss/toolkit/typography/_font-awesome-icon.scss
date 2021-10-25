@@ -25,8 +25,8 @@
   $margin: 0.25em
 ) {
   &::#{ $position } {
-    @extend %_fa-icon;
-    @extend %_fa-icon-style-#{ $style };
+    @extend %fa-icon;
+    @extend %fa-icon-style-#{ $style };
 
     content: string.unquote("\"#{ $unicode }\"");
 
@@ -41,7 +41,7 @@
   }
 }
 
-%_fa-icon {
+%fa-icon {
   display: inline-block;
   font-style: normal;
   font-variant: normal;
@@ -50,27 +50,27 @@
   vertical-align: middle;
 }
 
-%_fa-icon-style-light {
+%fa-icon-style-light {
   font-family: "Font Awesome 5 Pro";
   font-weight: 300;
 }
 
-%_fa-icon-style-regular {
+%fa-icon-style-regular {
   font-family: "Font Awesome 5 Pro";
   font-weight: 400;
 };
 
-%_fa-icon-style-solid {
+%fa-icon-style-solid {
   font-family: "Font Awesome 5 Pro";
   font-weight: 900;
 }
 
-%_fa-icon-style-brands {
+%fa-icon-style-brands {
   font-family: "Font Awesome 5 Brands";
   font-weight: 400;
 }
 
-%_fa-icon-style-duotone {
+%fa-icon-style-duotone {
   font-family: "Font Awesome 5 Duotone";
   font-weight: 900;
 }
