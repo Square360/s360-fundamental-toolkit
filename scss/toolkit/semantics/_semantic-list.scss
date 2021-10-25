@@ -3,18 +3,25 @@
 /// @author Brian Milea
 /// @author Steven Keiser
 ///
-%semantic-list {
-  --list-margin: 0;
-  --list-padding: 0;
+/// @param {number} $list-margin [0]
+///   How much margin the list should have.
+/// @param {number} $list-padding [0]
+///   How much padding the list should have.
+/// @param {number} $list-item-padding [0]
+///   How much padding each list item should have.
 
-  --li-padding: 0;
+@mixin semantic-list(
+  $list-margin: 0,
+  $list-padding: 0,
+  $list-item-padding: 0
+) {
+  --list-margin: #{ $list-margin };
+  --list-padding: #{ $list-padding };
+
+  --li-padding: #{ $list-item-padding };
   --li-style-type: none;
 }
 
-@mixin semantic-list($margin: 0, $padding: 0) {
-  --list-margin: #{ $margin };
-  --list-padding: #{ $padding };
-
-  --li-padding: 0;
-  --li-style-type: none;
+%semantic-list {
+  @include semantic-list();
 }
