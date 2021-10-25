@@ -1,7 +1,4 @@
-@use "sass:map";
 @use "sass:string";
-
-@use "~@fortawesome/fontawesome-pro/scss/_variables" as * with ($fa-font-path: "~@fortawesome/fontawesome-pro/webfonts");
 
 /// This mixing allows for placing an icon either before or after using the
 /// variable name from the Font Awesome 5 Pro package.
@@ -9,62 +6,29 @@
 /// @author George Heimel
 /// @author Steven Keiser
 ///
-/// @param {variable} $fa-icon-variable
-///   Which FontAwesome icon variable.
-///   See "node_modules/@fortawesome/fontawesome-pro/scss/_variables.scss" for
-///   all the available icon codes. The icon code can be constructed by
-///   appending "$fa-var-" to the icon's name. e.g. "thumbs-up" becomes "$fa-var-thumbs-up".
-/// @param {string} $fa-style ['light']
+/// @param {string} $unicode
+///   The unicode of the FontAwesome icon.
+/// @param {string} $style ['light']
 ///   Which FontAwesome icon style.
 /// @param {string} $position ['after']
-///   Where to place the Font Awesome icon.
-/// @param {string} $margin ['0.25em']
-///   The margin to add to either the left or right of the Font Awesome icon.
+///   Where to place the FontAwesome icon.
+/// @param {number} $margin [0.25em]
+///   The margin to add to either the left or right of the FontAwesome icon.
 ///
 /// @example
-///   @include fontawesome-icon('regular', $fa-var-thumbs-up, 'after');
+///   @include fontawesome-icon(\f164, 'regular');
 
 @mixin font-awesome-icon(
-  $fa-icon-variable,
-  $fa-style: 'light',
+  $unicode,
+  $style: 'light',
   $position: 'after',
   $margin: 0.25em
 ) {
-  $font-awesome-styles: (
-    'light': (
-      'family': '"Font Awesome 5 Pro"',
-      'weight': 300
-    ),
-    'regular': (
-      'family': '"Font Awesome 5 Pro"',
-      'weight': 400
-    ),
-    'solid': (
-      'family': '"Font Awesome 5 Pro"',
-      'weight': 900
-    ),
-    'brands': (
-      'family': '"Font Awesome 5 Brands"',
-      'weight': 400
-    ),
-    'duotone': (
-      'family': '"Font Awesome 5 Duotone"',
-      'weight': 900
-    )
-  );
-
   &::#{ $position } {
-    $font-awesome-style: map.get($font-awesome-styles, $fa-style);
+    @extend %_fa-icon;
+    @extend %_fa-icon-style-#{ $style };
 
-    content: fa-content(#{ $fa-icon-variable });
-    display: inline-block;
-    font-family: string.unquote(map.get($font-awesome-style, 'family'));
-    font-style: normal;
-    font-variant: normal;
-    font-weight: map.get($font-awesome-style, 'weight');
-    line-height: 1;
-    text-rendering: auto;
-    vertical-align: middle;
+    content: string.unquote("\"#{ $unicode }\"");
 
     @if $position == 'before' {
       margin-right: #{ $margin };
@@ -72,5 +36,41 @@
     @else if $position == 'after' {
       margin-left: #{ $margin };
     }
+
+    @content;
   }
+}
+
+%_fa-icon {
+  display: inline-block;
+  font-style: normal;
+  font-variant: normal;
+  line-height: 1;
+  text-rendering: auto;
+  vertical-align: middle;
+}
+
+%_fa-icon-style-light {
+  font-family: "Font Awesome 5 Pro";
+  font-weight: 300;
+}
+
+%_fa-icon-style-regular {
+  font-family: "Font Awesome 5 Pro";
+  font-weight: 400;
+};
+
+%_fa-icon-style-solid {
+  font-family: "Font Awesome 5 Pro";
+  font-weight: 900;
+}
+
+%_fa-icon-style-brands {
+  font-family: "Font Awesome 5 Brands";
+  font-weight: 400;
+}
+
+%_fa-icon-style-duotone {
+  font-family: "Font Awesome 5 Duotone";
+  font-weight: 900;
 }
