@@ -1,0 +1,87 @@
+@use "sass:map";
+@use "sass:list";
+@use "sass:string";
+@use "sass:color";
+
+/// Helper function which defines a map of shadow styles that create the
+/// illusion of depth at each level.
+///
+/// @access private
+///
+/// @author Brian Milea
+/// @author Steven Keiser
+///
+/// @param {number} $level
+///   How intense the shadow should be.
+/// @param {color} $color
+///   The color of the shadow.
+///
+/// @return {list}
+///   The shadow definition for the chosen $level.
+
+@function _shadow($level, $color) {
+  $shadow-levels: (
+    1:  (0 1px 3px color.scale($color, -88%))
+        (0 1px 2px color.scale($color, -76%)),
+
+    2:  (0 3px 6px color.scale($color, -84%))
+        (0 3px 6px color.scale($color, -77%)),
+
+    3:  (0 10px 20px color.scale($color, -81%))
+        (0 6px 6px color.scale($color, -77%)),
+
+    4:  (0 14px 28px color.scale($color, -75%))
+        (0 10px 10px color.scale($color, -78%)),
+
+    5:  (0 19px 38px color.scale($color, -7%))
+        (0 15px 12px color.scale($color, -78%))
+  );
+
+  @return map.get($shadow-levels, $level);
+}
+
+/// Applies a box-shadow with the given parameters.
+///
+/// @access public
+///
+/// @author Steven Keiser
+///
+/// @param {number} $level [1]
+///   How intense the shadow should be.
+/// @param {color} $color [#000000]
+///   The color of the shadow.
+///
+/// @require {function} _shadow
+
+@mixin box-shadow(
+  $level: 1,
+  $color: #000000
+) {
+  box-shadow: list.join(_shadow($level, $color), (), 'comma');
+}
+
+/// Adds drop-shadow filter(s) with the given parameters.
+///
+/// @access public
+///
+/// @author Steven Keiser
+///
+/// @param {number} $level [1]
+///   How intense the shadow should be.
+/// @param {color} $color [#000000]
+///   The color of the shadow.
+///
+/// @require {function} _shadow
+
+@function drop-shadow(
+  $level: 1,
+  $color: #000000
+) {
+  $shadows: ();
+
+  @each $shadow in _shadow($level, $color) {
+    $shadows: list.append($shadows, string.unquote('drop-shadow(#{ $shadow })'));
+  }
+
+  @return $shadows;
+}
