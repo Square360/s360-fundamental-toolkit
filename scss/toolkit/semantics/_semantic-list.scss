@@ -7,17 +7,21 @@
 ///   How much margin the list should have.
 /// @param {number} $list-padding [0]
 ///   How much padding the list should have.
+/// @param {number} $list-item-margin [0]
+///   How much margin each list item should have.
 /// @param {number} $list-item-padding [0]
 ///   How much padding each list item should have.
 
 @mixin semantic-list(
   $list-margin: 0,
   $list-padding: 0,
+  $list-item-margin: 0,
   $list-item-padding: 0
 ) {
   --list-margin: #{ $list-margin };
   --list-padding: #{ $list-padding };
 
+  --li-margin: #{ $list-item-margin };
   --li-padding: #{ $list-item-padding };
   --li-style-type: none;
 }
