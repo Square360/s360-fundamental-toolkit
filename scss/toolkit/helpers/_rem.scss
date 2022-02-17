@@ -17,6 +17,7 @@ $rem-font-size-base: 16 !default;
 ///   rem(12);
 ///
 /// @require {function} to-number
+/// @require {function} strip-unit
 ///
 /// @return {number}
 ///   The given $number converted to "rem" units.
