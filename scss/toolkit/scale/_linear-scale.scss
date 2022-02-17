@@ -69,6 +69,10 @@ $linear-scale-font-size-base: 16 !default;
   $slope: math.div(($max-size - $min-size), ($max-window - $min-window));
   $y-axis-intersection: (-$min-window) * $slope + $min-size;
 
+  @if $y-axis-intersection == 0 {
+    $y-axis-intersection: 0.0000000001;
+  }
+
   // Convert values based on the $unit.
   $min-size: if($unit == 'rem', #{ rem($min-size) }, #{ em($min-size) });
   $max-size: if($unit == 'rem', #{ rem($max-size) }, #{ em($max-size) });
