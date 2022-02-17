@@ -1,0 +1,55 @@
+@use "sass:math";
+@use "../helpers/strip-unit" as *;
+@use "../helpers/to-number" as *;
+
+$em-font-size-base: 16 !default;
+
+/// Converts the given $number to "em" using $em-font-size-base.
+///
+/// @author Steven Keiser
+///
+/// @param {number} $number
+///   The number to convert to "em".
+/// @param {number} $font-size-base [$em-font-size-base]
+///   The base font size to use when converting the $number.
+///
+/// @example
+///   em(12);
+///
+/// @require {function} to-number
+///
+/// @return {number}
+///   The given $number converted to "em" units.
+
+@function em(
+  $number,
+  $font-size-base: $em-font-size-base
+) {
+  @if $number == 0 {
+    @error "The argument $number: `#{ $number }` must be greater than 0.";
+  }
+
+  @if $font-size-base == 0 {
+    @error "The argument $font-size-base: `#{ $font-size-base }` must be greater than 0.";
+  }
+
+  @if type-of($number) != 'number' {
+    @error "The argument $number: `#{ $number }` is not a number.";
+  }
+
+  @if type-of($font-size-base) != 'number' {
+    @error "The argument $font-size-base: `#{ $font-size-base }` is not a number.";
+  }
+
+  @if not unitless($number) {
+    $number: strip-unit($number);
+  }
+
+  @if not unitless($font-size-base) {
+    $font-size-base: strip-unit($font-size-base);
+  }
+
+  $number: math.div($number, $font-size-base);
+
+  @return to-number(#{ $number }em);
+}

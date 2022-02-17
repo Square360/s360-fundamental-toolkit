@@ -1,0 +1,17 @@
+@use "sass:math";
+
+$modular-scale-ratio: 1.500 !default;
+$modular-scale-font-size-base: 16 !default;
+
+///
+///
+/// @author Steven Keiser
+///
+/// @param {number} $scale [0]
+///
+///
+/// @return {number}
+
+@function modular-scale($scale: 0) {
+  @return $modular-scale-font-size-base * math.pow($modular-scale-ratio, $scale);
+}

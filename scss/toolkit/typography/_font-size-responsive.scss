@@ -1,0 +1,49 @@
+@use "../helpers/rem" as *;
+
+/// Returns responsive font sizing using clamp() with fallback.
+///
+/// @author Brian Milea
+///
+/// @param {number} $min-size
+///   Minimum size
+/// @param {number} $med-size
+///   Median size (in vw)
+/// @param {number} $max-size
+///   Maximum size
+
+@mixin font-size-responsive(
+  $min-size,
+  $med-size,
+  $max-size
+) {
+  @if type-of($min-size) != 'number' {
+    @error 'The argument $min-size: `#{ $min-size }` is not a number.';
+  }
+
+  @if not unitless($min-size) {
+    @error "The argument $min-size: `#{ $min-size }` is not unitless.";
+  }
+
+  @if type-of($med-size) != 'number' {
+    @error 'The argument $med: `#{ $med-size }` is not a number.';
+  }
+
+  @if not unitless($med-size) {
+    @error "The argument $med-size: `#{ $med-size }` is not unitless.";
+  }
+
+  @if type-of($max-size) != 'number' {
+    @error 'The argument $max-size: `#{ $max-size }` is not a number.';
+  }
+
+  @if not unitless($max-size) {
+    @error "The argument $max-size: `#{ $max-size }` is not unitless.";
+  }
+
+  font-size: rem($min-size);
+  font-size: #{ "min(max(#{ $min-size }, #{ $med-size }), #{ $max-size })" };
+
+  @supports (font-size: clamp($min-size, $med-size, $max-size)) {
+    font-size: clamp(rem($min-size), $med-size, rem($max-size));
+  }
+}

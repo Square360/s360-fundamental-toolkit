@@ -1,0 +1,17 @@
+/// Helper mixin that applies font-smoothing with proper vendor prefixes.
+///
+/// @author Brian Milea
+///
+/// @param {string} $aliasing ['antialiased']
+///   The type of font smoothing to use.
+
+@mixin font-smoothing($aliasing: antialiased) {
+  @if $aliasing == antialiased {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  @else {
+    -webkit-font-smoothing: subpixel-antialiased;
+    -moz-osx-font-smoothing: auto;
+  }
+}

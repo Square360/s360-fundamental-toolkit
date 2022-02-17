@@ -1,0 +1,26 @@
+@use "sass:math";
+
+/// Removes the unit from $number.
+///
+/// @author Steven Keiser
+///
+/// @param {number} $number
+///   The number to remove the unit from.
+///
+/// @example
+///   strip-unit(12px); // returns 12;
+///
+/// @return {number}
+///   The given $number with it's unit removed.
+
+@function strip-unit($number) {
+  @if type-of($number) != 'number' {
+    @error 'The argument $number: `#{ $number }` is not a number.';
+  }
+
+  @if math.is-unitless($number) {
+    @return $number;
+  }
+
+  @return math.div($number, ($number * 0 + 1));
+}

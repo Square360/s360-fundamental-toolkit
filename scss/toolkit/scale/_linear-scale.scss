@@ -1,0 +1,86 @@
+@use "sass:math";
+@use "../helpers/rem" as *;
+@use "../helpers/em" as *;
+@use "../helpers/strip-unit" as *;
+
+$linear-scale-font-size-base: 16 !default;
+
+/// Returns responsive font sizing using clamp() and linear scaling based on viewport min and max.
+///
+/// @see https://css-tricks.com/linearly-scale-font-size-with-css-clamp-based-on-the-viewport/
+///
+/// @author George Heimel
+/// @author Steven Keiser
+///
+/// @param {number} $min-size
+///   Minimum size.
+/// @param {number} $max-size
+///   Maximum size.
+/// @param {number} $min-window [360]
+///   Minimum window size.
+/// @param {number} $max-window [1440]
+///   Maximum window size.
+/// @param {string} $unit ['rem']
+///   The css unit to use for the values inside the clamp function. REM or EM.
+///
+/// @require {function} strip-unit
+///
+/// @example
+///   .selector {
+///     font-size: linear-scale(3.5rem, 7.75rem);
+///   }
+///
+/// @return {string}
+///
+
+@function linear-scale($min-size, $max-size, $min-window: 360, $max-window: 1440, $unit: 'rem') {
+  @if type-of($min-size) != 'number' {
+    @error 'The argument $min-size: `#{ $min-size }` is not a number.';
+  }
+  @if not unitless($min-size) {
+    $min-size: strip-unit($min-size);
+  }
+
+  @if type-of($max-size) != 'number' {
+    @error 'The argument $max-size: `#{ $max-size }` is not a number.';
+  }
+  @if not unitless($max-size) {
+    $max-size: strip-unit($max-size);
+  }
+
+  @if type-of($min-window) != 'number' {
+    @error 'The argument $min-window: `#{ $min-window }` is not a number.';
+  }
+  @if not unitless($min-window) {
+    $min-window: strip-unit($min-window);
+  }
+
+  @if type-of($max-window) != 'number' {
+    @error 'The argument $max-window: `#{ $max-window }` is not a number.';
+  }
+  @if not unitless($max-window) {
+    $max-window: strip-unit($max-window);
+  }
+
+  @if $unit != 'em' and $unit != 'rem' {
+    @error "The argument $unit: `#{ $unit }` is not `em` or `rem`.";
+  }
+
+  $slope: math.div(($max-size - $min-size), ($max-window - $min-window));
+  $y-axis-intersection: (-$min-window) * $slope + $min-size;
+
+  @if $y-axis-intersection == 0 {
+    $y-axis-intersection: 0.0000000001;
+  }
+
+  // Convert values based on the $unit.
+  $min-size: if($unit == 'rem', #{ rem($min-size) }, #{ em($min-size) });
+  $max-size: if($unit == 'rem', #{ rem($max-size) }, #{ em($max-size) });
+  $y-axis-intersection: if($unit == 'rem', #{ rem($y-axis-intersection) }, #{ em($y-axis-intersection) });
+
+  @return clamp(
+    #{ $min-size },
+    calc(#{ $y-axis-intersection } + #{ $slope * 100 }vw),
+    #{ $max-size }
+  );
+}

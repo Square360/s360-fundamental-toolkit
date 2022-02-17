@@ -1,0 +1,31 @@
+@use "sass:list";
+
+/// Makes an element visible again.
+///
+/// @group visibility
+
+@mixin remove-visually-hidden($position: static) {
+  $positions: static, absolute, fixed, relative, sticky, initial, inherit;
+
+  @if list.index($positions, $position) == null {
+    @error "The argument $position: `#{ $position }` is not one of the following: `#{ $positions }`." ;
+  }
+
+  clip: auto;
+  height: auto;
+  width: auto;
+  margin: 0;
+  overflow: visible;
+  position: $position;
+  white-space: inherit;
+}
+
+/// Uses the remove-visually-hidden mixin.
+///
+/// @require {mixin} remove-visually-hidden
+///
+/// @group visibility
+
+%remove-visually-hidden {
+  @include remove-visually-hidden;
+}

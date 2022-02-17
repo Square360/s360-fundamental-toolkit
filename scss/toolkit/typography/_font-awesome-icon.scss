@@ -1,0 +1,76 @@
+@use "sass:string";
+
+/// This mixing allows for placing an icon either before or after using the
+/// variable name from the Font Awesome 5 Pro package.
+///
+/// @author George Heimel
+/// @author Steven Keiser
+///
+/// @param {string} $unicode
+///   The unicode of the FontAwesome icon.
+/// @param {string} $style ['light']
+///   Which FontAwesome icon style.
+/// @param {string} $position ['after']
+///   Where to place the FontAwesome icon.
+/// @param {number} $margin [0.25em]
+///   The margin to add to either the left or right of the FontAwesome icon.
+///
+/// @example
+///   @include fontawesome-icon(\f164, 'regular');
+
+@mixin font-awesome-icon(
+  $unicode,
+  $style: 'light',
+  $position: 'after',
+  $margin: 0.25em
+) {
+  &::#{ $position } {
+    @extend %fa-icon;
+    @extend %fa-icon-style-#{ $style };
+
+    content: string.unquote("\"#{ $unicode }\"");
+
+    @if $position == 'before' {
+      margin-right: #{ $margin };
+    }
+    @else if $position == 'after' {
+      margin-left: #{ $margin };
+    }
+
+    @content;
+  }
+}
+
+%fa-icon {
+  display: inline-block;
+  font-style: normal;
+  font-variant: normal;
+  line-height: 1;
+  text-rendering: auto;
+  vertical-align: middle;
+}
+
+%fa-icon-style-light {
+  font-family: "Font Awesome 5 Pro";
+  font-weight: 300;
+}
+
+%fa-icon-style-regular {
+  font-family: "Font Awesome 5 Pro";
+  font-weight: 400;
+};
+
+%fa-icon-style-solid {
+  font-family: "Font Awesome 5 Pro";
+  font-weight: 900;
+}
+
+%fa-icon-style-brands {
+  font-family: "Font Awesome 5 Brands";
+  font-weight: 400;
+}
+
+%fa-icon-style-duotone {
+  font-family: "Font Awesome 5 Duotone";
+  font-weight: 900;
+}

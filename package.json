@@ -1,7 +1,7 @@
 {
   "name": "s360-fundamental-toolkit",
-  "version": "5.2.0",
-  "description": "Set of mixins, extenables, and other useful tools for building websites.",
+  "version": "6.0.0",
+  "description": "Set of mixins, placeholders, and other useful tools for building websites.",
   "license": "MIT",
   "main": "build/index.js",
   "types": "build/index.d.ts",
@@ -28,12 +28,8 @@
     "build": "tsc"
   },
   "dependencies": {
-    "breakpoint-sass": "^2.7.1",
-    "sass-toolkit": "^2.10.2",
-    "susy": "^2.2.12"
   },
   "devDependencies": {
-    "@types/jquery": "^3.5.4",
     "typescript": "^3.5.2"
   }
 }
