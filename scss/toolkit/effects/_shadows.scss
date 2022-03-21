@@ -21,20 +21,20 @@
 
 @function _shadow($level, $color) {
   $shadow-levels: (
-    1:  (0 1px 3px color.scale($color, -88%))
-        (0 1px 2px color.scale($color, -76%)),
+    1:  (0 1px 3px color.scale($color, $lightness: -88%))
+        (0 1px 2px color.scale($color, $lightness: -76%)),
 
-    2:  (0 3px 6px color.scale($color, -84%))
-        (0 3px 6px color.scale($color, -77%)),
+    2:  (0 3px 6px color.scale($color, $lightness: -84%))
+        (0 3px 6px color.scale($color, $lightness: -77%)),
 
-    3:  (0 10px 20px color.scale($color, -81%))
-        (0 6px 6px color.scale($color, -77%)),
+    3:  (0 10px 20px color.scale($color, $lightness: -81%))
+        (0 6px 6px color.scale($color, $lightness: -77%)),
 
-    4:  (0 14px 28px color.scale($color, -75%))
-        (0 10px 10px color.scale($color, -78%)),
+    4:  (0 14px 28px color.scale($color, $lightness: -75%))
+        (0 10px 10px color.scale($color, $lightness: -78%)),
 
-    5:  (0 19px 38px color.scale($color, -7%))
-        (0 15px 12px color.scale($color, -78%))
+    5:  (0 19px 38px color.scale($color, $lightness: -7%))
+        (0 15px 12px color.scale($color, $lightness: -78%))
   );
 
   @return map.get($shadow-levels, $level);
