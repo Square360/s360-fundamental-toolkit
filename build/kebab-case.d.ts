@@ -1,1 +1,3 @@
-export declare function kebabCase(string: string): string;
+interface String {
+    kebabCase(): string;
+}
