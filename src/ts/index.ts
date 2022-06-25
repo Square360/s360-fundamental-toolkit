@@ -1,5 +1,6 @@
-import "./kebab-case";
+import "./string/to-kebab-case";
+import "./string/to-title-case";
+
 export { svgRoleImg } from './accessibility/svg';
-// export { kebabCase } from './kebab-case';
 export { randomBetween } from './random-between';
 export { Timer } from './Timer';
