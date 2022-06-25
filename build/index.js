@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-require("./kebab-case");
+// import "./string/to-kebab-case";
 var svg_1 = require("./accessibility/svg");
 Object.defineProperty(exports, "svgRoleImg", { enumerable: true, get: function () { return svg_1.svgRoleImg; } });
 // export { kebabCase } from './kebab-case';
