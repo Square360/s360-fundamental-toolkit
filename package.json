@@ -25,12 +25,14 @@
     }
   ],
   "scripts": {
+    "build:sassdocs": "sassdoc scss",
     "prebuild": "rm -rf build",
     "build": "tsc"
   },
   "dependencies": {
   },
   "devDependencies": {
+    "sassdoc": "^2.7.4",
     "typescript": "^3.5.2"
   }
 }

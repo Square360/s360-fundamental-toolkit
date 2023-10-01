@@ -2,7 +2,7 @@
 
 /// Makes an element visible again.
 ///
-/// @group visibility
+/// @group Visibility
 
 @mixin remove-visually-hidden($position: static) {
   $positions: static, absolute, fixed, relative, sticky, initial, inherit;
@@ -24,7 +24,7 @@
 ///
 /// @require {mixin} remove-visually-hidden
 ///
-/// @group visibility
+/// @group Visibility
 
 %remove-visually-hidden {
   @include remove-visually-hidden;

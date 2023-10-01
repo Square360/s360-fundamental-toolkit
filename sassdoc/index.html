@@ -1,0 +1,404 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><title>S360-fundamental-toolkit - v6.0.2</title><link rel="stylesheet" href="assets/css/main.css"><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,500,700" rel="stylesheet" type="text/css"><meta name="viewport" content="width=device-width"><meta content="IE=edge, chrome=1" http-equiv="X-UA-Compatible"><!-- Open Graph tags --><meta property="og:title" content="S360-fundamental-toolkit - SassDoc"><meta property="og:type" content="website"><meta property="og:description" content="<p>Set of mixins, placeholders, and other useful tools for building websites.</p>
+"><!-- Thanks to Sass-lang.com for the icons --><link href="assets/images/favicon.png" rel="shortcut icon"></head><body><aside class="sidebar" role="nav"><div class="sidebar__header"><h1 class="sidebar__title">S360-fundamental-toolkit - 6.0.2</h1></div><div class="sidebar__body"><button type="button" class="btn-toggle js-btn-toggle" data-alt="Open all">Close all</button><p class="sidebar__item sidebar__item--heading" data-slug="css3"><a href="#css3">css3</a></p><div><p class="sidebar__item sidebar__item--sub-heading" data-slug="css3-css"><a href="#css3-css">css</a></p><ul class="list-unstyled"><li class="sidebar__item sassdoc__item" data-group="css3" data-name=":root" data-type="css"><a href="#css3-css-:root">:root</a></li></ul></div><p class="sidebar__item sidebar__item--heading" data-slug="effects"><a href="#effects">effects</a></p><div><p class="sidebar__item sidebar__item--sub-heading" data-slug="effects-function"><a href="#effects-function">functions</a></p><ul class="list-unstyled"><li class="sidebar__item sassdoc__item" data-group="effects" data-name="_shadow" data-type="function"><a href="#effects-function-_shadow">_shadow</a></li><li class="sidebar__item sassdoc__item" data-group="effects" data-name="drop-shadow" data-type="function"><a href="#effects-function-drop-shadow">drop-shadow</a></li></ul><p class="sidebar__item sidebar__item--sub-heading" data-slug="effects-mixin"><a href="#effects-mixin">mixins</a></p><ul class="list-unstyled"><li class="sidebar__item sassdoc__item" data-group="effects" data-name="box-shadow" data-type="mixin"><a href="#effects-mixin-box-shadow">box-shadow</a></li></ul></div><p class="sidebar__item sidebar__item--heading" data-slug="undefined"><a href="#undefined">General</a></p><div><p class="sidebar__item sidebar__item--sub-heading" data-slug="undefined-function"><a href="#undefined-function">functions</a></p><ul class="list-unstyled"><li class="sidebar__item sassdoc__item" data-group="undefined" data-name="em" data-type="function"><a href="#undefined-function-em">em</a></li><li class="sidebar__item sassdoc__item" data-group="undefined" data-name="rem" data-type="function"><a href="#undefined-function-rem">rem</a></li><li class="sidebar__item sassdoc__item" data-group="undefined" data-name="str-replace" data-type="function"><a href="#undefined-function-str-replace">str-replace</a></li><li class="sidebar__item sassdoc__item" data-group="undefined" data-name="str-split" data-type="function"><a href="#undefined-function-str-split">str-split</a></li><li class="sidebar__item sassdoc__item" data-group="undefined" data-name="strip-unit" data-type="function"><a href="#undefined-function-strip-unit">strip-unit</a></li><li class="sidebar__item sassdoc__item" data-group="undefined" data-name="to-number" data-type="function"><a href="#undefined-function-to-number">to-number</a></li><li class="sidebar__item sassdoc__item" data-group="undefined" data-name="to-unit" data-type="function"><a href="#undefined-function-to-unit">to-unit</a></li><li class="sidebar__item sassdoc__item" data-group="undefined" data-name="linear-scale" data-type="function"><a href="#undefined-function-linear-scale">linear-scale</a></li><li class="sidebar__item sassdoc__item" data-group="undefined" data-name="modular-scale" data-type="function"><a href="#undefined-function-modular-scale">modular-scale</a></li><li class="sidebar__item sassdoc__item" data-group="undefined" data-name="font-size-ms" data-type="function"><a href="#undefined-function-font-size-ms">font-size-ms</a></li></ul><p class="sidebar__item sidebar__item--sub-heading" data-slug="undefined-mixin"><a href="#undefined-mixin">mixins</a></p><ul class="list-unstyled"><li class="sidebar__item sassdoc__item" data-group="undefined" data-name="semantic-list" data-type="mixin"><a href="#undefined-mixin-semantic-list">semantic-list</a></li><li class="sidebar__item sassdoc__item" data-group="undefined" data-name="font-awesome-icon" data-type="mixin"><a href="#undefined-mixin-font-awesome-icon">font-awesome-icon</a></li><li class="sidebar__item sassdoc__item" data-group="undefined" data-name="font-size-ms" data-type="mixin"><a href="#undefined-mixin-font-size-ms">font-size-ms</a></li><li class="sidebar__item sassdoc__item" data-group="undefined" data-name="font-size-responsive" data-type="mixin"><a href="#undefined-mixin-font-size-responsive">font-size-responsive</a></li><li class="sidebar__item sassdoc__item" data-group="undefined" data-name="font-smoothing" data-type="mixin"><a href="#undefined-mixin-font-smoothing">font-smoothing</a></li></ul></div><p class="sidebar__item sidebar__item--heading" data-slug="visibility"><a href="#visibility">visibility</a></p><div><p class="sidebar__item sidebar__item--sub-heading" data-slug="visibility-placeholder"><a href="#visibility-placeholder">placeholders</a></p><ul class="list-unstyled"><li class="sidebar__item sassdoc__item" data-group="visibility" data-name="focus-within" data-type="placeholder"><a href="#visibility-placeholder-focus-within">focus-within</a></li><li class="sidebar__item sassdoc__item" data-group="visibility" data-name="focusable" data-type="placeholder"><a href="#visibility-placeholder-focusable">focusable</a></li><li class="sidebar__item sassdoc__item" data-group="visibility" data-name="hidden" data-type="placeholder"><a href="#visibility-placeholder-hidden">hidden</a></li><li class="sidebar__item sassdoc__item" data-group="visibility" data-name="invisible" data-type="placeholder"><a href="#visibility-placeholder-invisible">invisible</a></li><li class="sidebar__item sassdoc__item" data-group="visibility" data-name="remove-visually-hidden" data-type="placeholder"><a href="#visibility-placeholder-remove-visually-hidden">remove-visually-hidden</a></li></ul><p class="sidebar__item sidebar__item--sub-heading" data-slug="visibility-mixin"><a href="#visibility-mixin">mixins</a></p><ul class="list-unstyled"><li class="sidebar__item sassdoc__item" data-group="visibility" data-name="remove-visually-hidden" data-type="mixin"><a href="#visibility-mixin-remove-visually-hidden">remove-visually-hidden</a></li><li class="sidebar__item sassdoc__item" data-group="visibility" data-name="visually-hidden" data-type="mixin"><a href="#visibility-mixin-visually-hidden">visually-hidden</a></li></ul></div></div></aside><article class="main" role="main"><header class="header" role="banner"><div class="container"><div class="sassdoc__searchbar searchbar"><label for="js-search-input" class="visually-hidden">Search</label><div class="searchbar__form" id="js-search"><input name="search" type="search" class="searchbar__field" autocomplete="off" autofocus id="js-search-input" placeholder="Search"><ul class="searchbar__suggestions" id="js-search-suggestions"></ul></div></div></div></header><section class="main__section"><h1 class="main__heading" id="css3"><div class="container">css3</div></h1><section class="main__sub-section" id="css3-css"><h2 class="main__heading--secondary"><div class="container">css</div></h2><section class="main__item container item" id="css3-css-:root"><h3 class="item__heading"><a class="item__name" href="#css-:root">:root</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="<code>:root {
+  --safe-area: 20px;
+}</code>" data-collapsed=":root { ... }"><code>:root { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>This is a test</p></div></section></section></section><section class="main__section"><h1 class="main__heading" id="effects"><div class="container">effects</div></h1><section class="main__sub-section" id="effects-function"><h2 class="main__heading--secondary"><div class="container">functions</div></h2><section class="main__item container item" id="effects-function-_shadow"><h3 class="item__heading"><span class="item__access">[private]</span> <a class="item__name" href="#function-_shadow">_shadow</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@function _shadow($level, $color) { 
+  $shadow-levels: (
+    1:  (0 1px 3px color.adjust($color, $alpha: -0.88))
+        (0 1px 2px color.adjust($color, $alpha: -0.76)),
+
+    2:  (0 3px 6px color.adjust($color, $alpha: -0.84))
+        (0 3px 6px color.adjust($color, $alpha: -0.77)),
+
+    3:  (0 10px 20px color.adjust($color, $alpha: -0.81))
+        (0 6px 6px color.adjust($color, $alpha: -0.77)),
+
+    4:  (0 14px 28px color.adjust($color, $alpha: -0.75))
+        (0 10px 10px color.adjust($color, $alpha: -0.78)),
+
+    5:  (0 19px 38px color.adjust($color, $alpha: -0.7))
+        (0 15px 12px color.adjust($color, $alpha: -0.78))
+  );
+
+  @return map.get($shadow-levels, $level);
+ }" data-collapsed="@function _shadow($level, $color) { ... }"><code>@function _shadow($level, $color) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Helper function which defines a map of shadow styles that create the illusion of depth at each level.</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter </span>Name</th><th scope="col"><span class="visually-hidden">parameter </span>Description</th><th scope="col"><span class="visually-hidden">parameter </span>Type</th><th scope="col"><span class="visually-hidden">parameter </span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$level</code></th><td data-label="desc"><p>How intense the shadow should be.</p></td><td data-label="type"><code>Number</code></td><td data-label="default">&mdash;<span class="visually-hidden"> none</span></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$color</code></th><td data-label="desc"><p>The color of the shadow.</p></td><td data-label="type"><code>Color</code></td><td data-label="default">&mdash;<span class="visually-hidden"> none</span></td></tr></tbody></table><h3 class="item__sub-heading">Returns</h3><div class="item__description item__description--inline"><code>List</code> &mdash;<p>The shadow definition for the chosen $level.</p></div><h3 class="item__sub-heading">Used by</h3><ul class="list-unstyled"><li><span class="item__cross-type">[mixin]</span> <a href="#effects-mixin-box-shadow"><code>box-shadow</code></a></li><li><span class="item__cross-type">[function]</span> <a href="#effects-function-drop-shadow"><code>drop-shadow</code></a></li></ul><h3 class="item__sub-heading">Authors</h3><ul class="list-unstyled"><li><p>Brian Milea</p></li><li><p>Steven Keiser</p></li></ul></section><section class="main__item container item" id="effects-function-drop-shadow"><h3 class="item__heading"><a class="item__name" href="#function-drop-shadow">drop-shadow</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@function drop-shadow($level: 1, $color: #000000) { 
+  $shadows: ();
+
+  @each $shadow in _shadow($level, $color) {
+    $shadows: list.append($shadows, string.unquote(&#39;drop-shadow(#{ $shadow })&#39;));
+  }
+
+  @return $shadows;
+ }" data-collapsed="@function drop-shadow($level: 1, $color: #000000) { ... }"><code>@function drop-shadow($level: 1, $color: #000000) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Adds drop-shadow filter(s) with the given parameters.</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter </span>Name</th><th scope="col"><span class="visually-hidden">parameter </span>Description</th><th scope="col"><span class="visually-hidden">parameter </span>Type</th><th scope="col"><span class="visually-hidden">parameter </span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$level</code></th><td data-label="desc"><p>How intense the shadow should be.</p></td><td data-label="type"><code>Number</code></td><td data-label="default"><code>1</code></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$color</code></th><td data-label="desc"><p>The color of the shadow.</p></td><td data-label="type"><code>Color</code></td><td data-label="default"><code class="color-preview--inline" style="background:#000000; color: #fff">#000000</code></td></tr></tbody></table><h3 class="item__sub-heading">Requires</h3><ul class="list-unstyled"><li class="item__description item__description--inline"><span class="item__cross-type">[function]</span> <a href="#effects-function-_shadow"><code>_shadow</code></a></li></ul><h3 class="item__sub-heading">Author</h3><ul class="list-unstyled"><li><p>Steven Keiser</p></li></ul></section></section><section class="main__sub-section" id="effects-mixin"><h2 class="main__heading--secondary"><div class="container">mixins</div></h2><section class="main__item container item" id="effects-mixin-box-shadow"><h3 class="item__heading"><a class="item__name" href="#mixin-box-shadow">box-shadow</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin box-shadow($level: 1, $color: #000000) { 
+  box-shadow: list.join(_shadow($level, $color), (), &#39;comma&#39;);
+ }" data-collapsed="@mixin box-shadow($level: 1, $color: #000000) { ... }"><code>@mixin box-shadow($level: 1, $color: #000000) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Applies a box-shadow with the given parameters.</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter </span>Name</th><th scope="col"><span class="visually-hidden">parameter </span>Description</th><th scope="col"><span class="visually-hidden">parameter </span>Type</th><th scope="col"><span class="visually-hidden">parameter </span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$level</code></th><td data-label="desc"><p>How intense the shadow should be.</p></td><td data-label="type"><code>Number</code></td><td data-label="default"><code>1</code></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$color</code></th><td data-label="desc"><p>The color of the shadow.</p></td><td data-label="type"><code>Color</code></td><td data-label="default"><code class="color-preview--inline" style="background:#000000; color: #fff">#000000</code></td></tr></tbody></table><h3 class="item__sub-heading">Requires</h3><ul class="list-unstyled"><li class="item__description item__description--inline"><span class="item__cross-type">[function]</span> <a href="#effects-function-_shadow"><code>_shadow</code></a></li></ul><h3 class="item__sub-heading">Author</h3><ul class="list-unstyled"><li><p>Steven Keiser</p></li></ul></section></section></section><section class="main__section"><h1 class="main__heading" id="undefined"><div class="container">General</div></h1><section class="main__sub-section" id="undefined-function"><h2 class="main__heading--secondary"><div class="container">functions</div></h2><section class="main__item container item" id="undefined-function-em"><h3 class="item__heading"><a class="item__name" href="#function-em">em</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@function em($number, $font-size-base: $em-font-size-base) { 
+  @if $number == 0 {
+    @error &quot;The argument $number: `#{ $number }` must be greater than 0.&quot;;
+  }
+
+  @if $font-size-base == 0 {
+    @error &quot;The argument $font-size-base: `#{ $font-size-base }` must be greater than 0.&quot;;
+  }
+
+  @if type-of($number) != &#39;number&#39; {
+    @error &quot;The argument $number: `#{ $number }` is not a number.&quot;;
+  }
+
+  @if type-of($font-size-base) != &#39;number&#39; {
+    @error &quot;The argument $font-size-base: `#{ $font-size-base }` is not a number.&quot;;
+  }
+
+  @if not unitless($number) {
+    $number: strip-unit($number);
+  }
+
+  @if not unitless($font-size-base) {
+    $font-size-base: strip-unit($font-size-base);
+  }
+
+  $number: math.div($number, $font-size-base);
+
+  @return to-number(#{ $number }em);
+ }" data-collapsed="@function em($number, $font-size-base: $em-font-size-base) { ... }"><code>@function em($number, $font-size-base: $em-font-size-base) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Converts the given $number to &quot;em&quot; using $em-font-size-base.</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter </span>Name</th><th scope="col"><span class="visually-hidden">parameter </span>Description</th><th scope="col"><span class="visually-hidden">parameter </span>Type</th><th scope="col"><span class="visually-hidden">parameter </span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$number</code></th><td data-label="desc"><p>The number to convert to &quot;em&quot;.</p></td><td data-label="type"><code>Number</code></td><td data-label="default">&mdash;<span class="visually-hidden"> none</span></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$font-size-base</code></th><td data-label="desc"><p>The base font size to use when converting the $number.</p></td><td data-label="type"><code>Number</code></td><td data-label="default"><code>$em-font-size-base</code></td></tr></tbody></table><h3 class="item__sub-heading">Returns</h3><div class="item__description item__description--inline"><code>Number</code> &mdash;<p>The given $number converted to &quot;em&quot; units.</p></div><h3 class="item__sub-heading">Example</h3><div class="item__example example"><pre class="example__code language-scss"><code>em(12);</code></pre></div><h3 class="item__sub-heading">Throws</h3><ul class="list-unstyled"><li><p>The argument $number: <code>#{ $number }</code> must be greater than 0.</p></li><li><p>The argument $font-size-base: <code>#{ $font-size-base }</code> must be greater than 0.</p></li><li><p>The argument $number: <code>#{ $number }</code> is not a number.</p></li><li><p>The argument $font-size-base: <code>#{ $font-size-base }</code> is not a number.</p></li></ul><h3 class="item__sub-heading">Requires</h3><ul class="list-unstyled"><li class="item__description item__description--inline"><span class="item__cross-type">[function]</span> <a href="#undefined-function-strip-unit"><code>strip-unit</code></a></li><li class="item__description item__description--inline"><span class="item__cross-type">[function]</span> <a href="#undefined-function-strip-unit"><code>strip-unit</code></a></li><li class="item__description item__description--inline"><span class="item__cross-type">[function]</span> <a href="#undefined-function-to-number"><code>to-number</code></a></li></ul><h3 class="item__sub-heading">Used by</h3><ul class="list-unstyled"><li><span class="item__cross-type">[function]</span> <a href="#undefined-function-linear-scale"><code>linear-scale</code></a></li><li><span class="item__cross-type">[function]</span> <a href="#undefined-function-linear-scale"><code>linear-scale</code></a></li><li><span class="item__cross-type">[function]</span> <a href="#undefined-function-linear-scale"><code>linear-scale</code></a></li></ul><h3 class="item__sub-heading">Author</h3><ul class="list-unstyled"><li><p>Steven Keiser</p></li></ul></section><section class="main__item container item" id="undefined-function-rem"><h3 class="item__heading"><a class="item__name" href="#function-rem">rem</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@function rem($number, $font-size-base: $rem-font-size-base) { 
+  @if $number == 0 {
+    @error &quot;The argument $number: `#{ $number }` must be greater than 0.&quot;;
+  }
+
+  @if $font-size-base == 0 {
+    @error &quot;The argument $font-size-base: `#{ $font-size-base }` must be greater than 0.&quot;;
+  }
+
+  @if type-of($number) != &#39;number&#39; {
+    @error &quot;The argument $number: `#{ $number }` is not a number.&quot;;
+  }
+
+  @if type-of($font-size-base) != &#39;number&#39; {
+    @error &quot;The argument $font-size-base: `#{ $font-size-base }` is not a number.&quot;;
+  }
+
+  @if not unitless($number) {
+    $number: strip-unit($number);
+  }
+
+  @if not unitless($font-size-base) {
+    $font-size-base: strip-unit($font-size-base);
+  }
+
+  $number: math.div($number, $font-size-base);
+
+  @return to-number(#{ $number }rem);
+ }" data-collapsed="@function rem($number, $font-size-base: $rem-font-size-base) { ... }"><code>@function rem($number, $font-size-base: $rem-font-size-base) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Converts the given $number to &quot;rem&quot; using $rem-font-size-base.</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter </span>Name</th><th scope="col"><span class="visually-hidden">parameter </span>Description</th><th scope="col"><span class="visually-hidden">parameter </span>Type</th><th scope="col"><span class="visually-hidden">parameter </span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$number</code></th><td data-label="desc"><p>The number to convert to &quot;rem&quot;.</p></td><td data-label="type"><code>Number</code></td><td data-label="default">&mdash;<span class="visually-hidden"> none</span></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$font-size-base</code></th><td data-label="desc"><p>The base font size to use when converting the $number.</p></td><td data-label="type"><code>Number</code></td><td data-label="default"><code>$rem-font-size-base</code></td></tr></tbody></table><h3 class="item__sub-heading">Returns</h3><div class="item__description item__description--inline"><code>Number</code> &mdash;<p>The given $number converted to &quot;rem&quot; units.</p></div><h3 class="item__sub-heading">Example</h3><div class="item__example example"><pre class="example__code language-scss"><code>rem(12);</code></pre></div><h3 class="item__sub-heading">Throws</h3><ul class="list-unstyled"><li><p>The argument $number: <code>#{ $number }</code> must be greater than 0.</p></li><li><p>The argument $font-size-base: <code>#{ $font-size-base }</code> must be greater than 0.</p></li><li><p>The argument $number: <code>#{ $number }</code> is not a number.</p></li><li><p>The argument $font-size-base: <code>#{ $font-size-base }</code> is not a number.</p></li></ul><h3 class="item__sub-heading">Requires</h3><ul class="list-unstyled"><li class="item__description item__description--inline"><span class="item__cross-type">[function]</span> <a href="#undefined-function-to-number"><code>to-number</code></a></li><li class="item__description item__description--inline"><span class="item__cross-type">[function]</span> <a href="#undefined-function-strip-unit"><code>strip-unit</code></a></li></ul><h3 class="item__sub-heading">Used by</h3><ul class="list-unstyled"><li><span class="item__cross-type">[function]</span> <a href="#undefined-function-linear-scale"><code>linear-scale</code></a></li><li><span class="item__cross-type">[function]</span> <a href="#undefined-function-linear-scale"><code>linear-scale</code></a></li><li><span class="item__cross-type">[function]</span> <a href="#undefined-function-linear-scale"><code>linear-scale</code></a></li><li><span class="item__cross-type">[function]</span> <a href="#undefined-function-font-size-ms"><code>font-size-ms</code></a></li><li><span class="item__cross-type">[mixin]</span> <a href="#undefined-mixin-font-size-ms"><code>font-size-ms</code></a></li><li><span class="item__cross-type">[mixin]</span> <a href="#undefined-mixin-font-size-responsive"><code>font-size-responsive</code></a></li><li><span class="item__cross-type">[mixin]</span> <a href="#undefined-mixin-font-size-responsive"><code>font-size-responsive</code></a></li><li><span class="item__cross-type">[mixin]</span> <a href="#undefined-mixin-font-size-responsive"><code>font-size-responsive</code></a></li></ul><h3 class="item__sub-heading">Author</h3><ul class="list-unstyled"><li><p>Steven Keiser</p></li></ul></section><section class="main__item container item" id="undefined-function-str-replace"><h3 class="item__heading"><a class="item__name" href="#function-str-replace">str-replace</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@function str-replace($subject, $search, $replace) { 
+  @if type-of($subject) != &#39;string&#39; {
+    @error &quot;The argument $subject: `#{ $subject }` is not a string.&quot;;
+  }
+
+  @if type-of($search) != &#39;string&#39; {
+    @error &quot;The argument $search: `#{ $search }` is not a string.&quot;;
+  }
+
+  @if type-of($replace) != &#39;string&#39; {
+    @error &quot;The argument $replace: `#{ $replace }` is not a string.&quot;;
+  }
+
+  $index: string.index($subject, $search);
+
+  @if $index {
+    @return string.slice($subject, 1, $index - 1) +
+            $replace +
+            str-replace(string.slice($subject, $index + string.length($search)), $search, $replace);
+  }
+
+  @return $subject;
+ }" data-collapsed="@function str-replace($subject, $search, $replace) { ... }"><code>@function str-replace($subject, $search, $replace) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Replace all occurrences of the $search string with the $replace string.</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter </span>Name</th><th scope="col"><span class="visually-hidden">parameter </span>Description</th><th scope="col"><span class="visually-hidden">parameter </span>Type</th><th scope="col"><span class="visually-hidden">parameter </span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$subject</code></th><td data-label="desc"><p>The string being searched and replaced on.</p></td><td data-label="type"><code>String</code></td><td data-label="default">&mdash;<span class="visually-hidden"> none</span></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$search</code></th><td data-label="desc"><p>The value being searched for.</p></td><td data-label="type"><code>String</code></td><td data-label="default">&mdash;<span class="visually-hidden"> none</span></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$replace</code></th><td data-label="desc"><p>The replacement value that replaces found search values.</p></td><td data-label="type"><code>String</code></td><td data-label="default">&mdash;<span class="visually-hidden"> none</span></td></tr></tbody></table><h3 class="item__sub-heading">Returns</h3><div class="item__description item__description--inline"><code>String</code> &mdash;<p>A string with the replaced values.</p></div><h3 class="item__sub-heading">Throws</h3><ul class="list-unstyled"><li><p>The argument $subject: <code>#{ $subject }</code> is not a string.</p></li><li><p>The argument $search: <code>#{ $search }</code> is not a string.</p></li><li><p>The argument $replace: <code>#{ $replace }</code> is not a string.</p></li></ul><h3 class="item__sub-heading">Author</h3><ul class="list-unstyled"><li><p>Steven Keiser</p></li></ul></section><section class="main__item container item" id="undefined-function-str-split"><h3 class="item__heading"><a class="item__name" href="#function-str-split">str-split</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@function str-split($string, $separator) { 
+  @if type-of($string) != &#39;string&#39; {
+    @error &#39;The argument $string: `#{ $string }` is not a string.&#39;;
+  }
+
+  @if type-of($separator) != &#39;string&#39; {
+    @error &#39;The argument $separator: `#{ $separator }` is not a string.&#39;;
+  }
+
+  $result: ();
+  $running: true;
+
+  @while $running {
+    $index: string.index($string, $separator);
+
+    @if $index != null {
+      $item: string.slice($string, 1, ($index - 1));
+      $result: list.append($result, $item);
+      $string: string.slice($string, ($index + 1));
+    }
+    @else {
+      $running: false;
+    }
+  }
+
+  @return list.append($result, $string);
+ }" data-collapsed="@function str-split($string, $separator) { ... }"><code>@function str-split($string, $separator) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Split the $string by the $separator.</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter </span>Name</th><th scope="col"><span class="visually-hidden">parameter </span>Description</th><th scope="col"><span class="visually-hidden">parameter </span>Type</th><th scope="col"><span class="visually-hidden">parameter </span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$string</code></th><td data-label="desc"><p>The input string.</p></td><td data-label="type"><code>String</code></td><td data-label="default">&mdash;<span class="visually-hidden"> none</span></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$separator</code></th><td data-label="desc"><p>How the input string should be split.</p></td><td data-label="type"><code>String</code></td><td data-label="default">&mdash;<span class="visually-hidden"> none</span></td></tr></tbody></table><h3 class="item__sub-heading">Returns</h3><div class="item__description item__description--inline"><code>List</code> &mdash;<p>A list of strings created by splitting the $string by the $separator.</p></div><h3 class="item__sub-heading">Example</h3><div class="item__example example"><pre class="example__code language-scss"><code>str-split(&#39;Split by space.&#39;, &#39; &#39;); // returns &quot;Split&quot; &quot;by&quot; &quot;space.&quot;</code></pre></div><h3 class="item__sub-heading">Throws</h3><ul class="list-unstyled"><li><p>The argument $string: <code>#{ $string }</code> is not a string.</p></li><li><p>The argument $separator: <code>#{ $separator }</code> is not a string.</p></li></ul><h3 class="item__sub-heading">Author</h3><ul class="list-unstyled"><li><p>Steven Keiser</p></li></ul></section><section class="main__item container item" id="undefined-function-strip-unit"><h3 class="item__heading"><a class="item__name" href="#function-strip-unit">strip-unit</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@function strip-unit($number) { 
+  @if type-of($number) != &#39;number&#39; {
+    @error &#39;The argument $number: `#{ $number }` is not a number.&#39;;
+  }
+
+  @if math.is-unitless($number) {
+    @return $number;
+  }
+
+  @return math.div($number, ($number * 0 + 1));
+ }" data-collapsed="@function strip-unit($number) { ... }"><code>@function strip-unit($number) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Removes the unit from $number.</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter </span>Name</th><th scope="col"><span class="visually-hidden">parameter </span>Description</th><th scope="col"><span class="visually-hidden">parameter </span>Type</th><th scope="col"><span class="visually-hidden">parameter </span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$number</code></th><td data-label="desc"><p>The number to remove the unit from.</p></td><td data-label="type"><code>Number</code></td><td data-label="default">&mdash;<span class="visually-hidden"> none</span></td></tr></tbody></table><h3 class="item__sub-heading">Returns</h3><div class="item__description item__description--inline"><code>Number</code> &mdash;<p>The given $number with it&#39;s unit removed.</p></div><h3 class="item__sub-heading">Example</h3><div class="item__example example"><pre class="example__code language-scss"><code>strip-unit(12px); // returns 12;</code></pre></div><h3 class="item__sub-heading">Throws</h3><ul class="list-unstyled"><li><p>The argument $number: <code>#{ $number }</code> is not a number.</p></li></ul><h3 class="item__sub-heading">Used by</h3><ul class="list-unstyled"><li><span class="item__cross-type">[function]</span> <a href="#undefined-function-em"><code>em</code></a></li><li><span class="item__cross-type">[function]</span> <a href="#undefined-function-em"><code>em</code></a></li><li><span class="item__cross-type">[function]</span> <a href="#undefined-function-rem"><code>rem</code></a></li><li><span class="item__cross-type">[function]</span> <a href="#undefined-function-linear-scale"><code>linear-scale</code></a></li></ul><h3 class="item__sub-heading">Author</h3><ul class="list-unstyled"><li><p>Steven Keiser</p></li></ul></section><section class="main__item container item" id="undefined-function-to-number"><h3 class="item__heading"><a class="item__name" href="#function-to-number">to-number</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@function to-number($value) { 
+  @if type-of($value) == &#39;number&#39; {
+    @return $value;
+  }
+
+  @if type-of($value) != &#39;string&#39; {
+    @error &#39;The argument $value: `#{ $value }` is not a string.&#39;;
+  }
+
+  $result: 0;
+  $digits: 0;
+  $minus: string.slice($value, 1, 1) == &#39;-&#39;;
+  $numbers: (
+    &#39;0&#39;: 0,
+    &#39;1&#39;: 1,
+    &#39;2&#39;: 2,
+    &#39;3&#39;: 3,
+    &#39;4&#39;: 4,
+    &#39;5&#39;: 5,
+    &#39;6&#39;: 6,
+    &#39;7&#39;: 7,
+    &#39;8&#39;: 8,
+    &#39;9&#39;: 9
+  );
+
+  @for $i from if($minus, 2, 1) through string.length($value) {
+    $character: string.slice($value, $i, $i);
+
+    @if not (list.index(map.keys($numbers), $character) or $character == &#39;.&#39;) {
+      @return to-unit(if($minus, -$result, $result), string.slice($value, $i));
+    }
+
+    @if $character == &#39;.&#39; {
+      $digits: 1;
+    }
+    @else if $digits == 0 {
+      $result: $result * 10 + map.get($numbers, $character);
+    }
+    @else {
+      $digits: $digits * 10;
+      $result: $result + math.div(map.get($numbers, $character), $digits);
+    }
+  }
+
+  @return if($minus, -$result, $result);
+ }" data-collapsed="@function to-number($value) { ... }"><code>@function to-number($value) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Take the given $value and converts it into a number.</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter </span>Name</th><th scope="col"><span class="visually-hidden">parameter </span>Description</th><th scope="col"><span class="visually-hidden">parameter </span>Type</th><th scope="col"><span class="visually-hidden">parameter </span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$value</code></th><td data-label="desc"><p>The value to be converted.</p></td><td data-label="type"><code>String</code> or <code>Number</code></td><td data-label="default">&mdash;<span class="visually-hidden"> none</span></td></tr></tbody></table><h3 class="item__sub-heading">Returns</h3><div class="item__description item__description--inline"><code>Number</code> &mdash;<p>The $value as a number.</p></div><h3 class="item__sub-heading">Throws</h3><ul class="list-unstyled"><li><p>The argument $value: <code>#{ $value }</code> is not a string.</p></li></ul><h3 class="item__sub-heading">Requires</h3><ul class="list-unstyled"><li class="item__description item__description--inline"><span class="item__cross-type">[function]</span> <a href="#undefined-function-to-unit"><code>to-unit</code></a></li></ul><h3 class="item__sub-heading">Used by</h3><ul class="list-unstyled"><li><span class="item__cross-type">[function]</span> <a href="#undefined-function-em"><code>em</code></a></li><li><span class="item__cross-type">[function]</span> <a href="#undefined-function-rem"><code>rem</code></a></li></ul><h3 class="item__sub-heading">Author</h3><ul class="list-unstyled"><li><p>Steven Keiser</p></li></ul></section><section class="main__item container item" id="undefined-function-to-unit"><h3 class="item__heading"><a class="item__name" href="#function-to-unit">to-unit</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@function to-unit($number, $unit) { 
+  $units: (
+    &#39;px&#39;: 1px,
+    &#39;cm&#39;: 1cm,
+    &#39;mm&#39;: 1mm,
+    &#39;%&#39;: 1%,
+    &#39;ch&#39;: 1ch,
+    &#39;pc&#39;: 1pc,
+    &#39;in&#39;: 1in,
+    &#39;em&#39;: 1em,
+    &#39;rem&#39;: 1rem,
+    &#39;pt&#39;: 1pt,
+    &#39;ex&#39;: 1ex,
+    &#39;vw&#39;: 1vw,
+    &#39;vh&#39;: 1vh,
+    &#39;vmin&#39;: 1vmin,
+    &#39;vmax&#39;: 1vmax,
+    &#39;fr&#39;: 1fr
+  );
+
+  @if type-of($number) != &#39;number&#39; {
+    @error &#39;The argument $number: `#{ $number }` is not a number.&#39;;
+  }
+
+  @if not math.is-unitless($number) {
+    @error &#39;The argument $number: `#{ $number }` already has a unit, `#{ math.unit($number) }`.&#39;;
+  }
+
+  @if not list.index(map.keys($units), $unit) {
+    @error &#39;The argument $unit: `#{ $unit }` is not a valid css unit.&#39;;
+  }
+
+  @return $number * map.get($units, $unit);
+ }" data-collapsed="@function to-unit($number, $unit) { ... }"><code>@function to-unit($number, $unit) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Applies the $unit to the $number.</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter </span>Name</th><th scope="col"><span class="visually-hidden">parameter </span>Description</th><th scope="col"><span class="visually-hidden">parameter </span>Type</th><th scope="col"><span class="visually-hidden">parameter </span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$number</code></th><td data-label="desc"><p>The number to apply the unit to.</p></td><td data-label="type"><code>Number</code></td><td data-label="default">&mdash;<span class="visually-hidden"> none</span></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$unit</code></th><td data-label="desc"><p>The unit to be applied.</p></td><td data-label="type"><code>String</code></td><td data-label="default">&mdash;<span class="visually-hidden"> none</span></td></tr></tbody></table><h3 class="item__sub-heading">Returns</h3><div class="item__description item__description--inline"><code>Number</code> &mdash;<p>The $number displayed with the $unit.</p></div><h3 class="item__sub-heading">Throws</h3><ul class="list-unstyled"><li><p>The argument $number: <code>#{ $number }</code> is not a number.</p></li><li><p>The argument $number: <code>#{ $number }</code> already has a unit, <code>#{ math.unit($number) }</code>.</p></li><li><p>The argument $unit: <code>#{ $unit }</code> is not a valid css unit.</p></li></ul><h3 class="item__sub-heading">Used by</h3><ul class="list-unstyled"><li><span class="item__cross-type">[function]</span> <a href="#undefined-function-to-number"><code>to-number</code></a></li></ul><h3 class="item__sub-heading">Author</h3><ul class="list-unstyled"><li><p>Steven Keiser</p></li></ul></section><section class="main__item container item" id="undefined-function-linear-scale"><h3 class="item__heading"><a class="item__name" href="#function-linear-scale">linear-scale</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@function linear-scale($min-size, $max-size, $min-window: 360, $max-window: 1440, $unit: &#39;rem&#39;) { 
+  @if type-of($min-size) != &#39;number&#39; {
+    @error &#39;The argument $min-size: `#{ $min-size }` is not a number.&#39;;
+  }
+  @if not unitless($min-size) {
+    $min-size: strip-unit($min-size);
+  }
+
+  @if type-of($max-size) != &#39;number&#39; {
+    @error &#39;The argument $max-size: `#{ $max-size }` is not a number.&#39;;
+  }
+  @if not unitless($max-size) {
+    $max-size: strip-unit($max-size);
+  }
+
+  @if type-of($min-window) != &#39;number&#39; {
+    @error &#39;The argument $min-window: `#{ $min-window }` is not a number.&#39;;
+  }
+  @if not unitless($min-window) {
+    $min-window: strip-unit($min-window);
+  }
+
+  @if type-of($max-window) != &#39;number&#39; {
+    @error &#39;The argument $max-window: `#{ $max-window }` is not a number.&#39;;
+  }
+  @if not unitless($max-window) {
+    $max-window: strip-unit($max-window);
+  }
+
+  @if $unit != &#39;em&#39; and $unit != &#39;rem&#39; {
+    @error &quot;The argument $unit: `#{ $unit }` is not `em` or `rem`.&quot;;
+  }
+
+  $slope: math.div(($max-size - $min-size), ($max-window - $min-window));
+  $y-axis-intersection: (-$min-window) * $slope + $min-size;
+
+  @if $y-axis-intersection == 0 {
+    $y-axis-intersection: 0.0000000001;
+  }
+
+  // Convert values based on the $unit.
+  $min-size: if($unit == &#39;rem&#39;, #{ rem($min-size) }, #{ em($min-size) });
+  $max-size: if($unit == &#39;rem&#39;, #{ rem($max-size) }, #{ em($max-size) });
+  $y-axis-intersection: if($unit == &#39;rem&#39;, #{ rem($y-axis-intersection) }, #{ em($y-axis-intersection) });
+
+  @return clamp(
+    #{ $min-size },
+    calc(#{ $y-axis-intersection } + #{ $slope * 100 }vw),
+    #{ $max-size }
+  );
+ }" data-collapsed="@function linear-scale($min-size, $max-size, $min-window: 360, $max-window: 1440, $unit: &#39;rem&#39;) { ... }"><code>@function linear-scale($min-size, $max-size, $min-window: 360, $max-window: 1440, $unit: &#39;rem&#39;) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Returns responsive font sizing using clamp() and linear scaling based on viewport min and max.</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter </span>Name</th><th scope="col"><span class="visually-hidden">parameter </span>Description</th><th scope="col"><span class="visually-hidden">parameter </span>Type</th><th scope="col"><span class="visually-hidden">parameter </span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$min-size</code></th><td data-label="desc"><p>Minimum size.</p></td><td data-label="type"><code>Number</code></td><td data-label="default">&mdash;<span class="visually-hidden"> none</span></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$max-size</code></th><td data-label="desc"><p>Maximum size.</p></td><td data-label="type"><code>Number</code></td><td data-label="default">&mdash;<span class="visually-hidden"> none</span></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$min-window</code></th><td data-label="desc"><p>Minimum window size.</p></td><td data-label="type"><code>Number</code></td><td data-label="default"><code>360</code></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$max-window</code></th><td data-label="desc"><p>Maximum window size.</p></td><td data-label="type"><code>Number</code></td><td data-label="default"><code>1440</code></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$unit</code></th><td data-label="desc"><p>The css unit to use for the values inside the clamp function. REM or EM.</p></td><td data-label="type"><code>String</code></td><td data-label="default"><code>&#39;rem&#39;</code></td></tr></tbody></table><h3 class="item__sub-heading">Returns</h3><div class="item__description item__description--inline"><code>String</code></div><h3 class="item__sub-heading">Example</h3><div class="item__example example"><pre class="example__code language-scss"><code>.selector {
+  font-size: linear-scale(3.5rem, 7.75rem);
+}</code></pre></div><h3 class="item__sub-heading">Throws</h3><ul class="list-unstyled"><li><p>The argument $min-size: <code>#{ $min-size }</code> is not a number.</p></li><li><p>The argument $max-size: <code>#{ $max-size }</code> is not a number.</p></li><li><p>The argument $min-window: <code>#{ $min-window }</code> is not a number.</p></li><li><p>The argument $max-window: <code>#{ $max-window }</code> is not a number.</p></li><li><p>The argument $unit: <code>#{ $unit }</code> is not <code>em</code> or <code>rem</code>.</p></li></ul><h3 class="item__sub-heading">Requires</h3><ul class="list-unstyled"><li class="item__description item__description--inline"><span class="item__cross-type">[function]</span> <a href="#undefined-function-rem"><code>rem</code></a></li><li class="item__description item__description--inline"><span class="item__cross-type">[function]</span> <a href="#undefined-function-em"><code>em</code></a></li><li class="item__description item__description--inline"><span class="item__cross-type">[function]</span> <a href="#undefined-function-rem"><code>rem</code></a></li><li class="item__description item__description--inline"><span class="item__cross-type">[function]</span> <a href="#undefined-function-em"><code>em</code></a></li><li class="item__description item__description--inline"><span class="item__cross-type">[function]</span> <a href="#undefined-function-rem"><code>rem</code></a></li><li class="item__description item__description--inline"><span class="item__cross-type">[function]</span> <a href="#undefined-function-em"><code>em</code></a></li><li class="item__description item__description--inline"><span class="item__cross-type">[function]</span> <a href="#undefined-function-strip-unit"><code>strip-unit</code></a></li></ul><h3 class="item__sub-heading">Links</h3><ul class="list-unstyled"><li><a href="https://css-tricks.com/linearly-scale-font-size-with-css-clamp-based-on-the-viewport/">https://css-tricks.com/linearly-scale-font-size-with-css-clamp-based-on-the-viewport/</a></li></ul><h3 class="item__sub-heading">Authors</h3><ul class="list-unstyled"><li><p>George Heimel</p></li><li><p>Steven Keiser</p></li></ul></section><section class="main__item container item" id="undefined-function-modular-scale"><h3 class="item__heading"><a class="item__name" href="#function-modular-scale">modular-scale</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@function modular-scale($scale: 0) { 
+  @return $modular-scale-font-size-base * math.pow($modular-scale-ratio, $scale);
+ }" data-collapsed="@function modular-scale($scale: 0) { ... }"><code>@function modular-scale($scale: 0) { ... }</code></pre></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter </span>Name</th><th scope="col"><span class="visually-hidden">parameter </span>Description</th><th scope="col"><span class="visually-hidden">parameter </span>Type</th><th scope="col"><span class="visually-hidden">parameter </span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$scale</code></th><td data-label="desc">&mdash;<span class="visually-hidden"> none</span></td><td data-label="type"><code>Number</code></td><td data-label="default"><code>0</code></td></tr></tbody></table><h3 class="item__sub-heading">Returns</h3><div class="item__description item__description--inline"><code>Number</code></div><h3 class="item__sub-heading">Used by</h3><ul class="list-unstyled"><li><span class="item__cross-type">[function]</span> <a href="#undefined-function-font-size-ms"><code>font-size-ms</code></a></li><li><span class="item__cross-type">[mixin]</span> <a href="#undefined-mixin-font-size-ms"><code>font-size-ms</code></a></li></ul><h3 class="item__sub-heading">Author</h3><ul class="list-unstyled"><li><p>Steven Keiser</p></li></ul></section><section class="main__item container item" id="undefined-function-font-size-ms"><h3 class="item__heading"><a class="item__name" href="#function-font-size-ms">font-size-ms</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@function font-size-ms($scale, $namespace: &#39;&#39;) { 
+  @if type-of($scale) != &#39;number&#39; {
+    @error &quot;The argument $scale: `#{ $scale }` is not a number.&quot;;
+  }
+
+  @if $namespace == &#39;&#39; {
+    @return rem(modular-scale($scale));
+  }
+
+  @return var(--#{ $namespace }-font-size, #{ rem(modular-scale($scale)) });
+ }" data-collapsed="@function font-size-ms($scale, $namespace: &#39;&#39;) { ... }"><code>@function font-size-ms($scale, $namespace: &#39;&#39;) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Use this function to create a font-size css3 variable with default value for the $namespace. If no $namespace is provided, return the font size with REMs.</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter </span>Name</th><th scope="col"><span class="visually-hidden">parameter </span>Description</th><th scope="col"><span class="visually-hidden">parameter </span>Type</th><th scope="col"><span class="visually-hidden">parameter </span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$scale</code></th><td data-label="desc"><p>The point in the modular-scale sequence. Postive numbers, larger font size. Negative numbers, smaller font size.</p></td><td data-label="type"><code>Number</code></td><td data-label="default">&mdash;<span class="visually-hidden"> none</span></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$namespace</code></th><td data-label="desc"><p>The name who&#39;s font size you want to create the variable for.</p></td><td data-label="type"><code>Number</code></td><td data-label="default"><code>&#39;&#39;</code></td></tr></tbody></table><h3 class="item__sub-heading">Returns</h3><div class="item__description item__description--inline"><code>String</code> &mdash;<p>A css3 variable with a default font-size.</p></div><h3 class="item__sub-heading">Throws</h3><ul class="list-unstyled"><li><p>The argument $scale: <code>#{ $scale }</code> is not a number.</p></li></ul><h3 class="item__sub-heading">Requires</h3><ul class="list-unstyled"><li class="item__description item__description--inline"><span class="item__cross-type">[function]</span> <a href="#undefined-function-modular-scale"><code>modular-scale</code></a></li><li class="item__description item__description--inline"><span class="item__cross-type">[function]</span> <a href="#undefined-function-rem"><code>rem</code></a></li></ul><h3 class="item__sub-heading">Author</h3><ul class="list-unstyled"><li><p>Steven Keiser</p></li></ul></section></section><section class="main__sub-section" id="undefined-mixin"><h2 class="main__heading--secondary"><div class="container">mixins</div></h2><section class="main__item container item" id="undefined-mixin-semantic-list"><h3 class="item__heading"><a class="item__name" href="#mixin-semantic-list">semantic-list</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin semantic-list($list-margin: 0, $list-padding: 0, $list-item-margin: 0, $list-item-padding: 0) { 
+  --list-margin: #{ $list-margin };
+  --list-padding: #{ $list-padding };
+
+  --li-margin: #{ $list-item-margin };
+  --li-padding: #{ $list-item-padding };
+  --li-style-type: none;
+ }" data-collapsed="@mixin semantic-list($list-margin: 0, $list-padding: 0, $list-item-margin: 0, $list-item-padding: 0) { ... }"><code>@mixin semantic-list($list-margin: 0, $list-padding: 0, $list-item-margin: 0, $list-item-padding: 0) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Helper mixin to create semantic list styles.</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter </span>Name</th><th scope="col"><span class="visually-hidden">parameter </span>Description</th><th scope="col"><span class="visually-hidden">parameter </span>Type</th><th scope="col"><span class="visually-hidden">parameter </span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$list-margin</code></th><td data-label="desc"><p>How much margin the list should have.</p></td><td data-label="type"><code>Number</code></td><td data-label="default"><code>0</code></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$list-padding</code></th><td data-label="desc"><p>How much padding the list should have.</p></td><td data-label="type"><code>Number</code></td><td data-label="default"><code>0</code></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$list-item-margin</code></th><td data-label="desc"><p>How much margin each list item should have.</p></td><td data-label="type"><code>Number</code></td><td data-label="default"><code>0</code></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$list-item-padding</code></th><td data-label="desc"><p>How much padding each list item should have.</p></td><td data-label="type"><code>Number</code></td><td data-label="default"><code>0</code></td></tr></tbody></table><h3 class="item__sub-heading">Authors</h3><ul class="list-unstyled"><li><p>Brian Milea</p></li><li><p>Steven Keiser</p></li></ul></section><section class="main__item container item" id="undefined-mixin-font-awesome-icon"><h3 class="item__heading"><a class="item__name" href="#mixin-font-awesome-icon">font-awesome-icon</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin font-awesome-icon($unicode, $style: &#39;light&#39;, $position: &#39;after&#39;, $margin: 0.25em) { 
+  &amp;::#{ $position } {
+    @extend %fa-icon;
+    @extend %fa-icon-style-#{ $style };
+
+    content: string.unquote(&quot;&#92;&quot;#{ $unicode }&#92;&quot;&quot;);
+
+    @if $position == &#39;before&#39; {
+      margin-right: #{ $margin };
+    }
+    @else if $position == &#39;after&#39; {
+      margin-left: #{ $margin };
+    }
+
+    @content;
+  }
+ }" data-collapsed="@mixin font-awesome-icon($unicode, $style: &#39;light&#39;, $position: &#39;after&#39;, $margin: 0.25em) { ... }"><code>@mixin font-awesome-icon($unicode, $style: &#39;light&#39;, $position: &#39;after&#39;, $margin: 0.25em) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>This mixing allows for placing an icon either before or after using the variable name from the Font Awesome 5 Pro package.</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter </span>Name</th><th scope="col"><span class="visually-hidden">parameter </span>Description</th><th scope="col"><span class="visually-hidden">parameter </span>Type</th><th scope="col"><span class="visually-hidden">parameter </span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$unicode</code></th><td data-label="desc"><p>The unicode of the FontAwesome icon.</p></td><td data-label="type"><code>String</code></td><td data-label="default">&mdash;<span class="visually-hidden"> none</span></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$style</code></th><td data-label="desc"><p>Which FontAwesome icon style.</p></td><td data-label="type"><code>String</code></td><td data-label="default"><code>&#39;light&#39;</code></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$position</code></th><td data-label="desc"><p>Where to place the FontAwesome icon.</p></td><td data-label="type"><code>String</code></td><td data-label="default"><code>&#39;after&#39;</code></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$margin</code></th><td data-label="desc"><p>The margin to add to either the left or right of the FontAwesome icon.</p></td><td data-label="type"><code>Number</code></td><td data-label="default"><code>0.25em</code></td></tr></tbody></table><h3 class="item__sub-heading">Example</h3><div class="item__example example"><pre class="example__code language-scss"><code>@include fontawesome-icon(&#92;f164, &#39;regular&#39;);</code></pre></div><h3 class="item__sub-heading">Authors</h3><ul class="list-unstyled"><li><p>George Heimel</p></li><li><p>Steven Keiser</p></li></ul></section><section class="main__item container item" id="undefined-mixin-font-size-ms"><h3 class="item__heading"><a class="item__name" href="#mixin-font-size-ms">font-size-ms</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin font-size-ms($scale, $namespace: &#39;&#39;) { 
+  @if type-of($scale) != &#39;number&#39; {
+    @error &quot;The argument $scale: `#{ $scale }` is not a number.&quot;;
+  }
+
+  #{ if($namespace != &#39;&#39;, &#39;--&#39; + $namespace + &#39;-&#39;, &#39;&#39;) }font-size: rem(modular-scale($scale));
+ }" data-collapsed="@mixin font-size-ms($scale, $namespace: &#39;&#39;) { ... }"><code>@mixin font-size-ms($scale, $namespace: &#39;&#39;) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Include this mixin where you want to overwrite font-size css3 variable for the $namespace. If no $namespace is provided, this creates the font-size css property.</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter </span>Name</th><th scope="col"><span class="visually-hidden">parameter </span>Description</th><th scope="col"><span class="visually-hidden">parameter </span>Type</th><th scope="col"><span class="visually-hidden">parameter </span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$scale</code></th><td data-label="desc"><p>The point in the modular-scale sequence. Postive numbers, larger font size. Negative numbers, smaller font size.</p></td><td data-label="type"><code>Number</code></td><td data-label="default">&mdash;<span class="visually-hidden"> none</span></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$namespace</code></th><td data-label="desc"><p>The name who&#39;s font size you want to overwrite.</p></td><td data-label="type"><code>Number</code></td><td data-label="default"><code>&#39;&#39;</code></td></tr></tbody></table><h3 class="item__sub-heading">Throws</h3><ul class="list-unstyled"><li><p>The argument $scale: <code>#{ $scale }</code> is not a number.</p></li></ul><h3 class="item__sub-heading">Requires</h3><ul class="list-unstyled"><li class="item__description item__description--inline"><span class="item__cross-type">[function]</span> <a href="#undefined-function-modular-scale"><code>modular-scale</code></a></li><li class="item__description item__description--inline"><span class="item__cross-type">[function]</span> <a href="#undefined-function-rem"><code>rem</code></a></li></ul><h3 class="item__sub-heading">Author</h3><ul class="list-unstyled"><li><p>Steven Keiser</p></li></ul></section><section class="main__item container item" id="undefined-mixin-font-size-responsive"><h3 class="item__heading"><a class="item__name" href="#mixin-font-size-responsive">font-size-responsive</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin font-size-responsive($min-size, $med-size, $max-size) { 
+  @if type-of($min-size) != &#39;number&#39; {
+    @error &#39;The argument $min-size: `#{ $min-size }` is not a number.&#39;;
+  }
+
+  @if not unitless($min-size) {
+    @error &quot;The argument $min-size: `#{ $min-size }` is not unitless.&quot;;
+  }
+
+  @if type-of($med-size) != &#39;number&#39; {
+    @error &#39;The argument $med: `#{ $med-size }` is not a number.&#39;;
+  }
+
+  @if not unitless($med-size) {
+    @error &quot;The argument $med-size: `#{ $med-size }` is not unitless.&quot;;
+  }
+
+  @if type-of($max-size) != &#39;number&#39; {
+    @error &#39;The argument $max-size: `#{ $max-size }` is not a number.&#39;;
+  }
+
+  @if not unitless($max-size) {
+    @error &quot;The argument $max-size: `#{ $max-size }` is not unitless.&quot;;
+  }
+
+  font-size: rem($min-size);
+  font-size: #{ &quot;min(max(#{ $min-size }, #{ $med-size }), #{ $max-size })&quot; };
+
+  @supports (font-size: clamp($min-size, $med-size, $max-size)) {
+    font-size: clamp(rem($min-size), $med-size, rem($max-size));
+  }
+ }" data-collapsed="@mixin font-size-responsive($min-size, $med-size, $max-size) { ... }"><code>@mixin font-size-responsive($min-size, $med-size, $max-size) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Returns responsive font sizing using clamp() with fallback.</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter </span>Name</th><th scope="col"><span class="visually-hidden">parameter </span>Description</th><th scope="col"><span class="visually-hidden">parameter </span>Type</th><th scope="col"><span class="visually-hidden">parameter </span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$min-size</code></th><td data-label="desc"><p>Minimum size</p></td><td data-label="type"><code>Number</code></td><td data-label="default">&mdash;<span class="visually-hidden"> none</span></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$med-size</code></th><td data-label="desc"><p>Median size (in vw)</p></td><td data-label="type"><code>Number</code></td><td data-label="default">&mdash;<span class="visually-hidden"> none</span></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$max-size</code></th><td data-label="desc"><p>Maximum size</p></td><td data-label="type"><code>Number</code></td><td data-label="default">&mdash;<span class="visually-hidden"> none</span></td></tr></tbody></table><h3 class="item__sub-heading">Throws</h3><ul class="list-unstyled"><li><p>The argument $min-size: <code>#{ $min-size }</code> is not a number.</p></li><li><p>The argument $min-size: <code>#{ $min-size }</code> is not unitless.</p></li><li><p>The argument $med: <code>#{ $med-size }</code> is not a number.</p></li><li><p>The argument $med-size: <code>#{ $med-size }</code> is not unitless.</p></li><li><p>The argument $max-size: <code>#{ $max-size }</code> is not a number.</p></li><li><p>The argument $max-size: <code>#{ $max-size }</code> is not unitless.</p></li></ul><h3 class="item__sub-heading">Requires</h3><ul class="list-unstyled"><li class="item__description item__description--inline"><span class="item__cross-type">[function]</span> <a href="#undefined-function-rem"><code>rem</code></a></li><li class="item__description item__description--inline"><span class="item__cross-type">[function]</span> <a href="#undefined-function-rem"><code>rem</code></a></li><li class="item__description item__description--inline"><span class="item__cross-type">[function]</span> <a href="#undefined-function-rem"><code>rem</code></a></li></ul><h3 class="item__sub-heading">Author</h3><ul class="list-unstyled"><li><p>Brian Milea</p></li></ul></section><section class="main__item container item" id="undefined-mixin-font-smoothing"><h3 class="item__heading"><a class="item__name" href="#mixin-font-smoothing">font-smoothing</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin font-smoothing($aliasing: &#39;antialiased&#39;) { 
+  @if $aliasing == antialiased {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  @else {
+    -webkit-font-smoothing: subpixel-antialiased;
+    -moz-osx-font-smoothing: auto;
+  }
+ }" data-collapsed="@mixin font-smoothing($aliasing: &#39;antialiased&#39;) { ... }"><code>@mixin font-smoothing($aliasing: &#39;antialiased&#39;) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Helper mixin that applies font-smoothing with proper vendor prefixes.</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter </span>Name</th><th scope="col"><span class="visually-hidden">parameter </span>Description</th><th scope="col"><span class="visually-hidden">parameter </span>Type</th><th scope="col"><span class="visually-hidden">parameter </span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$aliasing</code></th><td data-label="desc"><p>The type of font smoothing to use.</p></td><td data-label="type"><code>String</code></td><td data-label="default"><code>&#39;antialiased&#39;</code></td></tr></tbody></table><h3 class="item__sub-heading">Author</h3><ul class="list-unstyled"><li><p>Brian Milea</p></li></ul></section></section></section><section class="main__section"><h1 class="main__heading" id="visibility"><div class="container">visibility</div></h1><section class="main__sub-section" id="visibility-placeholder"><h2 class="main__heading--secondary"><div class="container">placeholders</div></h2><section class="main__item container item" id="visibility-placeholder-focus-within"><h3 class="item__heading"><a class="item__name" href="#placeholder-focus-within">focus-within</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="%focus-within { 
+  &amp;:focus,
+  &amp;:active,
+  &amp;.focus-within {
+    @extend %remove-visually-hidden;
+  }
+
+  // Required by polyfill for IE.
+  &amp;:focus-within {
+    @include remove-visually-hidden;
+  }
+ }" data-collapsed="%focus-within { ... }"><code>%focus-within { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Extends the %remove-visually-hidden class to allow the element to be focusable when focus is in the element or a child element.</p></div><h3 class="item__sub-heading">Requires</h3><ul class="list-unstyled"><li class="item__description item__description--inline"><span class="item__cross-type">[placeholder]</span> <a href="#visibility-placeholder-remove-visually-hidden"><code>remove-visually-hidden</code></a></li><li class="item__description item__description--inline"><span class="item__cross-type">[mixin]</span> <a href="#visibility-mixin-remove-visually-hidden"><code>remove-visually-hidden</code></a></li></ul></section><section class="main__item container item" id="visibility-placeholder-focusable"><h3 class="item__heading"><a class="item__name" href="#placeholder-focusable">focusable</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="%focusable { 
+  &amp;:active,
+  &amp;:focus {
+    @extend %remove-visually-hidden;
+  }
+ }" data-collapsed="%focusable { ... }"><code>%focusable { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Extends the %remove-visually-hidden to allow the element to be focusable when navigated to via the keyboard.</p></div><h3 class="item__sub-heading">Requires</h3><ul class="list-unstyled"><li class="item__description item__description--inline"><span class="item__cross-type">[placeholder]</span> <a href="#visibility-placeholder-remove-visually-hidden"><code>remove-visually-hidden</code></a></li></ul></section><section class="main__item container item" id="visibility-placeholder-hidden"><h3 class="item__heading"><a class="item__name" href="#placeholder-hidden">hidden</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="%hidden { 
+  display: none !important;
+ }" data-collapsed="%hidden { ... }"><code>%hidden { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Hide visually and from screen readers.</p></div></section><section class="main__item container item" id="visibility-placeholder-invisible"><h3 class="item__heading"><a class="item__name" href="#placeholder-invisible">invisible</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="%invisible { 
+  visibility: hidden;
+ }" data-collapsed="%invisible { ... }"><code>%invisible { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Hide visually and from screen readers, but maintain layout.</p></div></section><section class="main__item container item" id="visibility-placeholder-remove-visually-hidden"><h3 class="item__heading"><a class="item__name" href="#placeholder-remove-visually-hidden">remove-visually-hidden</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="%remove-visually-hidden { 
+  @include remove-visually-hidden;
+ }" data-collapsed="%remove-visually-hidden { ... }"><code>%remove-visually-hidden { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Uses the remove-visually-hidden mixin.</p></div><h3 class="item__sub-heading">Requires</h3><ul class="list-unstyled"><li class="item__description item__description--inline"><span class="item__cross-type">[mixin]</span> <a href="#visibility-mixin-remove-visually-hidden"><code>remove-visually-hidden</code></a></li></ul><h3 class="item__sub-heading">Used by</h3><ul class="list-unstyled"><li><span class="item__cross-type">[placeholder]</span> <a href="#visibility-placeholder-focus-within"><code>focus-within</code></a></li><li><span class="item__cross-type">[placeholder]</span> <a href="#visibility-placeholder-focusable"><code>focusable</code></a></li></ul></section></section><section class="main__sub-section" id="visibility-mixin"><h2 class="main__heading--secondary"><div class="container">mixins</div></h2><section class="main__item container item" id="visibility-mixin-remove-visually-hidden"><h3 class="item__heading"><a class="item__name" href="#mixin-remove-visually-hidden">remove-visually-hidden</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin remove-visually-hidden() { 
+  $positions: static, absolute, fixed, relative, sticky, initial, inherit;
+
+  @if list.index($positions, $position) == null {
+    @error &quot;The argument $position: `#{ $position }` is not one of the following: `#{ $positions }`.&quot; ;
+  }
+
+  clip: auto;
+  height: auto;
+  width: auto;
+  margin: 0;
+  overflow: visible;
+  position: $position;
+  white-space: inherit;
+ }" data-collapsed="@mixin remove-visually-hidden() { ... }"><code>@mixin remove-visually-hidden() { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Makes an element visible again.</p></div><h3 class="item__sub-heading">Parameters</h3><p>None.</p><h3 class="item__sub-heading">Throws</h3><ul class="list-unstyled"><li><p>The argument $position: <code>#{ $position }</code> is not one of the following: <code>#{ $positions }</code>.</p></li></ul><h3 class="item__sub-heading">Used by</h3><ul class="list-unstyled"><li><span class="item__cross-type">[placeholder]</span> <a href="#visibility-placeholder-focus-within"><code>focus-within</code></a></li><li><span class="item__cross-type">[placeholder]</span> <a href="#visibility-placeholder-remove-visually-hidden"><code>remove-visually-hidden</code></a></li></ul></section><section class="main__item container item" id="visibility-mixin-visually-hidden"><h3 class="item__heading"><a class="item__name" href="#mixin-visually-hidden">visually-hidden</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin visually-hidden() { 
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+  white-space: nowrap;
+ }" data-collapsed="@mixin visually-hidden() { ... }"><code>@mixin visually-hidden() { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Hide visually, but not from screen readers. Line feeds are not interpreted as spaces and small width causes content to wrap 1 word per line.</p></div><h3 class="item__sub-heading">Parameters</h3><p>None.</p><h3 class="item__sub-heading">Links</h3><ul class="list-unstyled"><li><a href="https://snook.ca/archives/html_and_css/hiding-content-for-accessibility">https://snook.ca/archives/html_and_css/hiding-content-for-accessibility</a></li><li><a href="https://medium.com/@jessebeach/beware-smushed-off-screen-accessible-text-5952a4c2cbfe">https://medium.com/@jessebeach/beware-smushed-off-screen-accessible-text-5952a4c2cbfe</a></li></ul></section></section></section><footer class="footer" role="contentinfo"><div class="container"><div class="footer__project-info project-info"><!-- Name and URL --> <span class="project-info__name">S360-fundamental-toolkit</span><!-- Version --> <span class="project-info__version">- v6.0.2</span><!-- License --> <span class="project-info__license">, under MIT</span></div><a class="footer__watermark" href="http://sassdoc.com"><img src="assets/images/logo_light_inline.svg" alt="SassDoc Logo"></a></div></footer></article><script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script><script>window.jQuery || document.write('<script src="assets/js/vendor/jquery.min.js"><\/script>')</script><script src="assets/js/main.min.js"></script></body></html>

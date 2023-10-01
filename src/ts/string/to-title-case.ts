@@ -2,6 +2,12 @@ interface String {
   toTitleCase(): string;
 }
 
+/**
+ * Converts any string into Title Case.
+ *
+ * @example "this is a string"
+ *  returns "This Is A String".
+ */
 String.prototype.toTitleCase = function() {
   return this
     // Convert everything to lowercase.
