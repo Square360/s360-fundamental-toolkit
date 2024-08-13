@@ -1,7 +1,7 @@
 @use "sass:string";
 
 /// This mixing allows for placing an icon either before or after using the
-/// variable name from the Font Awesome 5 Pro package.
+/// variable name from the Font Awesome 6 Pro package.
 ///
 /// @author George Heimel
 /// @author Steven Keiser
@@ -51,26 +51,26 @@
 }
 
 %fa-icon-style-light {
-  font-family: "Font Awesome 5 Pro";
+  font-family: "Font Awesome 6 Pro";
   font-weight: 300;
 }
 
 %fa-icon-style-regular {
-  font-family: "Font Awesome 5 Pro";
+  font-family: "Font Awesome 6 Pro";
   font-weight: 400;
 };
 
 %fa-icon-style-solid {
-  font-family: "Font Awesome 5 Pro";
+  font-family: "Font Awesome 6 Pro";
   font-weight: 900;
 }
 
 %fa-icon-style-brands {
-  font-family: "Font Awesome 5 Brands";
+  font-family: "Font Awesome 6 Brands";
   font-weight: 400;
 }
 
 %fa-icon-style-duotone {
-  font-family: "Font Awesome 5 Duotone";
+  font-family: "Font Awesome 6 Duotone";
   font-weight: 900;
 }
