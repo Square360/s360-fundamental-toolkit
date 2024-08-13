@@ -1,6 +1,6 @@
 {
   "name": "s360-fundamental-toolkit",
-  "version": "6.0.2",
+  "version": "6.0.3",
   "description": "Set of mixins, placeholders, and other useful tools for building websites.",
   "license": "MIT",
   "main": "build/index.js",
